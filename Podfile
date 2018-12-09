@@ -6,9 +6,12 @@ target 'Pettitude' do
   use_frameworks!
 
   # Pods for Pettitude
-  pod 'RIBs', '~> 0.9.2'
+  pod 'RIBs', '~> 0.9.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'RxCocoa', '~> 4.0.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionLabelModel'
 
   target 'PettitudeTests' do
     inherit! :search_paths

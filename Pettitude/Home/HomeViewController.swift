@@ -7,14 +7,13 @@
 //
 
 import ARKit
+import Firebase
 import RIBs
 import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void)
 }
 
 final class HomeViewController: UIViewController, HomePresentable, HomeViewControllable, ARSKViewDelegate, ARSessionDelegate {
@@ -32,6 +31,27 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.session.run(configuration)
     }
     
+    // MARK: - Protocol ARSessionDelegate
+    
+    // The pixel buffer being held for analysis; used to serialize Vision requests.
+    private var currentBuffer: CVPixelBuffer?
+    // Queue for dispatching vision classification requests
+    private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
+    
+    func session(_ session: ARSession, didUpdate frame: ARFrame) {
+        guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
+            return
+        }
+        self.currentBuffer = frame.capturedImage
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (succeed) in
+            if !succeed {
+                print("Error") // TODO: Handle
+                return
+            }
+            self.currentBuffer = nil
+        })
+    }
+    
     // MARK: - Private
     
     private func setupHome() {
@@ -47,20 +67,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.delegate = self
         sceneView.presentScene(overlayScene)
         sceneView.session.delegate = self
-    }
-    
-    // MARK: - Protocol ARSessionDelegate
-    
-    // The pixel buffer being held for analysis; used to serialize Vision requests.
-    private var currentBuffer: CVPixelBuffer?
-    // Queue for dispatching vision classification requests
-    private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
-    
-    func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
-            return
-        }
-        self.currentBuffer = frame.capturedImage
     }
     
     private var sceneView: ARSKView!

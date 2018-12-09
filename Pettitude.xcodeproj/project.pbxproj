@@ -23,6 +23,8 @@
 		92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553E21BD607F0098333A /* HomeBuilder.swift */; };
 		92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553F21BD607F0098333A /* HomeInteractor.swift */; };
 		92A2554821BD69F90098333A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554721BD69F90098333A /* View.swift */; };
+		92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A2554921BD82360098333A /* GoogleService-Info.plist */; };
+		92A2554D21BD85680098333A /* MLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554C21BD85680098333A /* MLProcessor.swift */; };
 		92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5721BD542A00FF622B /* AppDelegate.swift */; };
 		92E14D5A21BD542A00FF622B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5921BD542A00FF622B /* ViewController.swift */; };
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		92A2553E21BD607F0098333A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		92A2553F21BD607F0098333A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		92A2554721BD69F90098333A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		92A2554921BD82360098333A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		92A2554C21BD85680098333A /* MLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessor.swift; sourceTree = "<group>"; };
 		92E14D5421BD542A00FF622B /* Pettitude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pettitude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D5721BD542A00FF622B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E14D5921BD542A00FF622B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,14 @@
 			path = SharedUI;
 			sourceTree = "<group>";
 		};
+		92A2554B21BD85510098333A /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				92A2554C21BD85680098333A /* MLProcessor.swift */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
 		92E14D4B21BD542A00FF622B = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				92A2554B21BD85510098333A /* ML */,
 				92A2554621BD69EC0098333A /* SharedUI */,
 				92A2553B21BD606B0098333A /* Home */,
 				92A2552E21BD5DE60098333A /* Root */,
@@ -212,6 +225,7 @@
 				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
 				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
 				92E14D6321BD542C00FF622B /* Info.plist */,
+				92A2554921BD82360098333A /* GoogleService-Info.plist */,
 			);
 			path = Pettitude;
 			sourceTree = "<group>";
@@ -354,6 +368,7 @@
 			files = (
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
+				92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,17 +396,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RIBs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,6 +496,7 @@
 				92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */,
 				92E14D5A21BD542A00FF622B /* ViewController.swift in Sources */,
 				92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */,
+				92A2554D21BD85680098333A /* MLProcessor.swift in Sources */,
 				92A2553921BD5DE60098333A /* RootRouter.swift in Sources */,
 				92A2553621BD5DE60098333A /* RootInteractor.swift in Sources */,
 				92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */,

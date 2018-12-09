@@ -27,9 +27,8 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     weak var router: HomeRouting?
     weak var listener: HomeListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: HomePresentable) {
+    init(presenter: HomePresentable, mlProcessor: MLProcessor) {
+        self.mlProcessor = mlProcessor
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,4 +42,18 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    // MARK: - HomePresentableListener
+    
+    
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void) {
+        mlProcessor.classify(pixelBuffer: pixelBuffer) { (type) in
+            print(type)
+            completionHandler(type != nil)
+        }
+    }
+    
+    // MARK: - Private
+    
+    private let mlProcessor: MLProcessor
 }

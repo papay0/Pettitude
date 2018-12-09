@@ -9,13 +9,14 @@
 import RIBs
 
 protocol HomeDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var mlProcessor: MLProcessor { get }
 }
 
 final class HomeComponent: Component<HomeDependency> {
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    fileprivate var mlProcessor: MLProcessor {
+        return dependency.mlProcessor
+    }
 }
 
 // MARK: - Builder
@@ -33,7 +34,8 @@ final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
     func build(with listener: HomeListener) -> HomeRouting {
         let component = HomeComponent(dependency: dependency)
         let viewController = HomeViewController()
-        let interactor = HomeInteractor(presenter: viewController)
+        
+        let interactor = HomeInteractor(presenter: viewController, mlProcessor: component.mlProcessor)
         interactor.listener = listener
         return HomeRouter(interactor: interactor, viewController: viewController)
     }

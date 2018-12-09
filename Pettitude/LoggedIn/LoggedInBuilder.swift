@@ -15,7 +15,11 @@ protocol LoggedInDependency: Dependency {
 }
 
 final class LoggedInComponent: Component<LoggedInDependency>, HomeDependency {
-
+    
+    var mlProcessor: MLProcessor {
+        return shared { MLProcessor() }
+    }
+    
     fileprivate var loggedInViewController: LoggedInViewControllable {
         return dependency.loggedInViewController
     }
