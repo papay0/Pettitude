@@ -7,7 +7,7 @@ PODS:
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
-  - RIBs (~> 0.9)
+  - RIBs (~> 0.9.0)
   - RxCocoa (~> 4.0.0)
   - SnapKit (~> 4.0.0)
 
@@ -24,6 +24,6 @@ SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 32c17062973e47b624fba352a255e8f68111e57e
+PODFILE CHECKSUM: ecfe0edb0d788e68689602cc2cdb3d58b75260cf
 
 COCOAPODS: 1.5.3

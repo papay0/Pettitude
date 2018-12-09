@@ -6,7 +6,7 @@ target 'Pettitude' do
   use_frameworks!
 
   # Pods for Pettitude
-  pod 'RIBs', '~> 0.9'
+  pod 'RIBs', '~> 0.9.2'
   pod 'SnapKit', '~> 4.0.0'
   pod 'RxCocoa', '~> 4.0.0'
 
