@@ -1,4 +1,5 @@
 PODS:
+  - BulletinBoard (2.0.2)
   - Firebase/Core (5.14.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.4.0)
@@ -96,6 +97,7 @@ PODS:
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
+  - BulletinBoard
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
@@ -106,6 +108,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BulletinBoard
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -128,6 +131,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  BulletinBoard: a4a3022789e5202167127c3231975313c1d76c51
   Firebase: 963d5685fae888a56d6d4d9cfce6b9c976958798
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseCore: 8f49b70f57ab5cbb032ef41d64992ded21606459
@@ -149,6 +153,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 5fd6bb4d92e8f80e5637ebcf2920bb59b8df4565
+PODFILE CHECKSUM: a38c011171c17e0e41a0d5b36860ed210877588e
 
 COCOAPODS: 1.5.3

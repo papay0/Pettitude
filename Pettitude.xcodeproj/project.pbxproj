@@ -26,6 +26,10 @@
 		92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A2554921BD82360098333A /* GoogleService-Info.plist */; };
 		92A2554D21BD85680098333A /* MLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554C21BD85680098333A /* MLProcessor.swift */; };
 		92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */; };
+		92A2555921BDB57C0098333A /* StatusRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2555521BDB57C0098333A /* StatusRouter.swift */; };
+		92A2555A21BDB57C0098333A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2555621BDB57C0098333A /* StatusViewController.swift */; };
+		92A2555B21BDB57C0098333A /* StatusBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2555721BDB57C0098333A /* StatusBuilder.swift */; };
+		92A2555C21BDB57C0098333A /* StatusInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2555821BDB57C0098333A /* StatusInteractor.swift */; };
 		92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5721BD542A00FF622B /* AppDelegate.swift */; };
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
 		92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */; };
@@ -74,6 +78,10 @@
 		92A2554921BD82360098333A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92A2554C21BD85680098333A /* MLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessor.swift; sourceTree = "<group>"; };
 		92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessorResponse.swift; sourceTree = "<group>"; };
+		92A2555521BDB57C0098333A /* StatusRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRouter.swift; sourceTree = "<group>"; };
+		92A2555621BDB57C0098333A /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		92A2555721BDB57C0098333A /* StatusBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBuilder.swift; sourceTree = "<group>"; };
+		92A2555821BDB57C0098333A /* StatusInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInteractor.swift; sourceTree = "<group>"; };
 		92E14D5421BD542A00FF622B /* Pettitude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pettitude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D5721BD542A00FF622B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E14D5E21BD542C00FF622B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +199,17 @@
 			path = ML;
 			sourceTree = "<group>";
 		};
+		92A2555421BDB5360098333A /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				92A2555521BDB57C0098333A /* StatusRouter.swift */,
+				92A2555621BDB57C0098333A /* StatusViewController.swift */,
+				92A2555721BDB57C0098333A /* StatusBuilder.swift */,
+				92A2555821BDB57C0098333A /* StatusInteractor.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
 		92E14D4B21BD542A00FF622B = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +235,7 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				92A2555421BDB5360098333A /* Status */,
 				92A2554B21BD85510098333A /* ML */,
 				92A2554621BD69EC0098333A /* SharedUI */,
 				92A2553B21BD606B0098333A /* Home */,
@@ -397,6 +417,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -410,6 +431,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -467,11 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -505,16 +523,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A2552921BD5C010098333A /* LoggedInRouter.swift in Sources */,
+				92A2555A21BDB57C0098333A /* StatusViewController.swift in Sources */,
 				92A2554021BD607F0098333A /* HomeRouter.swift in Sources */,
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,
 				92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */,
+				92A2555C21BDB57C0098333A /* StatusInteractor.swift in Sources */,
 				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
 				92A2553821BD5DE60098333A /* RootComponent+LoggedIn.swift in Sources */,
+				92A2555921BDB57C0098333A /* StatusRouter.swift in Sources */,
 				92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */,
 				92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */,
 				92A2554D21BD85680098333A /* MLProcessor.swift in Sources */,
+				92A2555B21BDB57C0098333A /* StatusBuilder.swift in Sources */,
 				92A2553921BD5DE60098333A /* RootRouter.swift in Sources */,
 				92A2553621BD5DE60098333A /* RootInteractor.swift in Sources */,
 				92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */,
