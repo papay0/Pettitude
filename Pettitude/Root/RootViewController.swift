@@ -28,25 +28,11 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
 
     weak var listener: RootPresentableListener?
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Method is not supported")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.backgroundColor = UIColor.white
-    }
-
     // MARK: - RootViewControllable
 
     func present(viewController: ViewControllable) {
-        present(viewController.uiviewController, animated: true, completion: nil)
-    }
+        present(viewController.uiviewController, animated: false, completion: nil)
+    } 
 
     func dismiss(viewController: ViewControllable) {
         if presentedViewController === viewController.uiviewController {
@@ -57,6 +43,4 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
 
 // MARK: LoggedInViewControllable
 
-extension RootViewController: LoggedInViewControllable {
-
-}
+extension RootViewController: LoggedInViewControllable {}

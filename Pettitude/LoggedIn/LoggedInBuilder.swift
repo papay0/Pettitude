@@ -14,7 +14,7 @@ protocol LoggedInDependency: Dependency {
     // created by this RIB.
 }
 
-final class LoggedInComponent: Component<LoggedInDependency> {
+final class LoggedInComponent: Component<LoggedInDependency>, HomeDependency {
 
     fileprivate var loggedInViewController: LoggedInViewControllable {
         return dependency.loggedInViewController
@@ -39,6 +39,11 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let component = LoggedInComponent(dependency: dependency)
         let interactor = LoggedInInteractor()
         interactor.listener = listener
-        return LoggedInRouter(interactor: interactor, viewController: component.loggedInViewController)
+        
+        let homeBuilder = HomeBuilder(dependency: component)
+        
+        return LoggedInRouter(interactor: interactor,
+                              viewController: component.loggedInViewController,
+                              homeBuilder: homeBuilder)
     }
 }
