@@ -1,5 +1,7 @@
 PODS:
   - BulletinBoard (2.0.2)
+  - Firebase (5.14.0):
+    - Firebase/Core (= 5.14.0)
   - Firebase/Core (5.14.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.4.0)
@@ -90,14 +92,17 @@ PODS:
   - Protobuf (3.6.1)
   - RIBs (0.9.1):
     - RxSwift (~> 4.0)
+  - RxAtomic (4.4.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
-  - SnapKit (4.0.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SnapKit (4.0.1)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
   - BulletinBoard
+  - Firebase
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
@@ -125,6 +130,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - RIBs
+    - RxAtomic
     - RxCocoa
     - RxSwift
     - SnapKit
@@ -148,11 +154,12 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   RIBs: 879184fbca567425c488d6b3d14a9c5abfbf9d47
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: a38c011171c17e0e41a0d5b36860ed210877588e
+PODFILE CHECKSUM: fe81e39db1917087045c83204470e9e3d1a84385
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

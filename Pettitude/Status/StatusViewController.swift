@@ -6,6 +6,7 @@
 //  Copyright © 2018 Arthur Papailhau. All rights reserved.
 //
 
+import BLTNBoard
 import RIBs
 import RxSwift
 import UIKit
