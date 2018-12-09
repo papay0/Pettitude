@@ -22,6 +22,8 @@
 		92A2554121BD607F0098333A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553D21BD607F0098333A /* HomeViewController.swift */; };
 		92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553E21BD607F0098333A /* HomeBuilder.swift */; };
 		92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553F21BD607F0098333A /* HomeInteractor.swift */; };
+		92A2554521BD69170098333A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554421BD69170098333A /* HomeView.swift */; };
+		92A2554821BD69F90098333A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554721BD69F90098333A /* View.swift */; };
 		92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5721BD542A00FF622B /* AppDelegate.swift */; };
 		92E14D5A21BD542A00FF622B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5921BD542A00FF622B /* ViewController.swift */; };
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		92A2553D21BD607F0098333A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		92A2553E21BD607F0098333A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		92A2553F21BD607F0098333A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		92A2554421BD69170098333A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92A2554721BD69F90098333A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		92E14D5421BD542A00FF622B /* Pettitude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pettitude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D5721BD542A00FF622B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E14D5921BD542A00FF622B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,10 +166,19 @@
 			children = (
 				92A2553C21BD607F0098333A /* HomeRouter.swift */,
 				92A2553D21BD607F0098333A /* HomeViewController.swift */,
+				92A2554421BD69170098333A /* HomeView.swift */,
 				92A2553E21BD607F0098333A /* HomeBuilder.swift */,
 				92A2553F21BD607F0098333A /* HomeInteractor.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		92A2554621BD69EC0098333A /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				92A2554721BD69F90098333A /* View.swift */,
+			);
+			path = SharedUI;
 			sourceTree = "<group>";
 		};
 		92E14D4B21BD542A00FF622B = {
@@ -193,6 +206,7 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				92A2554621BD69EC0098333A /* SharedUI */,
 				92A2553B21BD606B0098333A /* Home */,
 				92A2552E21BD5DE60098333A /* Root */,
 				92A2552521BD5BC40098333A /* LoggedIn */,
@@ -452,6 +466,7 @@
 				92A2554021BD607F0098333A /* HomeRouter.swift in Sources */,
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,
+				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
 				92A2553821BD5DE60098333A /* RootComponent+LoggedIn.swift in Sources */,
 				92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */,
@@ -461,6 +476,7 @@
 				92A2553621BD5DE60098333A /* RootInteractor.swift in Sources */,
 				92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */,
 				92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */,
+				92A2554521BD69170098333A /* HomeView.swift in Sources */,
 				92A2554121BD607F0098333A /* HomeViewController.swift in Sources */,
 				92A2553A21BD5DE60098333A /* RootBuilder.swift in Sources */,
 			);

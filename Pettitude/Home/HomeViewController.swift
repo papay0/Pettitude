@@ -6,6 +6,7 @@
 //  Copyright © 2018 Arthur Papailhau. All rights reserved.
 //
 
+import ARKit
 import RIBs
 import RxSwift
 import UIKit
@@ -20,9 +21,16 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
 
     weak var listener: HomePresentableListener?
     
+    private lazy var internalView: HomeView = {
+        return HomeView()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.red
+        view = internalView
     }
+    
+    // MARK: - Private
+    
+    private var sceneView: ARSKView!
 }
