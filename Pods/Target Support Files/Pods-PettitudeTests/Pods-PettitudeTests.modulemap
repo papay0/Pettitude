@@ -1,0 +1,6 @@
+framework module Pods_PettitudeTests {
+  umbrella header "Pods-PettitudeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
