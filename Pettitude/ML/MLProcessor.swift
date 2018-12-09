@@ -16,9 +16,9 @@ class MLProcessor {
         labelDetector = vision.labelDetector(options: options)
     }
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (String?) -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (MLProcessorResponse?) -> Void) {
         guard let sampleBuffer = getCMSampleBuffer(pixelBuffer: pixelBuffer) else {
-            completionHandler(nil) // TODO: Make a better handler than just a Sting?
+            completionHandler(nil)
             return
         }
 
@@ -36,7 +36,12 @@ class MLProcessor {
             let sortedFeatures = features.sorted(by: { (image1, image2) -> Bool in
                 return image1.confidence > image2.confidence
             })
-            completionHandler(sortedFeatures.first?.label)
+            guard let label = sortedFeatures.first?.label else {
+                completionHandler(nil)
+                return
+            }
+            let response = MLProcessorResponse(label: label)
+            completionHandler(response)
         }
     }
 

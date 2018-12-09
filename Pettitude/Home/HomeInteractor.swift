@@ -41,10 +41,10 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     // MARK: - HomePresentableListener
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void) {
-        mlProcessor.classify(pixelBuffer: pixelBuffer) { (type) in
-            print(type ?? "type not recognized")
-            completionHandler(type != nil)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (AnimalType?) -> Void) {
+        mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse) in
+            // print(mlProcessorResponse?.animalType ?? "[Animal Type] Not recognize")
+            completionHandler(mlProcessorResponse?.animalType)
         }
     }
 

@@ -25,6 +25,7 @@
 		92A2554821BD69F90098333A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554721BD69F90098333A /* View.swift */; };
 		92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A2554921BD82360098333A /* GoogleService-Info.plist */; };
 		92A2554D21BD85680098333A /* MLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554C21BD85680098333A /* MLProcessor.swift */; };
+		92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */; };
 		92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5721BD542A00FF622B /* AppDelegate.swift */; };
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
 		92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */; };
@@ -72,6 +73,7 @@
 		92A2554721BD69F90098333A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		92A2554921BD82360098333A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92A2554C21BD85680098333A /* MLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessor.swift; sourceTree = "<group>"; };
+		92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessorResponse.swift; sourceTree = "<group>"; };
 		92E14D5421BD542A00FF622B /* Pettitude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pettitude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D5721BD542A00FF622B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E14D5E21BD542C00FF622B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				92A2554C21BD85680098333A /* MLProcessor.swift */,
+				92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				92A2554021BD607F0098333A /* HomeRouter.swift in Sources */,
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,
+				92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */,
 				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
 				92A2553821BD5DE60098333A /* RootComponent+LoggedIn.swift in Sources */,

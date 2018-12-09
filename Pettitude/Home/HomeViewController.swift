@@ -7,13 +7,12 @@
 //
 
 import ARKit
-import Firebase
 import RIBs
 import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (AnimalType?) -> Void)
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -45,11 +44,14 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             return
         }
         self.currentBuffer = frame.capturedImage
-        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (succeed) in
-            if !succeed {
-                print("Error") // TODO: Handle
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (animalType) in
+            guard let animalType = animalType else {
+                // TODO: Handle error correctly
+                print("Error")
+                self.currentBuffer = nil
                 return
             }
+            print(animalType)
             self.currentBuffer = nil
         })
     }
