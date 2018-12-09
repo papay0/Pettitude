@@ -49,21 +49,23 @@ class MLProcessor {
 
     private func getCMSampleBuffer(pixelBuffer: CVPixelBuffer) -> CMSampleBuffer? {
         var info = CMSampleTimingInfo()
-        info.presentationTimeStamp = kCMTimeZero
-        info.duration = kCMTimeInvalid
-        info.decodeTimeStamp = kCMTimeInvalid
+        info.presentationTimeStamp = CMTime.zero
+        info.duration = CMTime.invalid
+        info.decodeTimeStamp = CMTime.invalid
 
         var formatDesc: CMFormatDescription?
-        CMVideoFormatDescriptionCreateForImageBuffer(kCFAllocatorDefault, pixelBuffer, &formatDesc)
+        CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault,
+                                                     imageBuffer: pixelBuffer,
+                                                     formatDescriptionOut: &formatDesc)
 
         var sampleBuffer: CMSampleBuffer?
 
-        CMSampleBufferCreateReadyWithImageBuffer(kCFAllocatorDefault,
-                                                 pixelBuffer,
+        CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault,
+                                                 imageBuffer: pixelBuffer,
                                                  // swiftlint:disable force_unwrapping
-                                                 formatDesc!,
-                                                 &info,
-                                                 &sampleBuffer)
+                                                formatDescription: formatDesc!,
+                                                sampleTiming: &info,
+                                                sampleBufferOut: &sampleBuffer)
 
         return sampleBuffer ?? nil
     }

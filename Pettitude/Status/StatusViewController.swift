@@ -16,4 +16,8 @@ protocol StatusPresentableListener: class {
 final class StatusViewController: UIViewController, StatusPresentable, StatusViewControllable {
 
     weak var listener: StatusPresentableListener?
+
+    private let titleBulletin = "TEST STATUS RIB"
+
+    var uiViewController: UIViewController?
 }

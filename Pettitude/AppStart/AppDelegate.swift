@@ -34,7 +34,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     ///   the possible keys in this dictionary and how to handle them, see Launch Options Keys.
     /// - returns: false if the app cannot handle the URL resource or continue a user activity, otherwise return true.
     public func application(_ application: UIApplication,
-                            didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
+                            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
         -> Bool {
 
         FirebaseApp.configure()

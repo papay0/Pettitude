@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6CD1ECB3219FE5A7F6119A00 /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80049987A4565886EF9421BB /* Pods_PettitudeUITests.framework */; };
-		716F43E68770BA3F1A073064 /* Pods_PettitudeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C17C828859BFC5D64615BDA /* Pods_PettitudeTests.framework */; };
+		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
+		7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 		92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2551A21BD58BD0098333A /* AppComponent.swift */; };
 		92A2552921BD5C010098333A /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2552621BD5C010098333A /* LoggedInRouter.swift */; };
 		92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2552721BD5C010098333A /* LoggedInBuilder.swift */; };
@@ -35,7 +35,7 @@
 		92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */; };
 		92E14D6D21BD542D00FF622B /* PettitudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D6C21BD542D00FF622B /* PettitudeTests.swift */; };
 		92E14D7821BD542D00FF622B /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D7721BD542D00FF622B /* PettitudeUITests.swift */; };
-		F7CF7B1940ED566FB23DEFCC /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECF4C411415C9785E191958 /* Pods_Pettitude.framework */; };
+		D328EC241E89C124036889DF /* Pods_PettitudeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AF4F932D555C084DEE29BDD /* Pods-Pettitude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pettitude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude.debug.xcconfig"; sourceTree = "<group>"; };
-		2C17C828859BFC5D64615BDA /* Pods_PettitudeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2ECF4C411415C9785E191958 /* Pods_Pettitude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pettitude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ED57080906AB72E580FB603 /* Pods-PettitudeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.release.xcconfig"; sourceTree = "<group>"; };
-		80049987A4565886EF9421BB /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D3AD405B90E7E57899D75F /* Pods-PettitudeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.release.xcconfig"; sourceTree = "<group>"; };
+		307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92A2551A21BD58BD0098333A /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		92A2552621BD5C010098333A /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		92A2552721BD5C010098333A /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
@@ -93,10 +93,10 @@
 		92E14D7321BD542D00FF622B /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D7721BD542D00FF622B /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
 		92E14D7921BD542D00FF622B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A84F799F400FE6C6DF695930 /* Pods-PettitudeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CA6B8FD5ED0960D24AF84BE6 /* Pods-PettitudeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC34F1E295DD2A015168784D /* Pods-Pettitude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pettitude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude.release.xcconfig"; sourceTree = "<group>"; };
-		FBE79AF320C5C504FBDD47EC /* Pods-PettitudeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pettitude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pettitude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude.release.xcconfig"; sourceTree = "<group>"; };
+		D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA9343CD93FEB53B8EB94D99 /* Pods-Pettitude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pettitude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7CF7B1940ED566FB23DEFCC /* Pods_Pettitude.framework in Frameworks */,
+				0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716F43E68770BA3F1A073064 /* Pods_PettitudeTests.framework in Frameworks */,
+				D328EC241E89C124036889DF /* Pods_PettitudeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,24 +120,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CD1ECB3219FE5A7F6119A00 /* Pods_PettitudeUITests.framework in Frameworks */,
+				7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D9D35A4F46A4C808DB4738E /* Pods */ = {
+		0713765F8EDA7D0C87C6CB9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0AF4F932D555C084DEE29BDD /* Pods-Pettitude.debug.xcconfig */,
-				EC34F1E295DD2A015168784D /* Pods-Pettitude.release.xcconfig */,
-				A84F799F400FE6C6DF695930 /* Pods-PettitudeTests.debug.xcconfig */,
-				4ED57080906AB72E580FB603 /* Pods-PettitudeTests.release.xcconfig */,
-				CA6B8FD5ED0960D24AF84BE6 /* Pods-PettitudeUITests.debug.xcconfig */,
-				FBE79AF320C5C504FBDD47EC /* Pods-PettitudeUITests.release.xcconfig */,
+				AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */,
+				39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */,
+				58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		92A2551921BD58980098333A /* AppStart */ = {
@@ -217,8 +214,8 @@
 				92E14D6B21BD542D00FF622B /* PettitudeTests */,
 				92E14D7621BD542D00FF622B /* PettitudeUITests */,
 				92E14D5521BD542A00FF622B /* Products */,
-				1D9D35A4F46A4C808DB4738E /* Pods */,
-				A542AD63325B0E7233510FE9 /* Frameworks */,
+				A85D4F6C4ABF926F58E8E94B /* Pods */,
+				0713765F8EDA7D0C87C6CB9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,14 +265,17 @@
 			path = PettitudeUITests;
 			sourceTree = "<group>";
 		};
-		A542AD63325B0E7233510FE9 /* Frameworks */ = {
+		A85D4F6C4ABF926F58E8E94B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2ECF4C411415C9785E191958 /* Pods_Pettitude.framework */,
-				2C17C828859BFC5D64615BDA /* Pods_PettitudeTests.framework */,
-				80049987A4565886EF9421BB /* Pods_PettitudeUITests.framework */,
+				DA9343CD93FEB53B8EB94D99 /* Pods-Pettitude.debug.xcconfig */,
+				BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */,
+				8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */,
+				13D3AD405B90E7E57899D75F /* Pods-PettitudeTests.release.xcconfig */,
+				D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */,
+				307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E14D7C21BD542D00FF622B /* Build configuration list for PBXNativeTarget "Pettitude" */;
 			buildPhases = (
-				DCC7502C4A879B9A3C89ECBF /* [CP] Check Pods Manifest.lock */,
+				5867239A2920D6BA70132124 /* [CP] Check Pods Manifest.lock */,
 				92E14D5021BD542A00FF622B /* Sources */,
 				92E14D5121BD542A00FF622B /* Frameworks */,
 				92E14D5221BD542A00FF622B /* Resources */,
-				3A9B14DB5EB7A0EDF2B79654 /* [CP] Embed Pods Frameworks */,
 				92A2554E21BD9E0E0098333A /* ShellScript */,
+				40D6740154573E9F8BD116F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,7 +305,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E14D7F21BD542D00FF622B /* Build configuration list for PBXNativeTarget "PettitudeTests" */;
 			buildPhases = (
-				62DFF297D98DCAAEDF48CFAC /* [CP] Check Pods Manifest.lock */,
+				AF7ADA08BBA1FA6C57DD8CA4 /* [CP] Check Pods Manifest.lock */,
 				92E14D6421BD542D00FF622B /* Sources */,
 				92E14D6521BD542D00FF622B /* Frameworks */,
 				92E14D6621BD542D00FF622B /* Resources */,
@@ -324,7 +324,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E14D8221BD542D00FF622B /* Build configuration list for PBXNativeTarget "PettitudeUITests" */;
 			buildPhases = (
-				4C620AD3302C88737F2A24E1 /* [CP] Check Pods Manifest.lock */,
+				E0A3C19B2BE083CE19A0DC30 /* [CP] Check Pods Manifest.lock */,
 				92E14D6F21BD542D00FF622B /* Sources */,
 				92E14D7021BD542D00FF622B /* Frameworks */,
 				92E14D7121BD542D00FF622B /* Resources */,
@@ -410,7 +410,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A9B14DB5EB7A0EDF2B79654 /* [CP] Embed Pods Frameworks */ = {
+		40D6740154573E9F8BD116F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,7 +448,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C620AD3302C88737F2A24E1 /* [CP] Check Pods Manifest.lock */ = {
+		5867239A2920D6BA70132124 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,25 +459,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PettitudeUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62DFF297D98DCAAEDF48CFAC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PettitudeTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Pettitude-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -497,7 +479,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
 		};
-		DCC7502C4A879B9A3C89ECBF /* [CP] Check Pods Manifest.lock */ = {
+		AF7ADA08BBA1FA6C57DD8CA4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,7 +490,25 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Pettitude-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PettitudeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A3C19B2BE083CE19A0DC30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PettitudeUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -707,7 +707,7 @@
 		};
 		92E14D7D21BD542D00FF622B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AF4F932D555C084DEE29BDD /* Pods-Pettitude.debug.xcconfig */;
+			baseConfigurationReference = DA9343CD93FEB53B8EB94D99 /* Pods-Pettitude.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -719,14 +719,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Papay0.Pettitude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		92E14D7E21BD542D00FF622B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC34F1E295DD2A015168784D /* Pods-Pettitude.release.xcconfig */;
+			baseConfigurationReference = BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -738,14 +738,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Papay0.Pettitude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		92E14D8021BD542D00FF622B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A84F799F400FE6C6DF695930 /* Pods-PettitudeTests.debug.xcconfig */;
+			baseConfigurationReference = 8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -767,7 +767,7 @@
 		};
 		92E14D8121BD542D00FF622B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ED57080906AB72E580FB603 /* Pods-PettitudeTests.release.xcconfig */;
+			baseConfigurationReference = 13D3AD405B90E7E57899D75F /* Pods-PettitudeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -789,7 +789,7 @@
 		};
 		92E14D8321BD542D00FF622B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA6B8FD5ED0960D24AF84BE6 /* Pods-PettitudeUITests.debug.xcconfig */;
+			baseConfigurationReference = D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -810,7 +810,7 @@
 		};
 		92E14D8421BD542D00FF622B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBE79AF320C5C504FBDD47EC /* Pods-PettitudeUITests.release.xcconfig */;
+			baseConfigurationReference = 307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
