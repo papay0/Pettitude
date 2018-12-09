@@ -12,6 +12,7 @@ target 'Pettitude' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionLabelModel'
+  pod 'SwiftLint'
 
   target 'PettitudeTests' do
     inherit! :search_paths

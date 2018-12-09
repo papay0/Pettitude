@@ -10,21 +10,17 @@ import RIBs
 
 protocol LoggedInDependency: Dependency {
     var loggedInViewController: LoggedInViewControllable { get }
-    // TODO: Declare the set of dependencies required by this RIB, but won't be
-    // created by this RIB.
 }
 
 final class LoggedInComponent: Component<LoggedInDependency>, HomeDependency {
-    
+
     var mlProcessor: MLProcessor {
         return shared { MLProcessor() }
     }
-    
+
     fileprivate var loggedInViewController: LoggedInViewControllable {
         return dependency.loggedInViewController
     }
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
 // MARK: - Builder
@@ -43,9 +39,9 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let component = LoggedInComponent(dependency: dependency)
         let interactor = LoggedInInteractor()
         interactor.listener = listener
-        
+
         let homeBuilder = HomeBuilder(dependency: component)
-        
+
         return LoggedInRouter(interactor: interactor,
                               viewController: component.loggedInViewController,
                               homeBuilder: homeBuilder)

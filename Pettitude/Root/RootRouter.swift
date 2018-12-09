@@ -48,6 +48,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
 
     // MARK: - Private
-    
+
     private let loggedInBuilder: LoggedInBuildable
 }

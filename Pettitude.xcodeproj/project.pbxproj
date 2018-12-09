@@ -26,7 +26,6 @@
 		92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A2554921BD82360098333A /* GoogleService-Info.plist */; };
 		92A2554D21BD85680098333A /* MLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554C21BD85680098333A /* MLProcessor.swift */; };
 		92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5721BD542A00FF622B /* AppDelegate.swift */; };
-		92E14D5A21BD542A00FF622B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D5921BD542A00FF622B /* ViewController.swift */; };
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
 		92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */; };
 		92E14D6D21BD542D00FF622B /* PettitudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D6C21BD542D00FF622B /* PettitudeTests.swift */; };
@@ -75,7 +74,6 @@
 		92A2554C21BD85680098333A /* MLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessor.swift; sourceTree = "<group>"; };
 		92E14D5421BD542A00FF622B /* Pettitude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pettitude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D5721BD542A00FF622B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92E14D5921BD542A00FF622B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92E14D5E21BD542C00FF622B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92E14D6121BD542C00FF622B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92E14D6321BD542C00FF622B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				92A2552E21BD5DE60098333A /* Root */,
 				92A2552521BD5BC40098333A /* LoggedIn */,
 				92A2551921BD58980098333A /* AppStart */,
-				92E14D5921BD542A00FF622B /* ViewController.swift */,
 				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
 				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
 				92E14D6321BD542C00FF622B /* Info.plist */,
@@ -270,6 +267,7 @@
 				92E14D5121BD542A00FF622B /* Frameworks */,
 				92E14D5221BD542A00FF622B /* Resources */,
 				3A9B14DB5EB7A0EDF2B79654 /* [CP] Embed Pods Frameworks */,
+				92A2554E21BD9E0E0098333A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -461,6 +459,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		92A2554E21BD9E0E0098333A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+		};
 		DCC7502C4A879B9A3C89ECBF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,7 +509,6 @@
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
 				92A2553821BD5DE60098333A /* RootComponent+LoggedIn.swift in Sources */,
 				92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */,
-				92E14D5A21BD542A00FF622B /* ViewController.swift in Sources */,
 				92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */,
 				92A2554D21BD85680098333A /* MLProcessor.swift in Sources */,
 				92A2553921BD5DE60098333A /* RootRouter.swift in Sources */,
