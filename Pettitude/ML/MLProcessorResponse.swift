@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arthur Papailhau. All rights reserved.
 //
 
-private enum AnimalTypeLabel: String {
+private enum AnimalLabel: String {
 
     // swiftlint:disable identifier_name
     case Cat
@@ -15,31 +15,24 @@ private enum AnimalTypeLabel: String {
     // swiftlint:disable identifier_name
     case Bird
 
-    var animalType: AnimalType {
+    var animal: Animal {
         switch self {
         case .Cat:
-            return .cat
+            return Animal(type: .cat)
         case .Dog:
-            return .dog
+            return Animal(type: .dog)
         case .Bird:
-            return .bird
+            return Animal(type: .bird)
         }
     }
 }
 
-public enum AnimalType {
-    case cat
-    case dog
-    case bird
-    case unknown
-}
-
 public final class MLProcessorResponse {
 
-    public let animalType: AnimalType
+    public let animal: Animal?
 
     public init(label: String) {
         print(label)
-        animalType = AnimalTypeLabel(rawValue: label)?.animalType ?? .unknown
+        animal = AnimalLabel(rawValue: label)?.animal ?? Animal(type: .unknown)
     }
 }

@@ -12,10 +12,14 @@ protocol HomeDependency: Dependency {
     var mlProcessor: MLProcessor { get }
 }
 
-final class HomeComponent: Component<HomeDependency> {
+final class HomeComponent: Component<HomeDependency>, StatusDependency {
 
     fileprivate var mlProcessor: MLProcessor {
         return dependency.mlProcessor
+    }
+
+    var animalTypeStream: String { // String for now
+        return ""
     }
 }
 
@@ -37,6 +41,8 @@ final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
 
         let interactor = HomeInteractor(presenter: viewController, mlProcessor: component.mlProcessor)
         interactor.listener = listener
-        return HomeRouter(interactor: interactor, viewController: viewController)
+
+        let statusBuilder = StatusBuilder(dependency: component)
+        return HomeRouter(interactor: interactor, viewController: viewController, statusBuilder: statusBuilder)
     }
 }

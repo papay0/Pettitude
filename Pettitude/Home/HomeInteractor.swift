@@ -9,8 +9,7 @@
 import RIBs
 import RxSwift
 
-protocol HomeRouting: ViewableRouting {
-}
+protocol HomeRouting: ViewableRouting {}
 
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
@@ -41,10 +40,10 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     // MARK: - HomePresentableListener
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (AnimalType?) -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Animal?) -> Void) {
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse) in
             // print(mlProcessorResponse?.animalType ?? "[Animal Type] Not recognize")
-            completionHandler(mlProcessorResponse?.animalType)
+            completionHandler(mlProcessorResponse?.animal)
         }
     }
 

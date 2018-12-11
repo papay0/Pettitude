@@ -13,7 +13,7 @@ import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (AnimalType?) -> Void)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Animal?) -> Void)
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -45,14 +45,14 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             return
         }
         self.currentBuffer = frame.capturedImage
-        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (animalType) in
-            guard let animalType = animalType else {
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (animal) in
+            guard let animal = animal else {
                 // TODO: Handle error correctly
                 print("Error")
                 self.currentBuffer = nil
                 return
             }
-            print(animalType)
+            print(animal)
             self.currentBuffer = nil
         })
     }

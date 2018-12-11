@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol HomeInteractable: Interactable {
+protocol HomeInteractable: Interactable, StatusListener {
     var router: HomeRouting? { get set }
     var listener: HomeListener? { get set }
 }
@@ -17,8 +17,27 @@ protocol HomeViewControllable: ViewControllable {}
 
 final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, HomeRouting {
 
-    override init(interactor: HomeInteractable, viewController: HomeViewControllable) {
+    init(interactor: HomeInteractable,
+         viewController: HomeViewControllable,
+         statusBuilder: StatusBuildable) {
+        self.statusBuilder = statusBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+
+    override func didLoad() {
+        super.didLoad()
+        attachStatus()
+    }
+
+    // MARK: - Private
+
+    private let statusBuilder: StatusBuildable
+    private var currentChild: ViewableRouting?
+
+    private func attachStatus() {
+        let status = statusBuilder.build(with: interactor)
+        currentChild = status
+        attachChild(status)
     }
 }
