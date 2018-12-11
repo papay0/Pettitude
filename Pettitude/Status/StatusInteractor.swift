@@ -10,7 +10,7 @@ import RIBs
 import RxSwift
 
 protocol StatusRouting: ViewableRouting {
-
+    func setParentViewController(parentVC: ViewControllable)
 }
 
 protocol StatusPresentable: Presentable {

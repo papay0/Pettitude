@@ -14,6 +14,7 @@ protocol StatusInteractable: Interactable {
 }
 
 protocol StatusViewControllable: ViewControllable {
+    func setParentViewController(parentVC: ViewControllable)
 }
 
 final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControllable>, StatusRouting {
@@ -21,5 +22,9 @@ final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControlla
     override init(interactor: StatusInteractable, viewController: StatusViewControllable) {
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+
+    func setParentViewController(parentVC: ViewControllable) {
+        viewController.setParentViewController(parentVC: parentVC)
     }
 }

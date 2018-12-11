@@ -39,5 +39,6 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
         let status = statusBuilder.build(with: interactor)
         currentChild = status
         attachChild(status)
+        status.setParentViewController(parentVC: viewController)
     }
 }
