@@ -10,6 +10,7 @@
 		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
 		7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 		92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7D21C071B700EB800B /* AnimalStream.swift */; };
+		92000C8021C0780A00EB800B /* HomeComponent+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */; };
 		92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2551A21BD58BD0098333A /* AppComponent.swift */; };
 		92A2552921BD5C010098333A /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2552621BD5C010098333A /* LoggedInRouter.swift */; };
 		92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2552721BD5C010098333A /* LoggedInBuilder.swift */; };
@@ -63,6 +64,7 @@
 		58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92000C7D21C071B700EB800B /* AnimalStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStream.swift; sourceTree = "<group>"; };
+		92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Status.swift"; sourceTree = "<group>"; };
 		92A2551A21BD58BD0098333A /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		92A2552621BD5C010098333A /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		92A2552721BD5C010098333A /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				92A2553C21BD607F0098333A /* HomeRouter.swift */,
 				92A2553D21BD607F0098333A /* HomeViewController.swift */,
+				92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */,
 				92A2553E21BD607F0098333A /* HomeBuilder.swift */,
 				92A2553F21BD607F0098333A /* HomeInteractor.swift */,
 			);
@@ -566,6 +569,7 @@
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,
 				92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */,
+				92000C8021C0780A00EB800B /* HomeComponent+Status.swift in Sources */,
 				92A2555C21BDB57C0098333A /* StatusInteractor.swift in Sources */,
 				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,

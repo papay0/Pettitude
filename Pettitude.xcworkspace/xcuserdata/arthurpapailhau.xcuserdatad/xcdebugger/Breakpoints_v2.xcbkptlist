@@ -61,8 +61,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "HomeInteractor"
-            landmarkType = "3">
+            landmarkName = "classify(pixelBuffer:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

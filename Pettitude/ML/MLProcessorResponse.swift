@@ -29,7 +29,7 @@ private enum AnimalLabel: String {
 
 public final class MLProcessorResponse {
 
-    public let animal: Animal?
+    public let animal: Animal
 
     public init(label: String) {
         print(label)

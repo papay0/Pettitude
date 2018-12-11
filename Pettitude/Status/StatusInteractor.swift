@@ -15,6 +15,7 @@ protocol StatusRouting: ViewableRouting {
 
 protocol StatusPresentable: Presentable {
     var listener: StatusPresentableListener? { get set }
+    func set(animal: Animal)
 }
 
 protocol StatusListener: class {
@@ -25,7 +26,8 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
     weak var router: StatusRouting?
     weak var listener: StatusListener?
 
-    override init(presenter: StatusPresentable) {
+    init(presenter: StatusPresentable, animalStream: AnimalStream) {
+        self.animalStream = animalStream
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -36,5 +38,17 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
 
     override func willResignActive() {
         super.willResignActive()
+    }
+
+    // MARK: - Private
+
+    private let animalStream: AnimalStream
+
+    private func updateAnimal() {
+        animalStream.animal
+            .subscribe(onNext: { (animal: Animal) in
+                self.presenter.set(animal: animal)
+            })
+            .disposeOnDeactivate(interactor: self)
     }
 }

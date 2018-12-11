@@ -8,35 +8,6 @@
 
 import RxSwift
 
-//struct Score {
-//    let player1Score: Int
-//    let player2Score: Int
-//
-//    static func equals(lhs: Score, rhs: Score) -> Bool {
-//        return lhs.player1Score == rhs.player1Score && lhs.player2Score == rhs.player2Score
-//    }
-//}
-
-private enum AnimalTypeLabel: String {
-    // swiftlint:disable identifier_name
-    case Cat
-    // swiftlint:disable identifier_name
-    case Dog
-    // swiftlint:disable identifier_name
-    case Bird
-
-    var animalType: AnimalType {
-        switch self {
-        case .Cat:
-            return .cat
-        case .Dog:
-            return .dog
-        case .Bird:
-            return .bird
-        }
-    }
-}
-
 public struct Animal {
     let type: AnimalType
 

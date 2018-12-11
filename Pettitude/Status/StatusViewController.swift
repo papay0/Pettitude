@@ -21,4 +21,10 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     private let titleBulletin = "TEST STATUS RIB"
 
     var uiViewController: UIViewController?
+
+    // MARK: - StatusPresentable
+
+    func set(animal: Animal) {
+        print("animal: \(animal)")
+    }
 }

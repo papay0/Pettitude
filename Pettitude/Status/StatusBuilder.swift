@@ -9,10 +9,13 @@
 import RIBs
 
 protocol StatusDependency: Dependency {
-    var animalTypeStream: String { get }
+    var animalStream: AnimalStream { get }
 }
 
 final class StatusComponent: Component<StatusDependency> {
+    fileprivate var animalStream: AnimalStream {
+        return dependency.animalStream
+    }
 }
 
 // MARK: - Builder
@@ -30,7 +33,8 @@ final class StatusBuilder: Builder<StatusDependency>, StatusBuildable {
     func build(with listener: StatusListener) -> StatusRouting {
         let component = StatusComponent(dependency: dependency)
         let viewController = StatusViewController()
-        let interactor = StatusInteractor(presenter: viewController)
+        let interactor = StatusInteractor(presenter: viewController,
+                                          animalStream: component.animalStream)
         interactor.listener = listener
         return StatusRouter(interactor: interactor, viewController: viewController)
     }
