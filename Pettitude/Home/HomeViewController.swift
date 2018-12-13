@@ -47,7 +47,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         }
         self.currentBuffer = frame.capturedImage
         listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (success) in
-            guard !success else {
+            guard success else {
                 // TODO: Handle error correctly, showing something etc
                 print("Error")
                 self.currentBuffer = nil

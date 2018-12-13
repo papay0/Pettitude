@@ -16,7 +16,7 @@ public struct Animal {
     }
 }
 
-enum AnimalType {
+enum AnimalType: String {
     case cat
     case dog
     case bird
@@ -36,6 +36,9 @@ class AnimalStreamImpl: MutableAnimalStream {
     var animal: Observable<Animal> {
         return variable
             .asObservable()
+            .skipWhile({ (animal) -> Bool in
+                return animal.type != .unknown
+            })
             .distinctUntilChanged { (lhs: Animal, rhs: Animal) -> Bool in
                 Animal.equals(lhs: lhs, rhs: rhs)
         }
@@ -43,7 +46,7 @@ class AnimalStreamImpl: MutableAnimalStream {
 
     func updateAnimal(with animal: Animal) {
         let newAnimal: Animal = {
-            return variable.value
+            return animal
         }()
         variable.value = newAnimal
     }

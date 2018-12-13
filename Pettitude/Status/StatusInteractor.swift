@@ -34,6 +34,7 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        updateAnimal()
     }
 
     override func willResignActive() {

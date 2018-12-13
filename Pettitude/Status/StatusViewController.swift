@@ -27,8 +27,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     private func createOnboarding() -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
-        page.image = UIImage(named: "stick-man-up")
-        page.descriptionText = "Place your iPhone flat on the floor under your face."
+        page.descriptionText = "HAPPY"
         page.actionButtonTitle = "OK"
 
         page.actionHandler = { item in
@@ -38,9 +37,13 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         return page
     }
 
-    private let titleBulletin = "TEST STATUS RIB"
+    private var titleBulletin = "TEST STATUS RIB"
 
-    var parentVC: UIViewController?
+    var parentVC: UIViewController? {
+        didSet {
+            print("parentVC set")
+        }
+    }
 
     private func presentAnimalCard(animal: Animal) {
         guard let parentVC = parentVC else { return }
@@ -52,6 +55,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     func set(animal: Animal) {
         print("animal: \(animal)")
+        titleBulletin = animal.type.rawValue
         presentAnimalCard(animal: animal)
     }
 
