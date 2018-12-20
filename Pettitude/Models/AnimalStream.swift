@@ -10,10 +10,6 @@ import RxSwift
 
 public struct Animal {
     let type: AnimalType
-
-    static func equals(lhs: Animal, rhs: Animal) -> Bool {
-        return lhs.type == rhs.type
-    }
 }
 
 enum AnimalType: String {
@@ -39,9 +35,6 @@ class AnimalStreamImpl: MutableAnimalStream {
             .skipWhile({ (animal) -> Bool in
                 return animal.type != .unknown
             })
-            .distinctUntilChanged { (lhs: Animal, rhs: Animal) -> Bool in
-                Animal.equals(lhs: lhs, rhs: rhs)
-        }
     }
 
     func updateAnimal(with animal: Animal) {
