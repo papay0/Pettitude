@@ -19,7 +19,6 @@ import RIBs
 import RxSwift
 import UIKit
 
-/// Game app delegate.
 @UIApplicationMain
 public class AppDelegate: UIResponder, UIApplicationDelegate {
 
