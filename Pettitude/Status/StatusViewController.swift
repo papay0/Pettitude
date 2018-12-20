@@ -46,7 +46,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     }
 
     private func presentAnimalCard(animal: Animal) {
-        guard let parentVC = parentVC else { return }
+        guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
         bulletinManager.backgroundViewStyle = .dimmed
         bulletinManager.showBulletin(above: parentVC)
     }
