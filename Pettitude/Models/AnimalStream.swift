@@ -30,10 +30,10 @@ protocol MutableAnimalStream: AnimalStream {
 class AnimalStreamImpl: MutableAnimalStream {
 
     var animal: Observable<Animal> {
-        return variable
+        return subject
             .asObservable()
             .skipWhile({ (animal) -> Bool in
-                return animal.type != .unknown
+                return animal.type == .unknown
             })
     }
 
@@ -41,10 +41,10 @@ class AnimalStreamImpl: MutableAnimalStream {
         let newAnimal: Animal = {
             return animal
         }()
-        variable.value = newAnimal
+        subject.onNext(newAnimal)
     }
 
     // MARK: - Private
 
-    private let variable = Variable<Animal>(Animal(type: .unknown))
+    private let subject = PublishSubject<Animal>()
 }
