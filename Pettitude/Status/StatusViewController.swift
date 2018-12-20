@@ -19,15 +19,13 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     weak var listener: StatusPresentableListener?
 
     lazy var bulletinManager: BLTNItemManager = {
-
-        let rootItem: BLTNItem = createOnboarding()
+        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: "")
         return BLTNItemManager(rootItem: rootItem)
-
     }()
 
-    private func createOnboarding() -> BLTNItem {
+    private func createBulletinStatusAnimal(feeling: String) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
-        page.descriptionText = "HAPPY"
+        page.descriptionText = feeling
         page.actionButtonTitle = "OK"
 
         page.actionHandler = { item in
@@ -37,7 +35,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         return page
     }
 
-    private var titleBulletin = "TEST STATUS RIB"
+    private var titleBulletin = ""
 
     var parentVC: UIViewController? {
         didSet {
@@ -47,8 +45,9 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     private func presentAnimalCard(animal: Animal) {
         guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
+        bulletinManager = BLTNItemManager(rootItem: createBulletinStatusAnimal(feeling: "SAD 2"))
         bulletinManager.backgroundViewStyle = .dimmed
-        bulletinManager.showBulletin(above: parentVC)
+        bulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
     }
 
     // MARK: - StatusPresentable

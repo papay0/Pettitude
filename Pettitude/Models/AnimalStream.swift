@@ -32,16 +32,15 @@ class AnimalStreamImpl: MutableAnimalStream {
     var animal: Observable<Animal> {
         return subject
             .asObservable()
-            .skipWhile({ (animal) -> Bool in
-                return animal.type == .unknown
-            })
     }
 
     func updateAnimal(with animal: Animal) {
         let newAnimal: Animal = {
             return animal
         }()
-        subject.onNext(newAnimal)
+        if newAnimal.type != .unknown {
+            subject.onNext(newAnimal)
+        }
     }
 
     // MARK: - Private
