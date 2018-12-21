@@ -37,11 +37,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     private var titleBulletin = ""
 
-    var parentVC: UIViewController? {
-        didSet {
-            print("parentVC set")
-        }
-    }
+    var parentVC: UIViewController?
 
     private func presentAnimalCard(animal: Animal, feeling: String) {
         guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
@@ -61,7 +57,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     // MARK: - StatusViewControllable
 
-    func setParentViewController(parentVC: ViewControllable) { // TODO: Update to parentViewControllable
+    func setParentViewController(parentVC: ViewControllable) {
         self.parentVC = parentVC.uiviewController
     }
 }
