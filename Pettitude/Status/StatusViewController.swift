@@ -26,10 +26,10 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     private func createBulletinStatusAnimal(feeling: String) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
         page.descriptionText = feeling
-        page.actionButtonTitle = "OK"
+        page.actionButtonTitle = "📸"
 
         page.actionHandler = { item in
-            item.manager?.dismissBulletin()
+            print("Screenshot clicked")
         }
 
         return page
