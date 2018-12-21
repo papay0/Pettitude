@@ -12,6 +12,7 @@ import RxSwift
 import UIKit
 
 protocol StatusPresentableListener: class {
+    func screenshot()
 }
 
 final class StatusViewController: UIViewController, StatusPresentable, StatusViewControllable {
@@ -29,7 +30,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         page.actionButtonTitle = "📸"
 
         page.actionHandler = { item in
-            print("Screenshot clicked")
+            self.listener?.screenshot()
         }
 
         return page

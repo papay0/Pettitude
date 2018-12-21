@@ -7,7 +7,7 @@
 //
 
 import ARKit
-
+import Photos
 import RIBs
 import RxSwift
 import UIKit
@@ -57,6 +57,42 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         })
     }
 
+    // MARK: - HomePresentable
+
+    func screenshot() {
+        let takeScreenshotBlock = {
+            DispatchQueue.main.async {
+                let flashOverlay = UIView(frame: self.sceneView.frame)
+                flashOverlay.backgroundColor = UIColor.white
+                self.sceneView.addSubview(flashOverlay)
+                UIView.animate(withDuration: 0.25, animations: {
+                    flashOverlay.alpha = 0.0
+                }, completion: { _ in
+                    self.takeScreenshot()
+                    flashOverlay.removeFromSuperview()
+                })
+            }
+        }
+
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized:
+            takeScreenshotBlock()
+        case .restricted, .denied:
+            let message = """
+            Please enable Photos access for this application
+            in Settings > Privacy to allow saving screenshots.
+            """
+            print(message)
+        // statusViewController.showWarningMessage(message: message) // TODO: Create the error warning UI
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
+                if authorizationStatus == .authorized {
+                    takeScreenshotBlock()
+                }
+            })
+        }
+    }
+
     // MARK: - Private
 
     private func setupHome() {
@@ -72,6 +108,21 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.delegate = self
         sceneView.presentScene(overlayScene)
         sceneView.session.delegate = self
+    }
+
+    private func takeScreenshot() {
+        var screenshotImage: UIImage?
+        guard let layer = UIApplication.shared.keyWindow?.layer else { return }
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        self.view.drawHierarchy(in: self.sceneView.bounds, afterScreenUpdates: true)
+        layer.render(in: context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
     }
 
     private var sceneView: ARSKView!

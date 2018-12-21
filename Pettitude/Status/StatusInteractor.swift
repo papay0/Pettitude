@@ -19,6 +19,7 @@ protocol StatusPresentable: Presentable {
 }
 
 protocol StatusListener: class {
+    func screenshot()
 }
 
 final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusInteractable, StatusPresentableListener {
@@ -39,6 +40,12 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
 
     override func willResignActive() {
         super.willResignActive()
+    }
+
+    // MARK: - StatusPresentableListener
+
+    func screenshot() {
+        listener?.screenshot()
     }
 
     // MARK: - Private

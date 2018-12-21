@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save the picture of your Pettitude!</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality and Computer Vision.</string>
 	<key>CFBundleDevelopmentRegion</key>

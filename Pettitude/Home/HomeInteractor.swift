@@ -13,6 +13,7 @@ protocol HomeRouting: ViewableRouting {}
 
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
+    func screenshot()
 }
 
 protocol HomeListener: class {
@@ -40,6 +41,12 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     override func willResignActive() {
         super.willResignActive()
+    }
+
+    // MARK: - StatusListener
+
+    func screenshot() {
+        presenter.screenshot()
     }
 
     // MARK: - HomePresentableListener
