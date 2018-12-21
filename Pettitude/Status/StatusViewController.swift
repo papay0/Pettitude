@@ -54,7 +54,8 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     func set(animal: Animal, feeling: String) {
         print("animal: \(animal)")
-        titleBulletin = animal.type.rawValue
+        // titleBulletin = animal.type.rawValue
+        titleBulletin = animal.representation
         presentAnimalCard(animal: animal, feeling: feeling)
     }
 

@@ -10,7 +10,10 @@ import RxSwift
 
 public struct Animal {
     let type: AnimalType
+    let representation: Emoji
 }
+
+typealias Emoji = String
 
 enum AnimalType: String {
     case cat
@@ -35,7 +38,7 @@ protocol AnimalDisplayable {
 class AnimalDisplayableImpl: AnimalDisplayable {
     var animal: Animal
     var feeling: Feeling
-    
+
     init(animal: Animal, feeling: Feeling) {
         self.animal = animal
         self.feeling = feeling
