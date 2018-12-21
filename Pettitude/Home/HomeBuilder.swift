@@ -21,6 +21,10 @@ final class HomeComponent: Component<HomeDependency> {
     var mutableAnimalStream: MutableAnimalStream {
         return shared { AnimalStreamImpl() }
     }
+
+    var feelingsGenerator: FeelingsGeneratable {
+        return shared { FeelingsGenerator() }
+    }
 }
 
 // MARK: - Builder
@@ -41,6 +45,7 @@ final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
 
         let interactor = HomeInteractor(presenter: viewController,
                                         mlProcessor: component.mlProcessor,
+                                        feelingsGenerator: component.feelingsGenerator,
                                         mutableAnimalStream: component.mutableAnimalStream)
         interactor.listener = listener
 

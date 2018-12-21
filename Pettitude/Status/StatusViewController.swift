@@ -43,19 +43,19 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         }
     }
 
-    private func presentAnimalCard(animal: Animal) {
+    private func presentAnimalCard(animal: Animal, feeling: String) {
         guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
-        bulletinManager = BLTNItemManager(rootItem: createBulletinStatusAnimal(feeling: "SAD 2"))
+        bulletinManager = BLTNItemManager(rootItem: createBulletinStatusAnimal(feeling: feeling))
         bulletinManager.backgroundViewStyle = .dimmed
         bulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
     }
 
     // MARK: - StatusPresentable
 
-    func set(animal: Animal) {
+    func set(animal: Animal, feeling: String) {
         print("animal: \(animal)")
         titleBulletin = animal.type.rawValue
-        presentAnimalCard(animal: animal)
+        presentAnimalCard(animal: animal, feeling: feeling)
     }
 
     // MARK: - StatusViewControllable

@@ -20,30 +20,43 @@ enum AnimalType: String {
 }
 
 protocol AnimalStream: class {
-    var animal: Observable<Animal> { get }
+    var animalDisplayable: Observable<AnimalDisplayable> { get }
 }
 
 protocol MutableAnimalStream: AnimalStream {
-    func updateAnimal(with animal: Animal)
+    func updateAnimal(with animal: Animal, feeling: Feeling)
+}
+
+protocol AnimalDisplayable {
+    var animal: Animal { get }
+    var feeling: Feeling { get }
+}
+
+class AnimalDisplayableImpl: AnimalDisplayable {
+    var animal: Animal
+    var feeling: Feeling
+    
+    init(animal: Animal, feeling: Feeling) {
+        self.animal = animal
+        self.feeling = feeling
+    }
 }
 
 class AnimalStreamImpl: MutableAnimalStream {
 
-    var animal: Observable<Animal> {
+    var animalDisplayable: Observable<AnimalDisplayable> {
         return subject
             .asObservable()
     }
 
-    func updateAnimal(with animal: Animal) {
-        let newAnimal: Animal = {
-            return animal
-        }()
-        if newAnimal.type != .unknown {
-            subject.onNext(newAnimal)
+    func updateAnimal(with animal: Animal, feeling: Feeling) {
+        let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feeling)
+        if animal.type != .unknown {
+            subject.onNext(animalDisplayable)
         }
     }
 
     // MARK: - Private
 
-    private let subject = PublishSubject<Animal>()
+    private let subject = PublishSubject<AnimalDisplayable>()
 }
