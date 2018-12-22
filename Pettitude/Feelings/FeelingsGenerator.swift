@@ -13,9 +13,11 @@ protocol FeelingsGeneratable {
 }
 
 enum SentimentType {
+    case extraPositive
     case positive
     case neutral
     case negative
+    case extraNegative
 }
 
 typealias FeelingDescription = String
@@ -47,8 +49,10 @@ class FeelingsGenerator: FeelingsGeneratable {
     private var feelings: [
             SentimentType: [FeelingDescription]
         ] = [
+            .extraPositive: [
+                "In love"
+            ],
             .positive: [
-                "In love",
                 "Happy",
                 "Surprised",
                 "Playful",
@@ -68,28 +72,36 @@ class FeelingsGenerator: FeelingsGeneratable {
                 "Shocked"
             ],
             .negative: [
-                "Sad",
                 "Bored",
                 "Arrogant",
-                "Disgusted",
-                "Regretful",
+                "Regretful"
+            ],
+            .extraNegative: [
+                "Sad",
                 "Horrified",
-                "Guilty"
+                "Guilty",
+                "Disgusted"
             ]
         ]
 
-    /// 60% chance to have a positive feeling
+    /// 10% chance to have a positive feeling
+    /// 50% chance to have a positive feeling
     /// 25% chance to have a neutral feeling
-    /// 15% chance to have a negative feeling
+    /// 10% chance to have a negative feeling
+    /// 5% chance to have a negative feeling
     private func generateSentimentType() -> SentimentType {
         let number = Int.random(in: 0 ... 100)
         switch number {
-        case 0 ... 70:
+        case 0 ... 10:
+            return .extraPositive
+        case 11 ... 60:
             return .positive
-        case 71 ... 85:
+        case 61 ... 85:
             return .neutral
-        case 86 ... 100:
+        case 86 ... 95:
             return .negative
+        case 96 ... 100:
+            return .extraNegative
         default:
             return .positive
         }

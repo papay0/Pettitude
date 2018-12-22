@@ -15,7 +15,7 @@ protocol StatusRouting: ViewableRouting {
 
 protocol StatusPresentable: Presentable {
     var listener: StatusPresentableListener? { get set }
-    func set(animal: Animal, feeling: Feeling)
+    func set(animalDisplayable: AnimalDisplayable)
 }
 
 protocol StatusListener: class {
@@ -55,7 +55,7 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
     private func updateAnimal() {
         animalStream.animalDisplayable
             .subscribe(onNext: { (animalDisplayable: AnimalDisplayable) in
-                self.presenter.set(animal: animalDisplayable.animal, feeling: animalDisplayable.feeling)
+                self.presenter.set(animalDisplayable: animalDisplayable)
             })
             .disposeOnDeactivate(interactor: self)
     }

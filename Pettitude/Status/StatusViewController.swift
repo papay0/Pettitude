@@ -27,7 +27,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     private func createBulletinStatusAnimal(feeling: String) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
         page.descriptionText = feeling
-        page.actionButtonTitle = "📸"
+        page.actionButtonTitle = "Screenshot 📸"
 
         page.actionHandler = { item in
             self.listener?.screenshot()
@@ -49,11 +49,10 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     // MARK: - StatusPresentable
 
-    func set(animal: Animal, feeling: Feeling) {
-        print("animal: \(animal)")
-        // titleBulletin = animal.type.rawValue
-        titleBulletin = animal.representation
-        presentAnimalCard(animal: animal, feeling: feeling)
+    func set(animalDisplayable: AnimalDisplayable) {
+        print("animal: \(animalDisplayable.animal.type)")
+        titleBulletin = animalDisplayable.animalRepresentation
+        presentAnimalCard(animal: animalDisplayable.animal, feeling: animalDisplayable.feeling)
     }
 
     // MARK: - StatusViewControllable

@@ -10,7 +10,6 @@ import RxSwift
 
 public struct Animal {
     let type: AnimalType
-    let representation: Emoji
 }
 
 typealias Emoji = String
@@ -31,17 +30,46 @@ protocol MutableAnimalStream: AnimalStream {
 }
 
 protocol AnimalDisplayable {
-    var animal: Animal { get }
-    var feeling: Feeling { get }
+    var animal: Animal! { get }
+    var feeling: Feeling! { get }
+    var animalRepresentation: Emoji! { get }
 }
 
 class AnimalDisplayableImpl: AnimalDisplayable {
-    var animal: Animal
-    var feeling: Feeling
+    var animal: Animal!
+    var feeling: Feeling!
+    var animalRepresentation: Emoji!
 
     init(animal: Animal, feeling: Feeling) {
         self.animal = animal
         self.feeling = feeling
+        self.animalRepresentation = getAnimalRepresentation(animal: animal, feeling: feeling)
+    }
+
+    // MARK: - Private
+
+    private func getAnimalRepresentation(animal: Animal, feeling: Feeling) -> Emoji {
+        switch animal.type {
+        case .cat:
+            switch feeling.sentimentType {
+            case .extraPositive:
+                return "😻"
+            case .positive:
+                return "😺"
+            case .neutral:
+                return "😼"
+            case .negative:
+                return "😾"
+            case .extraNegative:
+                return "😿"
+            }
+        case .dog:
+            return "🐶"
+        case .bird:
+            return "🕊"
+        case .unknown:
+            return "🤷‍♂️"
+        }
     }
 }
 

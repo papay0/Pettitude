@@ -65,7 +65,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
                 let flashOverlay = UIView(frame: self.sceneView.frame)
                 flashOverlay.backgroundColor = UIColor.white
                 self.sceneView.addSubview(flashOverlay)
-                UIView.animate(withDuration: 0.25, animations: {
+                UIView.animate(withDuration: 0.50, animations: {
                     flashOverlay.alpha = 0.0
                 }, completion: { _ in
                     self.takeScreenshot()
