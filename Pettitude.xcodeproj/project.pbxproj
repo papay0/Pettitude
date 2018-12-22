@@ -27,7 +27,6 @@
 		92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553E21BD607F0098333A /* HomeBuilder.swift */; };
 		92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2553F21BD607F0098333A /* HomeInteractor.swift */; };
 		92A2554821BD69F90098333A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554721BD69F90098333A /* View.swift */; };
-		92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92A2554921BD82360098333A /* GoogleService-Info.plist */; };
 		92A2554D21BD85680098333A /* MLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554C21BD85680098333A /* MLProcessor.swift */; };
 		92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */; };
 		92A2555921BDB57C0098333A /* StatusRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2555521BDB57C0098333A /* StatusRouter.swift */; };
@@ -83,7 +82,6 @@
 		92A2553E21BD607F0098333A /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		92A2553F21BD607F0098333A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		92A2554721BD69F90098333A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		92A2554921BD82360098333A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92A2554C21BD85680098333A /* MLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessor.swift; sourceTree = "<group>"; };
 		92A2554F21BDA5AA0098333A /* MLProcessorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProcessorResponse.swift; sourceTree = "<group>"; };
 		92A2555521BDB57C0098333A /* StatusRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRouter.swift; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
 				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
 				92E14D6321BD542C00FF622B /* Info.plist */,
-				92A2554921BD82360098333A /* GoogleService-Info.plist */,
 			);
 			path = Pettitude;
 			sourceTree = "<group>";
@@ -427,7 +424,6 @@
 			files = (
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
-				92A2554A21BD82360098333A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
