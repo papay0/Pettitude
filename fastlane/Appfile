@@ -1,4 +1,4 @@
-app_identifier("com.pettitude.pettitude") # The bundle identifier of your app
+app_identifier("com.pettitude.app") # The bundle identifier of your app
 apple_id("papailhau@gmail.com") # Your Apple email address
 
 itc_team_id("117882319") # App Store Connect Team ID
