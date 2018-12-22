@@ -24,13 +24,26 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         return BLTNItemManager(rootItem: rootItem)
     }()
 
-    private func createBulletinStatusAnimal(feeling: String) -> BLTNItem {
+    private func createBulletinStatusAnimal(feeling: FeelingDescription) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
         page.descriptionText = feeling
         page.actionButtonTitle = "Screenshot 📸"
 
         page.actionHandler = { item in
             self.listener?.screenshot()
+        }
+
+        return page
+    }
+
+    private func createBulletinErrorMessage(message: String) -> BLTNItem {
+        let page = BLTNPageItem(title: titleBulletin)
+        page.descriptionText = message
+        page.actionButtonTitle = "Ok"
+        page.appearance.actionButtonColor = .red
+
+        page.actionHandler = { item in
+            self.bulletinManager.dismissBulletin()
         }
 
         return page
@@ -53,6 +66,14 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         print("animal: \(animalDisplayable.animal.type)")
         titleBulletin = animalDisplayable.animalRepresentation
         presentAnimalCard(animal: animalDisplayable.animal, feeling: animalDisplayable.feeling)
+    }
+
+    func showError(message: String) {
+        guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
+        titleBulletin = "🤷‍♂️"
+        bulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message))
+        bulletinManager.backgroundViewStyle = .dimmed
+        bulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
     }
 
     // MARK: - StatusViewControllable

@@ -30,14 +30,21 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
         attachStatus()
     }
 
+    // MARK: - HomeRouting
+
+    func showError(message: String) {
+        guard statusRouter != nil else { return }
+        statusRouter?.showError(message: message)
+    }
+
     // MARK: - Private
 
     private let statusBuilder: StatusBuildable
-    private var currentChild: ViewableRouting?
+    private var statusRouter: StatusRouting?
 
     private func attachStatus() {
         let status = statusBuilder.build(with: interactor)
-        currentChild = status
+        statusRouter = status
         attachChild(status)
         status.setParentViewController(parentVC: viewController)
     }

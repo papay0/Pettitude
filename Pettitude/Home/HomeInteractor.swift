@@ -9,15 +9,16 @@
 import RIBs
 import RxSwift
 
-protocol HomeRouting: ViewableRouting {}
+protocol HomeRouting: ViewableRouting {
+    func showError(message: String)
+}
 
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
     func screenshot()
 }
 
-protocol HomeListener: class {
-}
+protocol HomeListener: class {}
 
 final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteractable, HomePresentableListener {
 
@@ -51,18 +52,22 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     // MARK: - HomePresentableListener
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void) {
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse) in
             guard let mlProcessorResponse = mlProcessorResponse else {
-                // TODO: Handle error here
-                completionHandler(false)
+                self.router?.showError(message: "Oups, something went wrong!\n\n🐒 is fixing it right now!")
+                completionHandler()
                 return
             }
-            completionHandler(true)
+            completionHandler()
             let animal = mlProcessorResponse.animal
             let feeling = self.feelingsGenerator.getFeeling(for: animal)
             self.mutableAnimalStream.updateAnimal(with: animal, feeling: feeling)
         }
+    }
+
+    func showError(message: String) {
+        self.router?.showError(message: message)
     }
 
     // MARK: - Private

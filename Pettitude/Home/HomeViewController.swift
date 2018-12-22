@@ -13,8 +13,8 @@ import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    // TODO: Check what's the best way to do completionHandler with error
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
+    func showError(message: String)
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -46,13 +46,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             return
         }
         self.currentBuffer = frame.capturedImage
-        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { (success) in
-            guard success else {
-                // TODO: Handle error correctly, showing something etc
-                print("Error")
-                self.currentBuffer = nil
-                return
-            }
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: {
             self.currentBuffer = nil
         })
     }
@@ -83,7 +77,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             in Settings > Privacy to allow saving screenshots.
             """
             print(message)
-        // statusViewController.showWarningMessage(message: message) // TODO: Create the error warning UI
+        listener?.showError(message: message)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
                 if authorizationStatus == .authorized {

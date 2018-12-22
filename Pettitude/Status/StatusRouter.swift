@@ -15,6 +15,7 @@ protocol StatusInteractable: Interactable {
 
 protocol StatusViewControllable: ViewControllable {
     func setParentViewController(parentVC: ViewControllable)
+    func showError(message: String)
 }
 
 final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControllable>, StatusRouting {
@@ -24,7 +25,13 @@ final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControlla
         interactor.router = self
     }
 
+    // MARK: - StatusRouting
+
     func setParentViewController(parentVC: ViewControllable) {
         viewController.setParentViewController(parentVC: parentVC)
+    }
+
+    func showError(message: String) {
+        viewController.showError(message: message)
     }
 }
