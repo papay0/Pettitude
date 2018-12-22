@@ -69,7 +69,10 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     }
 
     func showError(message: String) {
-        guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
+        guard let parentVC = parentVC else { return }
+        if bulletinManager.isShowingBulletin {
+            bulletinManager.dismissBulletin()
+        }
         titleBulletin = "🤷‍♂️"
         bulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message))
         bulletinManager.backgroundViewStyle = .dimmed

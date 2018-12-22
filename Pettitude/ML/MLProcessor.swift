@@ -8,6 +8,13 @@
 
 import Firebase
 
+public enum MLProcessorError {
+    case error
+    case emptyFeatures
+    case animalNotRecognized
+    case cannotSampleBuffer
+}
+
 class MLProcessor {
 
     init() {
@@ -16,9 +23,10 @@ class MLProcessor {
         labelDetector = vision.labelDetector(options: options)
     }
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (MLProcessorResponse?) -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer,
+                  completionHandler: @escaping (MLProcessorResponse?, MLProcessorError?) -> Void) {
         guard let sampleBuffer = getCMSampleBuffer(pixelBuffer: pixelBuffer) else {
-            completionHandler(nil)
+            completionHandler(nil, .cannotSampleBuffer)
             return
         }
 
@@ -28,8 +36,12 @@ class MLProcessor {
         image.metadata = metadata
 
         labelDetector.detect(in: image) { features, error in
-            guard error == nil, let features = features, !features.isEmpty else {
-                completionHandler(nil)
+            guard error == nil else {
+                completionHandler(nil, .error)
+                return
+            }
+            guard let features = features, !features.isEmpty else {
+                completionHandler(nil, .emptyFeatures)
                 return
             }
 
@@ -37,11 +49,11 @@ class MLProcessor {
                 return image1.confidence > image2.confidence
             })
             guard let label = sortedFeatures.first?.label else {
-                completionHandler(nil)
+                completionHandler(nil, .emptyFeatures)
                 return
             }
             let response = MLProcessorResponse(label: label)
-            completionHandler(response)
+            completionHandler(response, nil)
         }
     }
 

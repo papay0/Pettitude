@@ -41,6 +41,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     // Queue for dispatching vision classification requests
     private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
 
+    // TODO: Handle when the camera is not autorized
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
             return

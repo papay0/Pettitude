@@ -53,9 +53,19 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     // MARK: - HomePresentableListener
 
     func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void) {
-        mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse) in
+        mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse, error) in
+            if let error = error {
+                switch error {
+                case .cannotSampleBuffer, .error:
+                    self.showError(message: self.genericErrorMessage)
+                case .animalNotRecognized, .emptyFeatures:
+                    break
+                }
+                completionHandler()
+                return
+            }
             guard let mlProcessorResponse = mlProcessorResponse else {
-                self.router?.showError(message: "Oups, something went wrong!\n\n🐒 is fixing it right now!")
+                self.showError(message: self.genericErrorMessage)
                 completionHandler()
                 return
             }
@@ -75,4 +85,6 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     private let mlProcessor: MLProcessor
     private let mutableAnimalStream: MutableAnimalStream
     private let feelingsGenerator: FeelingsGeneratable
+
+    private let genericErrorMessage = "Oups, something went wrong!\n\n🐒 is fixing it right now!"
 }

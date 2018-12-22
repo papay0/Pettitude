@@ -5,7 +5,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Save the picture of your Pettitude!</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This application will use the camera for Augmented Reality and Computer Vision.</string>
+	<string>Pettitude will use the camera to recognize the emotion of your favorite animal.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
