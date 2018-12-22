@@ -16,6 +16,12 @@ PODS:
   - Firebase/MLVisionLabelModel (5.15.0):
     - Firebase/CoreOnly
     - FirebaseMLVisionLabelModel (= 0.13.0)
+  - Firebase/Performance (5.15.0):
+    - Firebase/Core
+    - FirebasePerformance (= 2.2.2)
+  - FirebaseABTesting (2.0.0):
+    - FirebaseCore (~> 5.0)
+    - Protobuf (~> 3.5)
   - FirebaseAnalytics (5.4.0):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.3)
@@ -41,6 +47,24 @@ PODS:
     - GoogleMobileVision/Detector (~> 1.4)
   - FirebaseMLVisionLabelModel (0.13.0):
     - GoogleMobileVision/LabelDetector (~> 1.4)
+  - FirebasePerformance (2.2.2):
+    - FirebaseAnalytics (~> 5.4)
+    - FirebaseInstanceID (~> 3.3)
+    - FirebaseRemoteConfig (~> 3.1)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleUtilities/ISASwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
+  - FirebaseRemoteConfig (3.1.0):
+    - FirebaseABTesting (~> 2.0)
+    - FirebaseAnalytics (~> 5.3)
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleUtilities/Environment (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - Protobuf (~> 3.5)
   - GoogleAPIClientForREST/Core (1.3.7):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Vision (1.3.7):
@@ -69,6 +93,7 @@ PODS:
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
   - GoogleUtilities/Environment (5.3.6)
+  - GoogleUtilities/ISASwizzler (5.3.6)
   - GoogleUtilities/Logger (5.3.6):
     - GoogleUtilities/Environment
   - GoogleUtilities/MethodSwizzler (5.3.6):
@@ -111,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
+  - Firebase/Performance
   - RIBs (~> 0.9.0)
   - RxCocoa (~> 4.0)
   - SnapKit (~> 4.0)
@@ -122,12 +148,15 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - Firebase
+    - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMLCommon
     - FirebaseMLVision
     - FirebaseMLVisionLabelModel
+    - FirebasePerformance
+    - FirebaseRemoteConfig
     - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleMobileVision
@@ -148,12 +177,15 @@ SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
+  FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseCore: 35747502d9e8c6ee217385ad04446c7c2aaf9c5c
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseMLCommon: 5e1bc4c4aa1d12c1f6bc38b40d2d60e8e63466bb
   FirebaseMLVision: eba288c56228b25d9be498861ad0b9f305e8ce5c
   FirebaseMLVisionLabelModel: 2437257cfcb84cab14ca285866b12f7acc50095b
+  FirebasePerformance: 6f77b930f982a54ad487d3de5523ce641db9dcc9
+  FirebaseRemoteConfig: 7e11c65f0769c09bff6947997c209515058c5318
   GoogleAPIClientForREST: 825503f12cb5824601cf526cf06d81a1cea4afd9
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleMobileVision: a1f93108b3527d67339e2de80e1db76645f9e8b9
@@ -169,6 +201,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: b72c33b25c9c5dae412bc10a79e095b5222668a6
+PODFILE CHECKSUM: dc01df2e68321c60385937e7e30ef11bb8f193de
 
 COCOAPODS: 1.5.3
