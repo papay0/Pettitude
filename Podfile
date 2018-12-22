@@ -15,6 +15,8 @@ target 'Pettitude' do
   pod 'Firebase/MLVisionLabelModel'
   pod 'SwiftLint'
   pod 'BulletinBoard'
+  pod 'Fabric', '~> 1.9.0'
+  pod 'Crashlytics', '~> 3.12.0'
 
   target 'PettitudeTests' do
     inherit! :search_paths

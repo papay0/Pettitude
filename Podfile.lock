@@ -1,5 +1,8 @@
 PODS:
   - BulletinBoard (3.0.0)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - Firebase (5.15.0):
     - Firebase/Core (= 5.15.0)
   - Firebase/Core (5.15.0):
@@ -102,6 +105,8 @@ PODS:
 
 DEPENDENCIES:
   - BulletinBoard
+  - Crashlytics (~> 3.12.0)
+  - Fabric (~> 1.9.0)
   - Firebase
   - Firebase/Core
   - Firebase/MLVision
@@ -114,6 +119,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BulletinBoard
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -138,6 +145,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseCore: 35747502d9e8c6ee217385ad04446c7c2aaf9c5c
@@ -160,6 +169,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 421ebfbf7da9316d6f0fa0a80b1ecec12d6a436b
+PODFILE CHECKSUM: b72c33b25c9c5dae412bc10a79e095b5222668a6
 
 COCOAPODS: 1.5.3
