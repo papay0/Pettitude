@@ -1,0 +1,8 @@
+app_identifier("com.pettitude.pettitude") # The bundle identifier of your app
+apple_id("papailhau@gmail.com") # Your Apple email address
+
+itc_team_id("117882319") # App Store Connect Team ID
+team_id("Q4B996RU7K") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
