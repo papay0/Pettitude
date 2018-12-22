@@ -15,7 +15,7 @@ protocol StatusRouting: ViewableRouting {
 
 protocol StatusPresentable: Presentable {
     var listener: StatusPresentableListener? { get set }
-    func set(animal: Animal, feeling: String)
+    func set(animal: Animal, feeling: Feeling)
 }
 
 protocol StatusListener: class {

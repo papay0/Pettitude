@@ -12,49 +12,88 @@ protocol FeelingsGeneratable {
     func getFeeling(for animal: Animal) -> Feeling
 }
 
-typealias Feeling = String
+enum SentimentType {
+    case positive
+    case neutral
+    case negative
+}
+
+typealias FeelingDescription = String
+
+struct Feeling {
+    let feelingDescription: FeelingDescription
+    let sentimentType: SentimentType
+}
 
 class FeelingsGenerator: FeelingsGeneratable {
 
     func getFeeling(for animal: Animal) -> Feeling {
-        let feeling = feelings.randomElement() ?? defaultFeeling
+        let sentimentType: SentimentType = generateSentimentType()
+        let feelingDescription = feelings[sentimentType]?.randomElement() ?? defaultFeeling
+        var feeling: Feeling
         switch animal.type {
         case .cat:
-            return feeling
+            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
         case .dog:
-            return feeling
+            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
         case .bird:
-            return feeling
+            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
         case .unknown:
-            return "Unknown"
+            feeling = Feeling(feelingDescription: "unknown", sentimentType: .neutral)
+        }
+        return feeling
+    }
+
+    private var feelings: [
+            SentimentType: [FeelingDescription]
+        ] = [
+            .positive: [
+                "In love",
+                "Happy",
+                "Surprised",
+                "Playful",
+                "Curious",
+                "Satisfied",
+                "Meditative",
+                "Relaxed"
+            ],
+            .neutral: [
+                "Nostalgic",
+                "Calm",
+                "Innocent",
+                "Indifferent",
+                "Undecided",
+                "Suspicious",
+                "Perplexed",
+                "Shocked"
+            ],
+            .negative: [
+                "Sad",
+                "Bored",
+                "Arrogant",
+                "Disgusted",
+                "Regretful",
+                "Horrified",
+                "Guilty"
+            ]
+        ]
+
+    /// 60% chance to have a positive feeling
+    /// 25% chance to have a neutral feeling
+    /// 15% chance to have a negative feeling
+    private func generateSentimentType() -> SentimentType {
+        let number = Int.random(in: 0 ... 100)
+        switch number {
+        case 0 ... 70:
+            return .positive
+        case 71 ... 85:
+            return .neutral
+        case 86 ... 100:
+            return .negative
+        default:
+            return .positive
         }
     }
 
-    private var feelings: [String] = [
-        "Nostalgic",
-        "In love",
-        "Happy",
-        "Sad",
-        "Surprised",
-        "Playful",
-        "Calm",
-        "Bored",
-        "Arrogant",
-        "Curious",
-        "Disgusted",
-        "Innocent",
-        "Indifferent",
-        "Satisfied",
-        "Undecided",
-        "Regretful",
-        "Suspicious",
-        "Perplexed",
-        "Shocked",
-        "Meditative",
-        "Horrified",
-        "Guilty",
-        "Relaxed"
-    ]
-
-    private let defaultFeeling = "Happy"
+    private let defaultFeeling: FeelingDescription = "Happy"
 }
