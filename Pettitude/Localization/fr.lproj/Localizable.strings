@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Pettitude
+
+  Created by Arthur Papailhau on 22/12/2018.
+  Copyright © 2018 Arthur Papailhau. All rights reserved.
+*/
+
+"access_camera_denied" = "Je ne vais pas pouvoir voir ton animal si tu ne donnes pas accès à la caméra 🙄";

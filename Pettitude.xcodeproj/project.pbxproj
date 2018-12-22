@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
+		7003DFAD21CEF2E800343022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFAF21CEF2E800343022 /* Localizable.strings */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
 		70FD6D3A21CE599400CA5D50 /* PettitudeErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */; };
 		70FD6D3C21CE69F700CA5D50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FD6D3B21CE69F700CA5D50 /* GoogleService-Info.plist */; };
@@ -64,6 +65,9 @@
 		307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7003DFA921CEF1B300343022 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7003DFAE21CEF2E800343022 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7003DFB021CEF30100343022 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
 		70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeErrorType.swift; sourceTree = "<group>"; };
 		70FD6D3B21CE69F700CA5D50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 				58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7003DFAA21CEF29000343022 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				7003DFAF21CEF2E800343022 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		7016A3DB21CC219D0054E19F /* Feelings */ = {
@@ -265,6 +277,7 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				7003DFAA21CEF29000343022 /* Localization */,
 				70FD6D3821CE597000CA5D50 /* PettitudeErrorType */,
 				7016A3DB21CC219D0054E19F /* Feelings */,
 				92C0BA6C21C0717600E46D24 /* Models */,
@@ -407,6 +420,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 92E14D4B21BD542A00FF622B;
 			productRefGroup = 92E14D5521BD542A00FF622B /* Products */;
@@ -426,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
+				7003DFAD21CEF2E800343022 /* Localizable.strings in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
 				70FD6D3C21CE69F700CA5D50 /* GoogleService-Info.plist in Resources */,
 			);
@@ -669,10 +684,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7003DFAF21CEF2E800343022 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7003DFAE21CEF2E800343022 /* en */,
+				7003DFB021CEF30100343022 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				92E14D6121BD542C00FF622B /* Base */,
+				7003DFA921CEF1B300343022 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -684,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -745,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

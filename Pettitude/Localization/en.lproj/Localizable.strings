@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Pettitude
+
+  Created by Arthur Papailhau on 22/12/2018.
+  Copyright © 2018 Arthur Papailhau. All rights reserved.
+*/
+
+"access_camera_denied" = "I won't be able to see your pet if you do not give access to the camera 🙄";
+
