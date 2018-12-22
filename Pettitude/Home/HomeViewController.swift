@@ -14,7 +14,7 @@ import UIKit
 
 protocol HomePresentableListener: class {
     func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
-    func showError(message: String)
+    func showError(message: String, error: PettitudeErrorType)
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -78,7 +78,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             in Settings > Privacy to allow saving screenshots.
             """
             print(message)
-        listener?.showError(message: message)
+        listener?.showError(message: message, error: .savingPhotoNotAuthorized)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
                 if authorizationStatus == .authorized {

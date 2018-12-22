@@ -11,13 +11,13 @@ import RxSwift
 
 protocol StatusRouting: ViewableRouting {
     func setParentViewController(parentVC: ViewControllable)
-    func showError(message: String)
+    func showError(message: String, error: PettitudeErrorType)
 }
 
 protocol StatusPresentable: Presentable {
     var listener: StatusPresentableListener? { get set }
     func set(animalDisplayable: AnimalDisplayable)
-    func showError(message: String)
+    func showError(message: String, error: PettitudeErrorType)
 }
 
 protocol StatusListener: class {

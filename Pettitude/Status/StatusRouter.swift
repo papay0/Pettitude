@@ -15,7 +15,7 @@ protocol StatusInteractable: Interactable {
 
 protocol StatusViewControllable: ViewControllable {
     func setParentViewController(parentVC: ViewControllable)
-    func showError(message: String)
+    func showError(message: String, error: PettitudeErrorType)
 }
 
 final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControllable>, StatusRouting {
@@ -31,7 +31,7 @@ final class StatusRouter: ViewableRouter<StatusInteractable, StatusViewControlla
         viewController.setParentViewController(parentVC: parentVC)
     }
 
-    func showError(message: String) {
-        viewController.showError(message: message)
+    func showError(message: String, error: PettitudeErrorType) {
+        viewController.showError(message: message, error: error)
     }
 }

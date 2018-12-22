@@ -32,9 +32,9 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
 
     // MARK: - HomeRouting
 
-    func showError(message: String) {
+    func showError(message: String, error: PettitudeErrorType) {
         guard statusRouter != nil else { return }
-        statusRouter?.showError(message: message)
+        statusRouter?.showError(message: message, error: error)
     }
 
     // MARK: - Private

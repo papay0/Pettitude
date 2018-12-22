@@ -10,7 +10,7 @@ import RIBs
 import RxSwift
 
 protocol HomeRouting: ViewableRouting {
-    func showError(message: String)
+    func showError(message: String, error: PettitudeErrorType)
 }
 
 protocol HomePresentable: Presentable {
@@ -57,7 +57,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             if let error = error {
                 switch error {
                 case .cannotSampleBuffer, .error:
-                    self.showError(message: self.genericErrorMessage)
+                    self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
                 case .animalNotRecognized, .emptyFeatures:
                     break
                 }
@@ -65,7 +65,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
                 return
             }
             guard let mlProcessorResponse = mlProcessorResponse else {
-                self.showError(message: self.genericErrorMessage)
+                self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
                 completionHandler()
                 return
             }
@@ -76,8 +76,8 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         }
     }
 
-    func showError(message: String) {
-        self.router?.showError(message: message)
+    func showError(message: String, error: PettitudeErrorType) {
+        self.router?.showError(message: message, error: error)
     }
 
     // MARK: - Private

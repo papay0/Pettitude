@@ -19,7 +19,12 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     weak var listener: StatusPresentableListener?
 
-    lazy var bulletinManager: BLTNItemManager = {
+    lazy var animalBulletinManager: BLTNItemManager = {
+        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: "")
+        return BLTNItemManager(rootItem: rootItem)
+    }()
+
+    lazy var errorBulletinManager: BLTNItemManager = {
         let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: "")
         return BLTNItemManager(rootItem: rootItem)
     }()
@@ -36,16 +41,25 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         return page
     }
 
-    private func createBulletinErrorMessage(message: String) -> BLTNItem {
+    private func createBulletinErrorMessage(message: String, error: PettitudeErrorType) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
         page.descriptionText = message
-        page.actionButtonTitle = "Ok"
         page.appearance.actionButtonColor = .red
 
-        page.actionHandler = { item in
-            self.bulletinManager.dismissBulletin()
+        if error == .mLProcessorError {
+            page.actionButtonTitle = "Ok"
+            page.actionHandler = { item in
+                self.animalBulletinManager.dismissBulletin()
+            }
+        } else if error == .savingPhotoNotAuthorized { // TODO: Improve the actioning system
+            page.actionButtonTitle = "Go to Settings"
+            page.actionHandler = { item in
+                self.errorBulletinManager.dismissBulletin()
+                if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsUrl)
+                }
+            }
         }
-
         return page
     }
 
@@ -54,10 +68,14 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     var parentVC: UIViewController?
 
     private func presentAnimalCard(animal: Animal, feeling: Feeling) {
-        guard let parentVC = parentVC, !bulletinManager.isShowingBulletin else { return }
-        bulletinManager = BLTNItemManager(rootItem: createBulletinStatusAnimal(feeling: feeling.feelingDescription))
-        bulletinManager.backgroundViewStyle = .dimmed
-        bulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        guard let parentVC = parentVC,
+            !animalBulletinManager.isShowingBulletin,
+            !errorBulletinManager.isShowingBulletin else { return }
+        animalBulletinManager = BLTNItemManager(rootItem:
+            createBulletinStatusAnimal(feeling: feeling.feelingDescription)
+        )
+        animalBulletinManager.backgroundViewStyle = .dimmed
+        animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
     }
 
     // MARK: - StatusPresentable
@@ -68,15 +86,15 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         presentAnimalCard(animal: animalDisplayable.animal, feeling: animalDisplayable.feeling)
     }
 
-    func showError(message: String) {
-        guard let parentVC = parentVC else { return }
-        if bulletinManager.isShowingBulletin {
-            bulletinManager.dismissBulletin()
+    func showError(message: String, error: PettitudeErrorType) {
+        guard let parentVC = parentVC, !errorBulletinManager.isShowingBulletin else { return }
+        if animalBulletinManager.isShowingBulletin {
+            animalBulletinManager.dismissBulletin()
         }
         titleBulletin = "🤷‍♂️"
-        bulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message))
-        bulletinManager.backgroundViewStyle = .dimmed
-        bulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        errorBulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message, error: error))
+        errorBulletinManager.backgroundViewStyle = .dimmed
+        errorBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
     }
 
     // MARK: - StatusViewControllable
