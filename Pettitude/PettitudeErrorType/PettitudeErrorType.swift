@@ -10,5 +10,6 @@ import Foundation
 
 enum PettitudeErrorType {
     case savingPhotoNotAuthorized
+    case cameraAccessDenied
     case mLProcessorError
 }

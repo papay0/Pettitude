@@ -26,12 +26,17 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHome()
+        checkCameraAccess()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
         sceneView.session.run(configuration)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     // MARK: - Protocol ARSessionDelegate
@@ -41,7 +46,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     // Queue for dispatching vision classification requests
     private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
 
-    // TODO: Handle when the camera is not autorized
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
             return
@@ -103,6 +107,19 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.delegate = self
         sceneView.presentScene(overlayScene)
         sceneView.session.delegate = self
+    }
+
+    private func checkCameraAccess() {
+        if AVCaptureDevice.authorizationStatus(for: .video) !=  .authorized {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                if !granted {
+                    self.listener?.showError(
+                        message: "I won't be able to see your pet if you do not give access to the camera 🙄",
+                        error: .cameraAccessDenied
+                    )
+                }
+            })
+        }
     }
 
     private func takeScreenshot() {

@@ -51,7 +51,8 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             page.actionHandler = { item in
                 self.animalBulletinManager.dismissBulletin()
             }
-        } else if error == .savingPhotoNotAuthorized { // TODO: Improve the actioning system
+            // TODO: Improve the actioning system
+        } else if error == .savingPhotoNotAuthorized || error == .cameraAccessDenied {
             page.actionButtonTitle = "Go to Settings"
             page.actionHandler = { item in
                 self.errorBulletinManager.dismissBulletin()
@@ -75,7 +76,9 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             createBulletinStatusAnimal(feeling: feeling.feelingDescription)
         )
         animalBulletinManager.backgroundViewStyle = .dimmed
-        animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        }
     }
 
     // MARK: - StatusPresentable
@@ -94,7 +97,9 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         titleBulletin = "🤷‍♂️"
         errorBulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message, error: error))
         errorBulletinManager.backgroundViewStyle = .dimmed
-        errorBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.errorBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
+        }
     }
 
     // MARK: - StatusViewControllable
