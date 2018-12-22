@@ -18,6 +18,7 @@ target 'Pettitude' do
   pod 'Fabric', '~> 1.9.0'
   pod 'Crashlytics', '~> 3.12.0'
   pod 'Firebase/Performance'
+  pod 'Firebase/Auth'
 
   target 'PettitudeTests' do
     inherit! :search_paths
