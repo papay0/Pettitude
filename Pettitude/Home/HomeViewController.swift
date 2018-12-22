@@ -117,7 +117,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
                 if !granted {
                     Analytics.logEvent("access_camera_denied", parameters: nil)
                     self.listener?.showError(
-                        message: NSLocalizedString("access_camera_denied", comment: ""),
+                        message: LS("access_camera_denied"),
                         error: .cameraAccessDenied
                     )
                 }

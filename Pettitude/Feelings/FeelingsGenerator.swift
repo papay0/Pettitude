@@ -50,37 +50,37 @@ class FeelingsGenerator: FeelingsGeneratable {
             SentimentType: [FeelingDescription]
         ] = [
             .extraPositive: [
-                "In love"
+                NSLocalizedString("in_love", comment: "")
             ],
             .positive: [
-                "Happy",
-                "Surprised",
-                "Playful",
-                "Curious",
-                "Satisfied",
-                "Meditative",
-                "Relaxed"
+                NSLocalizedString("Happy", comment: ""),
+                NSLocalizedString("Surprised", comment: ""),
+                NSLocalizedString("Playful", comment: ""),
+                NSLocalizedString("Curious", comment: ""),
+                NSLocalizedString("Satisfied", comment: ""),
+                NSLocalizedString("Meditative", comment: ""),
+                NSLocalizedString("Relaxed", comment: "")
             ],
             .neutral: [
-                "Nostalgic",
-                "Calm",
-                "Innocent",
-                "Indifferent",
-                "Undecided",
-                "Suspicious",
-                "Perplexed",
-                "Shocked"
+                NSLocalizedString("Nostalgic", comment: ""),
+                NSLocalizedString("Calm", comment: ""),
+                NSLocalizedString("Innocent", comment: ""),
+                NSLocalizedString("Indifferent", comment: ""),
+                NSLocalizedString("Undecided", comment: ""),
+                NSLocalizedString("Suspicious", comment: ""),
+                NSLocalizedString("Perplexed", comment: ""),
+                NSLocalizedString("Shocked", comment: "")
             ],
             .negative: [
-                "Bored",
-                "Arrogant",
-                "Regretful"
+                NSLocalizedString("Bored", comment: ""),
+                NSLocalizedString("Arrogant", comment: ""),
+                NSLocalizedString("Regretful", comment: "")
             ],
             .extraNegative: [
-                "Sad",
-                "Horrified",
-                "Guilty",
-                "Disgusted"
+                NSLocalizedString("Sad", comment: ""),
+                NSLocalizedString("Horrified", comment: ""),
+                NSLocalizedString("Guilty", comment: ""),
+                NSLocalizedString("Disgusted", comment: "")
             ]
         ]
 
@@ -107,5 +107,5 @@ class FeelingsGenerator: FeelingsGeneratable {
         }
     }
 
-    private let defaultFeeling: FeelingDescription = "Happy"
+    private let defaultFeeling: FeelingDescription = NSLocalizedString("Happy", comment: "")
 }

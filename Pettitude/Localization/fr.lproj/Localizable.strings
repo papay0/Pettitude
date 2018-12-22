@@ -6,4 +6,35 @@
   Copyright © 2018 Arthur Papailhau. All rights reserved.
 */
 
+// System
 "access_camera_denied" = "Je ne vais pas pouvoir voir ton animal si tu ne donnes pas accès à la caméra 🙄";
+
+// Sentiments
+"in_love" = "Amoureux";
+
+"Happy" = "Heureux";
+"Surprised" = "Surpris";
+"Playful" = "Joueur";
+"Curious" = "Curieux";
+"Satisfied" = "Satisfait";
+"Meditative" = "Méditatif";
+"Relaxed" = "Détendu";
+
+"Nostalgic" = "Nostalgique";
+"Calm" = "Calms";
+"Innocent" = "Innocent";
+"Indifferent" = "Indifférent";
+"Undecided" = "Indécis";
+"Suspicious" = "Méfiant";
+"Perplexed" = "Perplexe";
+"Shocked" = "Choqué";
+
+"Bored" = "Ennuyé";
+"Arrogant" = "Arrogant";
+"Regretful" = "De regret";
+
+"Sad" = "Triste";
+"Horrified" = "Horrifié";
+"Guilty" = "Coupable";
+"Disgusted" = "Dégoûté";
+

@@ -6,5 +6,34 @@
   Copyright © 2018 Arthur Papailhau. All rights reserved.
 */
 
+// System
 "access_camera_denied" = "I won't be able to see your pet if you do not give access to the camera 🙄";
 
+// Feelings
+"in_love" = "In love";
+
+"Happy" = "Happy";
+"Surprised" = "Surprised";
+"Playful" = "Playful";
+"Curious" = "Curious";
+"Satisfied" = "Satisfied";
+"Meditative" = "Meditative";
+"Relaxed" = "Relaxed";
+
+"Nostalgic" = "Nostalgic";
+"Calm" = "Calm";
+"Innocent" = "Innocent";
+"Indifferent" = "Indifferent";
+"Undecided" = "Undecided";
+"Suspicious" = "Suspicious";
+"Perplexed" = "Perplexed";
+"Shocked" = "Shocked";
+
+"Bored" = "Bored";
+"Arrogant" = "Arrogant";
+"Regretful" = "Regretful";
+
+"Sad" = "Sad";
+"Horrified" = "Horrified";
+"Guilty" = "Guilty";
+"Disgusted" = "Disgusted";
