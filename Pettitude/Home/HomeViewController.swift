@@ -7,6 +7,7 @@
 //
 
 import ARKit
+import Firebase
 import Photos
 import RIBs
 import RxSwift
@@ -59,6 +60,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     // MARK: - HomePresentable
 
     func screenshot() {
+        Analytics.logEvent("screenshot", parameters: nil)
         let takeScreenshotBlock = {
             DispatchQueue.main.async {
                 let flashOverlay = UIView(frame: self.sceneView.frame)
@@ -113,6 +115,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         if AVCaptureDevice.authorizationStatus(for: .video) !=  .authorized {
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
                 if !granted {
+                    Analytics.logEvent("access_camera_denied", parameters: nil)
                     self.listener?.showError(
                         message: "I won't be able to see your pet if you do not give access to the camera 🙄",
                         error: .cameraAccessDenied
