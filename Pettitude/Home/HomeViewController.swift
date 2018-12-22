@@ -79,10 +79,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         case .authorized:
             takeScreenshotBlock()
         case .restricted, .denied:
-            let message = """
-            Please enable Photos access for this application
-            in Settings > Privacy to allow saving screenshots.
-            """
+            let message = LS("access_photo_denied")
             print(message)
         listener?.showError(message: message, error: .savingPhotoNotAuthorized)
         case .notDetermined:

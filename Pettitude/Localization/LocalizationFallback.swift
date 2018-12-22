@@ -13,7 +13,7 @@ public func LS(_ key: String) -> String {
     if value != key || NSLocale.preferredLanguages.first == "en" {
         return value
     }
-    
+
     // Fall back to en
     guard
         let path = Bundle.main.path(forResource: "en", ofType: "lproj"),

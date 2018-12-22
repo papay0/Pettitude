@@ -33,7 +33,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     private func createBulletinStatusAnimal(feeling: FeelingDescription) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
         page.descriptionText = feeling
-        page.actionButtonTitle = "Screenshot 📸"
+        page.actionButtonTitle = LS("screenshot")
 
         page.actionHandler = { item in
             self.listener?.screenshot()
@@ -48,13 +48,13 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         page.appearance.actionButtonColor = .red
 
         if error == .mLProcessorError {
-            page.actionButtonTitle = "Ok"
+            page.actionButtonTitle = LS("Ok")
             page.actionHandler = { item in
                 self.animalBulletinManager.dismissBulletin()
             }
             // TODO: Improve the actioning system
         } else if error == .savingPhotoNotAuthorized || error == .cameraAccessDenied {
-            page.actionButtonTitle = "Go to Settings"
+            page.actionButtonTitle = LS("go_to_settings")
             page.actionHandler = { item in
                 self.errorBulletinManager.dismissBulletin()
                 if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {

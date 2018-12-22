@@ -8,6 +8,10 @@
 
 // System
 "access_camera_denied" = "I won't be able to see your pet if you do not give access to the camera 🙄";
+"access_photo_denied" = "Please go to Settings > Pettitude > Photos and select Read and write.";
+"go_to_settings" = "Go to Settings";
+"screenshot" = "Screenshot 📸";
+"Ok" = "Ok";
 
 // Feelings
 "in_love" = "In love";

@@ -8,6 +8,10 @@
 
 // System
 "access_camera_denied" = "Je ne vais pas pouvoir voir ton animal si tu ne donnes pas accès à la caméra 🙄";
+"access_photo_denied" = "Veuillez aller dans Réglages > Pettitude > Photos et séléctionner Lecture et écriture.";
+"go_to_settings" = "Ouvrir Réglages";
+"screenshot" = "Screenshot 📸";
+"Ok" = "Ok";
 
 // Sentiments
 "in_love" = "Amoureux";
