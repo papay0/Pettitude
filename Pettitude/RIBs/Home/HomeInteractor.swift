@@ -93,6 +93,10 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             router?.startOnboarding()
         }
     }
+    
+    func UITests_only_showCardFor(animal: Animal, feeling: Feeling) {
+        self.mutableAnimalStream.updateAnimal(with: animal, feeling: feeling)
+    }
 
     // MARK: - Private
 

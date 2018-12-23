@@ -17,6 +17,9 @@ protocol HomePresentableListener: class {
     func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
     func showError(message: String, error: PettitudeErrorType)
     func startOnboarding()
+
+    // UITests
+    func UITests_only_showCardFor(animal: Animal, feeling: Feeling)
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -28,6 +31,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHome()
+        setupUitests()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +113,22 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.delegate = self
         sceneView.presentScene(overlayScene)
         sceneView.session.delegate = self
+    }
+
+    private func setupUitests() {
+        if CommandLine.arguments.contains("uitests") {
+            let animalView = UIView(frame: UIScreen.main.bounds)
+            guard let catImage = UIImage(named: "Cat") else { return }
+            let imageView = UIImageView(image: catImage)
+            imageView.frame = animalView.bounds
+            animalView.addSubview(imageView)
+            self.sceneView.addSubview(animalView)
+            if CommandLine.arguments.contains("cat") {
+                let cat = Animal(type: .cat)
+                let feeling = Feeling(description: "Happy", sentimentType: .positive)
+                listener?.UITests_only_showCardFor(animal: cat, feeling: feeling)
+            }
+        }
     }
 
     private func checkCameraAccess() {
