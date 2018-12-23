@@ -1,5 +1,6 @@
 excluded:
   - Pods
   - tooling
+  - PettitudeUITests/SnapshotHelper.swift
 opt_in_rules:
   - force_unwrapping

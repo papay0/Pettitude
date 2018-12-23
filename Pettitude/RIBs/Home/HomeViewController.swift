@@ -117,17 +117,24 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
 
     private func setupUitests() {
         if CommandLine.arguments.contains("uitests") {
+            var animal: Animal!
+            var feeling: Feeling!
+            var imageAnimal: UIImage!
+            if CommandLine.arguments.contains("cat") {
+                imageAnimal = UIImage(named: "Cat")
+                animal = Animal(type: .cat)
+                feeling = Feeling(description: LS("Thoughtful"), sentimentType: .positive)
+            } else if CommandLine.arguments.contains("dog") {
+                imageAnimal = UIImage(named: "Dog")
+                animal = Animal(type: .dog)
+                feeling = Feeling(description: LS("Happy"), sentimentType: .positive)
+            }
             let animalView = UIView(frame: UIScreen.main.bounds)
-            guard let catImage = UIImage(named: "Cat") else { return }
-            let imageView = UIImageView(image: catImage)
+            let imageView = UIImageView(image: imageAnimal)
             imageView.frame = animalView.bounds
             animalView.addSubview(imageView)
             self.sceneView.addSubview(animalView)
-            if CommandLine.arguments.contains("cat") {
-                let cat = Animal(type: .cat)
-                let feeling = Feeling(description: "Happy", sentimentType: .positive)
-                listener?.UITests_only_showCardFor(animal: cat, feeling: feeling)
-            }
+            listener?.UITests_only_showCardFor(animal: animal, feeling: feeling)
         }
     }
 
