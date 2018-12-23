@@ -79,7 +79,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         animalBulletinManager.backgroundViewStyle = .dimmed
         DispatchQueue.main.async {
             Analytics.logEvent("present_animal", parameters: nil)
-            Analytics.logEvent("animal_type", parameters: ["type": animal.type])
+            Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
             Analytics.logEvent("animal_feeling", parameters: ["description": feeling.feelingDescription])
             self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
         }
