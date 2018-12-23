@@ -1,0 +1,40 @@
+{
+  "default": {
+    "keyword": {
+      "fonts": [
+        {
+          "font": "./../fonts/Lato-Bold.ttf",
+          "supported": ["en-US", "fr-FR"]
+        }
+      ]
+    },
+    "title": {
+      "fonts": [
+        {
+          "font": "./../fonts/Lato-Bold.ttf",
+          "supported": ["en-US", "fr-FR"]
+        }
+      ],
+      "color": "#303E55"
+    },
+    "background": "./background.jpg",
+    "padding": 90,
+    "show_complete_frame": true,
+    "stack_title": false,
+    "font_scale_factor": 0.06
+  },
+  "data": [
+    {
+      "filter": "Cat",
+      "keyword": {
+        "color": "#4ebc87"
+      }
+    },
+    {
+      "filter": "Dog",
+      "keyword": {
+        "color": "#4ebc87"
+      }
+    }
+  ]
+}
