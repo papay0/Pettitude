@@ -74,13 +74,15 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             !animalBulletinManager.isShowingBulletin,
             !errorBulletinManager.isShowingBulletin else { return }
         animalBulletinManager = BLTNItemManager(rootItem:
-            createBulletinStatusAnimal(feeling: feeling.feelingDescription)
+            createBulletinStatusAnimal(feeling: feeling.description)
         )
         animalBulletinManager.backgroundViewStyle = .dimmed
         DispatchQueue.main.async {
             Analytics.logEvent("present_animal", parameters: nil)
             Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
-            Analytics.logEvent("animal_feeling", parameters: ["description": feeling.feelingDescription])
+            Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description])
+            Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
+            Analytics.setUserProperty(feeling.description, forName: "animal_feeling")
             self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: nil)
         }
     }

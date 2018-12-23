@@ -23,7 +23,7 @@ enum SentimentType {
 typealias FeelingDescription = String
 
 struct Feeling {
-    let feelingDescription: FeelingDescription
+    let description: FeelingDescription
     let sentimentType: SentimentType
 }
 
@@ -35,13 +35,13 @@ class FeelingsGenerator: FeelingsGeneratable {
         var feeling: Feeling
         switch animal.type {
         case .cat:
-            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
+            feeling = Feeling(description: feelingDescription, sentimentType: sentimentType)
         case .dog:
-            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
+            feeling = Feeling(description: feelingDescription, sentimentType: sentimentType)
         case .bird:
-            feeling = Feeling(feelingDescription: feelingDescription, sentimentType: sentimentType)
+            feeling = Feeling(description: feelingDescription, sentimentType: sentimentType)
         case .unknown:
-            feeling = Feeling(feelingDescription: "unknown", sentimentType: .neutral)
+            feeling = Feeling(description: "unknown", sentimentType: .neutral)
         }
         return feeling
     }
