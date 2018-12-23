@@ -16,6 +16,7 @@ import UIKit
 protocol HomePresentableListener: class {
     func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
     func showError(message: String, error: PettitudeErrorType)
+    func startOnboarding()
 }
 
 protocol HomeViewControllerDependency: ARSKViewDelegate, ARSessionDelegate {}
@@ -27,7 +28,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHome()
-        checkCameraAccess()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -97,6 +97,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
 
     private func setupHome() {
         setupVision()
+        checkCameraAccess()
     }
 
     private func setupVision() {
@@ -119,6 +120,9 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
                         message: LS("access_camera_denied"),
                         error: .cameraAccessDenied
                     )
+                } else {
+                    print("Now if a good time to start the onboarding")
+                    self.listener?.startOnboarding()
                 }
             })
         }

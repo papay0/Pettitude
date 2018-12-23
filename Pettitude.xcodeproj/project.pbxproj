@@ -12,6 +12,11 @@
 		7003DFB221CEF9B600343022 /* LocalizationFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003DFB121CEF9B600343022 /* LocalizationFallback.swift */; };
 		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
+		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
+		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
+		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
+		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
+		70BBD20B21CFAB5D007F74BE /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20721CFAB5D007F74BE /* OnboardingInteractor.swift */; };
 		70FD6D3A21CE599400CA5D50 /* PettitudeErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */; };
 		7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 		92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7D21C071B700EB800B /* AnimalStream.swift */; };
@@ -72,6 +77,11 @@
 		7003DFB321CF027700343022 /* Pettitude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pettitude.entitlements; sourceTree = "<group>"; };
 		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
+		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
+		70BBD20721CFAB5D007F74BE /* OnboardingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeErrorType.swift; sourceTree = "<group>"; };
 		8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92000C7D21C071B700EB800B /* AnimalStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStream.swift; sourceTree = "<group>"; };
@@ -163,6 +173,7 @@
 		7003DFB821CFAA2900343022 /* RIBs */ = {
 			isa = PBXGroup;
 			children = (
+				7003DFBA21CFAAC100343022 /* Onboarding */,
 				92A2555421BDB5360098333A /* Status */,
 				92A2553B21BD606B0098333A /* Home */,
 				92A2552521BD5BC40098333A /* LoggedIn */,
@@ -179,12 +190,56 @@
 			path = Animal;
 			sourceTree = "<group>";
 		};
+		7003DFBA21CFAAC100343022 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */,
+				70BBD20721CFAB5D007F74BE /* OnboardingInteractor.swift */,
+				70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */,
+				70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		7016A3DB21CC219D0054E19F /* Feelings */ = {
 			isa = PBXGroup;
 			children = (
 				7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */,
 			);
 			path = Feelings;
+			sourceTree = "<group>";
+		};
+		708F8CC221CFAF9D00CAE79A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				708F8CC321CFAFC000CAE79A /* UserDefault */,
+				92A2554B21BD85510098333A /* ML */,
+				92A2554621BD69EC0098333A /* SharedUI */,
+				70FD6D3821CE597000CA5D50 /* PettitudeErrorType */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		708F8CC321CFAFC000CAE79A /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		70BBD20C21CFAE65007F74BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92A2551921BD58980098333A /* AppStart */,
+				7003DFAA21CEF29000343022 /* Localization */,
+				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
+				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
+				92E14D6321BD542C00FF622B /* Info.plist */,
+				7003DFB621CF05F400343022 /* GoogleService-Info.plist */,
+				7003DFB321CF027700343022 /* Pettitude.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70FD6D3821CE597000CA5D50 /* PettitudeErrorType */ = {
@@ -300,18 +355,10 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				708F8CC221CFAF9D00CAE79A /* Utils */,
+				70BBD20C21CFAE65007F74BE /* Resources */,
 				7003DFB821CFAA2900343022 /* RIBs */,
-				7003DFB321CF027700343022 /* Pettitude.entitlements */,
-				7003DFAA21CEF29000343022 /* Localization */,
-				70FD6D3821CE597000CA5D50 /* PettitudeErrorType */,
 				92C0BA6C21C0717600E46D24 /* Models */,
-				92A2554B21BD85510098333A /* ML */,
-				92A2554621BD69EC0098333A /* SharedUI */,
-				92A2551921BD58980098333A /* AppStart */,
-				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
-				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
-				92E14D6321BD542C00FF622B /* Info.plist */,
-				7003DFB621CF05F400343022 /* GoogleService-Info.plist */,
 			);
 			path = Pettitude;
 			sourceTree = "<group>";
@@ -652,25 +699,30 @@
 				92A2552921BD5C010098333A /* LoggedInRouter.swift in Sources */,
 				92A2555A21BDB57C0098333A /* StatusViewController.swift in Sources */,
 				92A2554021BD607F0098333A /* HomeRouter.swift in Sources */,
+				708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */,
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,
 				92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */,
+				70BBD20B21CFAB5D007F74BE /* OnboardingInteractor.swift in Sources */,
 				92000C8021C0780A00EB800B /* HomeComponent+Status.swift in Sources */,
 				92A2555C21BDB57C0098333A /* StatusInteractor.swift in Sources */,
 				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
+				70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */,
 				7003DFB221CEF9B600343022 /* LocalizationFallback.swift in Sources */,
 				92A2553821BD5DE60098333A /* RootComponent+LoggedIn.swift in Sources */,
 				92A2555921BDB57C0098333A /* StatusRouter.swift in Sources */,
 				92A2552A21BD5C010098333A /* LoggedInBuilder.swift in Sources */,
 				92E14D5821BD542A00FF622B /* AppDelegate.swift in Sources */,
 				7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */,
+				70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */,
 				92A2554D21BD85680098333A /* MLProcessor.swift in Sources */,
 				70FD6D3A21CE599400CA5D50 /* PettitudeErrorType.swift in Sources */,
 				92A2555B21BDB57C0098333A /* StatusBuilder.swift in Sources */,
 				92A2553921BD5DE60098333A /* RootRouter.swift in Sources */,
 				92A2553621BD5DE60098333A /* RootInteractor.swift in Sources */,
 				92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */,
+				70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */,
 				92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */,
 				92A2554121BD607F0098333A /* HomeViewController.swift in Sources */,
 				92A2553A21BD5DE60098333A /* RootBuilder.swift in Sources */,
@@ -853,12 +905,12 @@
 			baseConfigurationReference = DA9343CD93FEB53B8EB94D99 /* Pods-Pettitude.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pettitude/Pettitude.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pettitude/Resources/Pettitude.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Q4B996RU7K;
-				INFOPLIST_FILE = Pettitude/Info.plist;
+				INFOPLIST_FILE = Pettitude/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -876,11 +928,11 @@
 			baseConfigurationReference = BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pettitude/Pettitude.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pettitude/Resources/Pettitude.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4B996RU7K;
-				INFOPLIST_FILE = Pettitude/Info.plist;
+				INFOPLIST_FILE = Pettitude/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

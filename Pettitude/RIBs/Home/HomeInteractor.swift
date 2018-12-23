@@ -80,6 +80,9 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         self.router?.showError(message: message, error: error)
     }
 
+    func startOnboarding() {
+    }
+
     // MARK: - Private
 
     private let mlProcessor: MLProcessor
