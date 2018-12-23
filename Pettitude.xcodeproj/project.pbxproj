@@ -12,12 +12,15 @@
 		7003DFB221CEF9B600343022 /* LocalizationFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003DFB121CEF9B600343022 /* LocalizationFallback.swift */; };
 		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
+		70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70787ECD21CFC1CD00AA3F55 /* Mocks.swift */; };
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
 		70BBD20B21CFAB5D007F74BE /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20721CFAB5D007F74BE /* OnboardingInteractor.swift */; };
+		70CF0C6421CFBE7F005F1804 /* OnboardingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF0C6221CFBE7F005F1804 /* OnboardingInteractorTests.swift */; };
+		70CF0C6521CFBE7F005F1804 /* OnboardingRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF0C6321CFBE7F005F1804 /* OnboardingRouterTests.swift */; };
 		70FD6D3A21CE599400CA5D50 /* PettitudeErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */; };
 		7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 		92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7D21C071B700EB800B /* AnimalStream.swift */; };
@@ -78,12 +81,15 @@
 		7003DFB321CF027700343022 /* Pettitude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pettitude.entitlements; sourceTree = "<group>"; };
 		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
+		70787ECD21CFC1CD00AA3F55 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Onboarding.swift"; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
 		70BBD20721CFAB5D007F74BE /* OnboardingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
+		70CF0C6221CFBE7F005F1804 /* OnboardingInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractorTests.swift; sourceTree = "<group>"; };
+		70CF0C6321CFBE7F005F1804 /* OnboardingRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouterTests.swift; sourceTree = "<group>"; };
 		70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeErrorType.swift; sourceTree = "<group>"; };
 		8890F82C7BEF98F42E2BA526 /* Pods-PettitudeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeTests/Pods-PettitudeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92000C7D21C071B700EB800B /* AnimalStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalStream.swift; sourceTree = "<group>"; };
@@ -211,6 +217,14 @@
 			path = Feelings;
 			sourceTree = "<group>";
 		};
+		70787ECC21CFC1BF00AA3F55 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				70787ECD21CFC1CD00AA3F55 /* Mocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		708F8CC221CFAF9D00CAE79A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +256,15 @@
 				7003DFB321CF027700343022 /* Pettitude.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		70CF0C6121CFBE32005F1804 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				70CF0C6221CFBE7F005F1804 /* OnboardingInteractorTests.swift */,
+				70CF0C6321CFBE7F005F1804 /* OnboardingRouterTests.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		70FD6D3821CE597000CA5D50 /* PettitudeErrorType */ = {
@@ -369,6 +392,8 @@
 		92E14D6B21BD542D00FF622B /* PettitudeTests */ = {
 			isa = PBXGroup;
 			children = (
+				70787ECC21CFC1BF00AA3F55 /* Mocks */,
+				70CF0C6121CFBE32005F1804 /* Onboarding */,
 				92E14D6C21BD542D00FF622B /* PettitudeTests.swift */,
 				92E14D6E21BD542D00FF622B /* Info.plist */,
 			);
@@ -739,6 +764,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E14D6D21BD542D00FF622B /* PettitudeTests.swift in Sources */,
+				70CF0C6421CFBE7F005F1804 /* OnboardingInteractorTests.swift in Sources */,
+				70CF0C6521CFBE7F005F1804 /* OnboardingRouterTests.swift in Sources */,
+				70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
