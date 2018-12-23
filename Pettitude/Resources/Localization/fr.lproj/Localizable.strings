@@ -12,6 +12,7 @@
 "go_to_settings" = "Ouvrir Réglages";
 "screenshot" = "Screenshot 📸";
 "Ok" = "Ok";
+"generic_error_message" = "Oups, on dirait qu'il y a une erreur !\n\n🐒 est déjà en train de la réparer !";
 
 // Onboarding
 "onboarding_title" = "Comment ça marche ?";

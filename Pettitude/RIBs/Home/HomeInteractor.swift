@@ -6,6 +6,7 @@
 //  Copyright © 2018 Arthur Papailhau. All rights reserved.
 //
 
+import Firebase
 import RIBs
 import RxSwift
 
@@ -57,10 +58,16 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse, error) in
             if let error = error {
                 switch error {
-                case .cannotSampleBuffer, .error:
+                case .cannotSampleBuffer:
                     self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                case .animalNotRecognized, .emptyFeatures:
-                    break
+                    Analytics.logEvent("error_cannotSampleBuffer", parameters: nil)
+                case .error(let errorDescription):
+                    self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
+                    Analytics.logEvent("error_cannotSampleBuffer", parameters: ["description": errorDescription])
+                case .animalNotRecognized:
+                    Analytics.logEvent("warning_animalNotRecognized", parameters: nil)
+                case .emptyFeatures:
+                    Analytics.logEvent("warning_emptyFeatures", parameters: nil)
                 }
                 completionHandler()
                 return
@@ -93,5 +100,5 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     private let mutableAnimalStream: MutableAnimalStream
     private let feelingsGenerator: FeelingsGeneratable
 
-    private let genericErrorMessage = "Oups, something went wrong!\n\n🐒 is fixing it right now!" // TODO: Translate
+    private let genericErrorMessage = LS("generic_error_message")
 }

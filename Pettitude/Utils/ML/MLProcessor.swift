@@ -9,7 +9,7 @@
 import Firebase
 
 public enum MLProcessorError {
-    case error
+    case error(error: String)
     case emptyFeatures
     case animalNotRecognized
     case cannotSampleBuffer
@@ -37,7 +37,7 @@ class MLProcessor {
 
         labelDetector.detect(in: image) { features, error in
             guard error == nil else {
-                completionHandler(nil, .error)
+                completionHandler(nil, .error(error: error.debugDescription))
                 return
             }
             guard let features = features, !features.isEmpty else {

@@ -12,6 +12,7 @@
 "go_to_settings" = "Go to Settings";
 "screenshot" = "Screenshot 📸";
 "Ok" = "Ok";
+"generic_error_message" = "Oups, something went wrong!\n\n🐒 is fixing it right now!";
 
 // Onboarding
 "onboarding_title" = "How does it work?";
