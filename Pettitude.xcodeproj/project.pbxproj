@@ -160,6 +160,25 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		7003DFB821CFAA2900343022 /* RIBs */ = {
+			isa = PBXGroup;
+			children = (
+				92A2555421BDB5360098333A /* Status */,
+				92A2553B21BD606B0098333A /* Home */,
+				92A2552521BD5BC40098333A /* LoggedIn */,
+				92A2552E21BD5DE60098333A /* Root */,
+			);
+			path = RIBs;
+			sourceTree = "<group>";
+		};
+		7003DFB921CFAA5800343022 /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				92000C7D21C071B700EB800B /* AnimalStream.swift */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
 		7016A3DB21CC219D0054E19F /* Feelings */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +269,8 @@
 		92C0BA6C21C0717600E46D24 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92000C7D21C071B700EB800B /* AnimalStream.swift */,
+				7016A3DB21CC219D0054E19F /* Feelings */,
+				7003DFB921CFAA5800343022 /* Animal */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,17 +300,13 @@
 		92E14D5621BD542A00FF622B /* Pettitude */ = {
 			isa = PBXGroup;
 			children = (
+				7003DFB821CFAA2900343022 /* RIBs */,
 				7003DFB321CF027700343022 /* Pettitude.entitlements */,
 				7003DFAA21CEF29000343022 /* Localization */,
 				70FD6D3821CE597000CA5D50 /* PettitudeErrorType */,
-				7016A3DB21CC219D0054E19F /* Feelings */,
 				92C0BA6C21C0717600E46D24 /* Models */,
-				92A2555421BDB5360098333A /* Status */,
 				92A2554B21BD85510098333A /* ML */,
 				92A2554621BD69EC0098333A /* SharedUI */,
-				92A2553B21BD606B0098333A /* Home */,
-				92A2552E21BD5DE60098333A /* Root */,
-				92A2552521BD5BC40098333A /* LoggedIn */,
 				92A2551921BD58980098333A /* AppStart */,
 				92E14D5E21BD542C00FF622B /* Assets.xcassets */,
 				92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */,
