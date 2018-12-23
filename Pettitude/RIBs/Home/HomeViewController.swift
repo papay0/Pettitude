@@ -123,7 +123,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             if CommandLine.arguments.contains("cat") {
                 imageAnimal = UIImage(named: "Cat")
                 animal = Animal(type: .cat)
-                feeling = Feeling(description: LS("Thoughtful"), sentimentType: .positive)
+                feeling = Feeling(description: LS("Thoughtful"), sentimentType: .neutral)
             } else if CommandLine.arguments.contains("dog") {
                 imageAnimal = UIImage(named: "Dog")
                 animal = Animal(type: .dog)
