@@ -11,11 +11,11 @@ import RxSwift
 
 protocol OnboardingRouting: ViewableRouting {
     func setParentViewController(parentVC: ViewControllable)
+    func startOnboarding()
 }
 
 protocol OnboardingPresentable: Presentable {
     var listener: OnboardingPresentableListener? { get set }
-    func startOnboarding()
 }
 
 protocol OnboardingListener: class {
@@ -27,25 +27,16 @@ final class OnboardingInteractor: PresentableInteractor<OnboardingPresentable>,
     weak var router: OnboardingRouting?
     weak var listener: OnboardingListener?
 
-    init(presenter: OnboardingPresentable, animalStream: AnimalStream) {
+    override init(presenter: OnboardingPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        updateAnimal()
     }
 
     override func willResignActive() {
         super.willResignActive()
-    }
-
-    // MARK: - OnboardingPresentableListener
-
-    // MARK: - Private
-
-    private func updateAnimal() {
-        presenter.startOnboarding()
     }
 }

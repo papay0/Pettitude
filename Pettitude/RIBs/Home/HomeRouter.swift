@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol HomeInteractable: Interactable, StatusListener {
+protocol HomeInteractable: Interactable, StatusListener, OnboardingListener {
     var router: HomeRouting? { get set }
     var listener: HomeListener? { get set }
 }
@@ -19,8 +19,10 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
 
     init(interactor: HomeInteractable,
          viewController: HomeViewControllable,
-         statusBuilder: StatusBuildable) {
+         statusBuilder: StatusBuildable,
+         onboardingBuilder: OnboardingBuildable) {
         self.statusBuilder = statusBuilder
+        self.onboardingBuilder = onboardingBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
@@ -28,6 +30,7 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
     override func didLoad() {
         super.didLoad()
         attachStatus()
+        attachOnboarding()
     }
 
     // MARK: - HomeRouting
@@ -37,15 +40,30 @@ final class HomeRouter: ViewableRouter<HomeInteractable, HomeViewControllable>, 
         statusRouter?.showError(message: message, error: error)
     }
 
+    func startOnboarding() {
+        guard onboardingRouter != nil else { return }
+        onboardingRouter?.startOnboarding()
+    }
+
     // MARK: - Private
 
     private let statusBuilder: StatusBuildable
     private var statusRouter: StatusRouting?
+
+    private let onboardingBuilder: OnboardingBuildable
+    private var onboardingRouter: OnboardingRouting?
 
     private func attachStatus() {
         let status = statusBuilder.build(with: interactor)
         statusRouter = status
         attachChild(status)
         status.setParentViewController(parentVC: viewController)
+    }
+
+    private func attachOnboarding() {
+        let onboarding = onboardingBuilder.build(with: interactor)
+        onboardingRouter = onboarding
+        attachChild(onboarding)
+        onboarding.setParentViewController(parentVC: viewController)
     }
 }

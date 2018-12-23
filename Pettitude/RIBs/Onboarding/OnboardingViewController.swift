@@ -26,17 +26,18 @@ final class OnboardingViewController: UIViewController, OnboardingPresentable, O
 
     private func createOnboardingBulletin() -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
-        page.descriptionText = "feeling"
-        page.actionButtonTitle = "Compris"
+        page.descriptionText = LS("onboarding_description")
+        page.actionButtonTitle = LS("onboarding_acknowledgement")
 
         page.actionHandler = { item in
             self.onboardingBulletinManager.dismissBulletin()
+            UserDefaultsManager.onboardingDone = true
         }
 
         return page
     }
 
-    private var titleBulletin = "title here"
+    private var titleBulletin = LS("onboarding_title")
 
     var parentVC: UIViewController?
 
@@ -49,15 +50,13 @@ final class OnboardingViewController: UIViewController, OnboardingPresentable, O
         }
     }
 
-    // MARK: - OnboardingPresentable
-
-    func startOnboarding() {
-        presentOnboarding()
-    }
-
     // MARK: - OnboardingViewControllable
 
     func setParentViewController(parentVC: ViewControllable) {
         self.parentVC = parentVC.uiviewController
+    }
+
+    func startOnboarding() {
+        presentOnboarding()
     }
 }

@@ -8,15 +8,9 @@
 
 import RIBs
 
-protocol OnboardingDependency: Dependency {
-    var animalStream: AnimalStream { get }
-}
+protocol OnboardingDependency: Dependency {}
 
-final class OnboardingComponent: Component<OnboardingDependency> {
-    fileprivate var animalStream: AnimalStream {
-        return dependency.animalStream
-    }
-}
+final class OnboardingComponent: Component<OnboardingDependency> {}
 
 // MARK: - Builder
 
@@ -31,10 +25,8 @@ final class OnboardingBuilder: Builder<OnboardingDependency>, OnboardingBuildabl
     }
 
     func build(with listener: OnboardingListener) -> OnboardingRouting {
-        let component = OnboardingComponent(dependency: dependency)
         let viewController = OnboardingViewController()
-        let interactor = OnboardingInteractor(presenter: viewController,
-                                          animalStream: component.animalStream)
+        let interactor = OnboardingInteractor(presenter: viewController)
         interactor.listener = listener
         return OnboardingRouter(interactor: interactor, viewController: viewController)
     }

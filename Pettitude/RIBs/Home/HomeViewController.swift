@@ -121,7 +121,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
                         error: .cameraAccessDenied
                     )
                 } else {
-                    print("Now if a good time to start the onboarding")
                     self.listener?.startOnboarding()
                 }
             })

@@ -13,6 +13,7 @@
 		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
+		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -78,6 +79,7 @@
 		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
 		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Onboarding.swift"; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				92A2553C21BD607F0098333A /* HomeRouter.swift */,
 				92A2553D21BD607F0098333A /* HomeViewController.swift */,
 				92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */,
+				708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */,
 				92A2553E21BD607F0098333A /* HomeBuilder.swift */,
 				92A2553F21BD607F0098333A /* HomeInteractor.swift */,
 			);
@@ -699,6 +702,7 @@
 				92A2552921BD5C010098333A /* LoggedInRouter.swift in Sources */,
 				92A2555A21BDB57C0098333A /* StatusViewController.swift in Sources */,
 				92A2554021BD607F0098333A /* HomeRouter.swift in Sources */,
+				708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */,
 				708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */,
 				92A2553721BD5DE60098333A /* RootViewController.swift in Sources */,
 				92A2554321BD607F0098333A /* HomeInteractor.swift in Sources */,

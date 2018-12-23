@@ -13,6 +13,11 @@
 "screenshot" = "Screenshot 📸";
 "Ok" = "Ok";
 
+// Onboarding
+"onboarding_title" = "How does it work?";
+"onboarding_description" = "Present your Pet to the camera and Pettitude will tell your the feeling of your favorite animal.";
+"onboarding_acknowledgement" = "Let's start!";
+
 // Feelings
 "in_love" = "In love";
 

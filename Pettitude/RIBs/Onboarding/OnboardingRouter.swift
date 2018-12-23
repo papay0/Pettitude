@@ -15,6 +15,7 @@ protocol OnboardingInteractable: Interactable {
 
 protocol OnboardingViewControllable: ViewControllable {
     func setParentViewController(parentVC: ViewControllable)
+    func startOnboarding()
 }
 
 final class OnboardingRouter: ViewableRouter<OnboardingInteractable, OnboardingViewControllable>, OnboardingRouting {
@@ -28,5 +29,9 @@ final class OnboardingRouter: ViewableRouter<OnboardingInteractable, OnboardingV
 
     func setParentViewController(parentVC: ViewControllable) {
         viewController.setParentViewController(parentVC: parentVC)
+    }
+
+    func startOnboarding() {
+        viewController.startOnboarding()
     }
 }

@@ -50,8 +50,10 @@ final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
         interactor.listener = listener
 
         let statusBuilder = StatusBuilder(dependency: component)
+        let onboardingBuilder = OnboardingBuilder(dependency: component)
         return HomeRouter(interactor: interactor,
                           viewController: viewController,
-                          statusBuilder: statusBuilder)
+                          statusBuilder: statusBuilder,
+                          onboardingBuilder: onboardingBuilder)
     }
 }

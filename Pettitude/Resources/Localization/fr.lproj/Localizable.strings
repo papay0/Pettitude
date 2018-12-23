@@ -13,6 +13,11 @@
 "screenshot" = "Screenshot 📸";
 "Ok" = "Ok";
 
+// Onboarding
+"onboarding_title" = "Comment ça marche ?";
+"onboarding_description" = "Presentez votre animal à la caméra et Pettitude vous dira son sentiment.";
+"onboarding_acknowledgement" = "C'est parti !";
+
 // Sentiments
 "in_love" = "Amoureux";
 

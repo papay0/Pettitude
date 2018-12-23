@@ -11,6 +11,7 @@ import RxSwift
 
 protocol HomeRouting: ViewableRouting {
     func showError(message: String, error: PettitudeErrorType)
+    func startOnboarding()
 }
 
 protocol HomePresentable: Presentable {
@@ -77,10 +78,13 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     func showError(message: String, error: PettitudeErrorType) {
-        self.router?.showError(message: message, error: error)
+        router?.showError(message: message, error: error)
     }
 
     func startOnboarding() {
+        if !UserDefaultsManager.onboardingDone {
+            router?.startOnboarding()
+        }
     }
 
     // MARK: - Private
@@ -89,5 +93,5 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     private let mutableAnimalStream: MutableAnimalStream
     private let feelingsGenerator: FeelingsGeneratable
 
-    private let genericErrorMessage = "Oups, something went wrong!\n\n🐒 is fixing it right now!"
+    private let genericErrorMessage = "Oups, something went wrong!\n\n🐒 is fixing it right now!" // TODO: Translate
 }
