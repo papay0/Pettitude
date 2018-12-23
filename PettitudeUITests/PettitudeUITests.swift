@@ -28,9 +28,11 @@ class PettitudeUITests: XCTestCase {
 
     func testExample() {
         let app = XCUIApplication()
+        setupSnapshot(app)
         app.launchArguments = ["uitests", "cat"]
         // setupSnapshot(app)
         app.launch()
+        snapshot("Test")
     }
 
 }

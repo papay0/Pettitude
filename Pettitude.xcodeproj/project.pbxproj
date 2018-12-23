@@ -10,6 +10,7 @@
 		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
 		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
+		701A408A21D02E2A006724F4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A408921D02E2A006724F4 /* SnapshotHelper.swift */; };
 		70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70787ECD21CFC1CD00AA3F55 /* Mocks.swift */; };
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
@@ -78,6 +79,7 @@
 		7003DFB321CF027700343022 /* Pettitude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pettitude.entitlements; sourceTree = "<group>"; };
 		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
+		701A408921D02E2A006724F4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		70787ECD21CFC1CD00AA3F55 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Onboarding.swift"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		70916FC021D02AD1006FF4C8 /* PettitudeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				701A408921D02E2A006724F4 /* SnapshotHelper.swift */,
 				70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */,
 				70916FC321D02AD1006FF4C8 /* Info.plist */,
 			);
@@ -777,6 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */,
+				701A408A21D02E2A006724F4 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
