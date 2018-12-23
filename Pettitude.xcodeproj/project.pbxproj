@@ -13,6 +13,7 @@
 		70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70787ECD21CFC1CD00AA3F55 /* Mocks.swift */; };
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
+		70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -22,7 +23,6 @@
 		70F7648221CFEE410047537C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70F7647E21CFEE410047537C /* Localizable.strings */; };
 		70F7648321CFEE410047537C /* LocalizationFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F7648021CFEE410047537C /* LocalizationFallback.swift */; };
 		70FD6D3A21CE599400CA5D50 /* PettitudeErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD6D3921CE599400CA5D50 /* PettitudeErrorType.swift */; };
-		7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 		92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7D21C071B700EB800B /* AnimalStream.swift */; };
 		92000C8021C0780A00EB800B /* HomeComponent+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */; };
 		92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2551A21BD58BD0098333A /* AppComponent.swift */; };
@@ -49,19 +49,19 @@
 		92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D5E21BD542C00FF622B /* Assets.xcassets */; };
 		92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E14D6021BD542C00FF622B /* LaunchScreen.storyboard */; };
 		92E14D6D21BD542D00FF622B /* PettitudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D6C21BD542D00FF622B /* PettitudeTests.swift */; };
-		92E14D7821BD542D00FF622B /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E14D7721BD542D00FF622B /* PettitudeUITests.swift */; };
 		D328EC241E89C124036889DF /* Pods_PettitudeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */; };
+		E19B94C229C139FA240F1109 /* Pods_PettitudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		92E14D6921BD542D00FF622B /* PBXContainerItemProxy */ = {
+		70916FC421D02AD1006FF4C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92E14D4C21BD542A00FF622B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 92E14D5321BD542A00FF622B;
 			remoteInfo = Pettitude;
 		};
-		92E14D7421BD542D00FF622B /* PBXContainerItemProxy */ = {
+		92E14D6921BD542D00FF622B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92E14D4C21BD542A00FF622B /* Project object */;
 			proxyType = 1;
@@ -81,6 +81,9 @@
 		70787ECD21CFC1CD00AA3F55 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Onboarding.swift"; sourceTree = "<group>"; };
+		70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
+		70916FC321D02AD1006FF4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -122,9 +125,6 @@
 		92E14D6821BD542D00FF622B /* PettitudeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E14D6C21BD542D00FF622B /* PettitudeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeTests.swift; sourceTree = "<group>"; };
 		92E14D6E21BD542D00FF622B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92E14D7321BD542D00FF622B /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92E14D7721BD542D00FF622B /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
-		92E14D7921BD542D00FF622B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pettitude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pettitude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude.release.xcconfig"; sourceTree = "<group>"; };
 		D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PettitudeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +132,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		70916FBC21D02AD1006FF4C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E19B94C229C139FA240F1109 /* Pods_PettitudeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E14D5121BD542A00FF622B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,14 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D328EC241E89C124036889DF /* Pods_PettitudeTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92E14D7021BD542D00FF622B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7DC045A8B42288A246C1FFFB /* Pods_PettitudeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +233,15 @@
 				708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */,
 			);
 			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		70916FC021D02AD1006FF4C8 /* PettitudeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */,
+				70916FC321D02AD1006FF4C8 /* Info.plist */,
+			);
+			path = PettitudeUITests;
 			sourceTree = "<group>";
 		};
 		70BBD20C21CFAE65007F74BE /* Resources */ = {
@@ -361,7 +370,7 @@
 			children = (
 				92E14D5621BD542A00FF622B /* Pettitude */,
 				92E14D6B21BD542D00FF622B /* PettitudeTests */,
-				92E14D7621BD542D00FF622B /* PettitudeUITests */,
+				70916FC021D02AD1006FF4C8 /* PettitudeUITests */,
 				92E14D5521BD542A00FF622B /* Products */,
 				A85D4F6C4ABF926F58E8E94B /* Pods */,
 				0713765F8EDA7D0C87C6CB9A /* Frameworks */,
@@ -373,7 +382,7 @@
 			children = (
 				92E14D5421BD542A00FF622B /* Pettitude.app */,
 				92E14D6821BD542D00FF622B /* PettitudeTests.xctest */,
-				92E14D7321BD542D00FF622B /* PettitudeUITests.xctest */,
+				70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,15 +409,6 @@
 			path = PettitudeTests;
 			sourceTree = "<group>";
 		};
-		92E14D7621BD542D00FF622B /* PettitudeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				92E14D7721BD542D00FF622B /* PettitudeUITests.swift */,
-				92E14D7921BD542D00FF622B /* Info.plist */,
-			);
-			path = PettitudeUITests;
-			sourceTree = "<group>";
-		};
 		A85D4F6C4ABF926F58E8E94B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +425,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		70916FBE21D02AD1006FF4C8 /* PettitudeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70916FC621D02AD1006FF4C8 /* Build configuration list for PBXNativeTarget "PettitudeUITests" */;
+			buildPhases = (
+				DC855DE6E0431F3750A83EE9 /* [CP] Check Pods Manifest.lock */,
+				70916FBB21D02AD1006FF4C8 /* Sources */,
+				70916FBC21D02AD1006FF4C8 /* Frameworks */,
+				70916FBD21D02AD1006FF4C8 /* Resources */,
+				B88602196A3FB14C8DEF42A2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70916FC521D02AD1006FF4C8 /* PBXTargetDependency */,
+			);
+			name = PettitudeUITests;
+			productName = PettitudeUITests;
+			productReference = 70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		92E14D5321BD542A00FF622B /* Pettitude */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E14D7C21BD542D00FF622B /* Build configuration list for PBXNativeTarget "Pettitude" */;
@@ -466,35 +486,21 @@
 			productReference = 92E14D6821BD542D00FF622B /* PettitudeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		92E14D7221BD542D00FF622B /* PettitudeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 92E14D8221BD542D00FF622B /* Build configuration list for PBXNativeTarget "PettitudeUITests" */;
-			buildPhases = (
-				E0A3C19B2BE083CE19A0DC30 /* [CP] Check Pods Manifest.lock */,
-				92E14D6F21BD542D00FF622B /* Sources */,
-				92E14D7021BD542D00FF622B /* Frameworks */,
-				92E14D7121BD542D00FF622B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				92E14D7521BD542D00FF622B /* PBXTargetDependency */,
-			);
-			name = PettitudeUITests;
-			productName = PettitudeUITests;
-			productReference = 92E14D7321BD542D00FF622B /* PettitudeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		92E14D4C21BD542A00FF622B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Arthur Papailhau";
 				TargetAttributes = {
+					70916FBE21D02AD1006FF4C8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 92E14D5321BD542A00FF622B;
+					};
 					92E14D5321BD542A00FF622B = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -504,10 +510,6 @@
 						};
 					};
 					92E14D6721BD542D00FF622B = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 92E14D5321BD542A00FF622B;
-					};
-					92E14D7221BD542D00FF622B = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 92E14D5321BD542A00FF622B;
 					};
@@ -529,12 +531,19 @@
 			targets = (
 				92E14D5321BD542A00FF622B /* Pettitude */,
 				92E14D6721BD542D00FF622B /* PettitudeTests */,
-				92E14D7221BD542D00FF622B /* PettitudeUITests */,
+				70916FBE21D02AD1006FF4C8 /* PettitudeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		70916FBD21D02AD1006FF4C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E14D5221BD542A00FF622B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,13 +556,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		92E14D6621BD542D00FF622B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92E14D7121BD542D00FF622B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -683,6 +685,50 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B88602196A3FB14C8DEF42A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-ac14cd06/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RIBs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEC22706A1CA5761AAA48A11 /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,16 +747,20 @@
 			shellPath = /bin/bash;
 			shellScript = "declare -a DEPENDENCIES=('BulletinBoard' 'FirebaseCore' 'GTMSessionFetcher' 'GoogleAPIClientForREST' 'GoogleToolboxForMac' 'GoogleUtilities' 'Protobuf' 'RIBs' 'RxAtomic' 'RxCocoa' 'RxSwift' 'SnapKit' 'nanopb');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
-		E0A3C19B2BE083CE19A0DC30 /* [CP] Check Pods Manifest.lock */ = {
+		DC855DE6E0431F3750A83EE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PettitudeUITests-checkManifestLockResult.txt",
 			);
@@ -722,6 +772,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		70916FBB21D02AD1006FF4C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E14D5021BD542A00FF622B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -772,26 +830,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92E14D6F21BD542D00FF622B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92E14D7821BD542D00FF622B /* PettitudeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		70916FC521D02AD1006FF4C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92E14D5321BD542A00FF622B /* Pettitude */;
+			targetProxy = 70916FC421D02AD1006FF4C8 /* PBXContainerItemProxy */;
+		};
 		92E14D6A21BD542D00FF622B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 92E14D5321BD542A00FF622B /* Pettitude */;
 			targetProxy = 92E14D6921BD542D00FF622B /* PBXContainerItemProxy */;
-		};
-		92E14D7521BD542D00FF622B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 92E14D5321BD542A00FF622B /* Pettitude */;
-			targetProxy = 92E14D7421BD542D00FF622B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -816,6 +866,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		70916FC721D02AD1006FF4C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4B996RU7K;
+				INFOPLIST_FILE = PettitudeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthur.pettitude.PettitudeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pettitude;
+			};
+			name = Debug;
+		};
+		70916FC821D02AD1006FF4C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4B996RU7K;
+				INFOPLIST_FILE = PettitudeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthur.pettitude.PettitudeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pettitude;
+			};
+			name = Release;
+		};
 		92E14D7A21BD542D00FF622B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1023,51 +1113,18 @@
 			};
 			name = Release;
 		};
-		92E14D8321BD542D00FF622B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D040C4FDD5629DB4DEDABE35 /* Pods-PettitudeUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q4B996RU7K;
-				INFOPLIST_FILE = PettitudeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Papay0.PettitudeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pettitude;
-			};
-			name = Debug;
-		};
-		92E14D8421BD542D00FF622B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 307A13CE51BEA0AF05FD5969 /* Pods-PettitudeUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q4B996RU7K;
-				INFOPLIST_FILE = PettitudeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Papay0.PettitudeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pettitude;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		70916FC621D02AD1006FF4C8 /* Build configuration list for PBXNativeTarget "PettitudeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70916FC721D02AD1006FF4C8 /* Debug */,
+				70916FC821D02AD1006FF4C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92E14D4F21BD542A00FF622B /* Build configuration list for PBXProject "Pettitude" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1091,15 +1148,6 @@
 			buildConfigurations = (
 				92E14D8021BD542D00FF622B /* Debug */,
 				92E14D8121BD542D00FF622B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		92E14D8221BD542D00FF622B /* Build configuration list for PBXNativeTarget "PettitudeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92E14D8321BD542D00FF622B /* Debug */,
-				92E14D8421BD542D00FF622B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

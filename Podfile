@@ -29,5 +29,17 @@ target 'Pettitude' do
   target 'PettitudeUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RIBs', '~> 0.9.0'
+    pod 'SnapKit', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/MLVision'
+    pod 'Firebase/MLVisionLabelModel'
+    pod 'SwiftLint'
+    pod 'BulletinBoard'
+    pod 'Fabric', '~> 1.9.0'
+    pod 'Crashlytics', '~> 3.12.0'
+    pod 'Firebase/Performance'
+    pod 'Firebase/Auth'
   end
 end
