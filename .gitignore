@@ -67,5 +67,10 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
+# fastlane/screenshots
 fastlane/test_output
+
+# Snapshot generated screenshots
+/fastlane/screenshots/*/*.png
+/fastlane/screenshots/*/*.png
+/fastlane/screenshots/screenshots.html
