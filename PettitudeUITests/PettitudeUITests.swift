@@ -30,13 +30,23 @@ class PettitudeUITests: XCTestCase {
     func test_fastlane_Cat() {
         app.launchArguments.append("cat")
         app.launch()
+        acceptCameraAccess()
         snapshot("01-Cat")
     }
 
     func test_fastlane_Dog() {
         app.launchArguments.append("dog")
         app.launch()
+        acceptCameraAccess()
         snapshot("02-Dog")
+    }
+
+    // MARK: - Private
+
+    private func acceptCameraAccess() {
+        let springboardApp = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let alert = springboardApp.alerts.element
+        alert.buttons["OK"].tap()
     }
 
 }
