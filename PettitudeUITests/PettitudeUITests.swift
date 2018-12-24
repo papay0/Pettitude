@@ -30,13 +30,13 @@ class PettitudeUITests: XCTestCase {
     func test_fastlane_Cat() {
         app.launchArguments.append("cat")
         app.launch()
-        snapshot("Cat")
+        snapshot("01-Cat")
     }
 
     func test_fastlane_Dog() {
         app.launchArguments.append("dog")
         app.launch()
-        snapshot("Dog")
+        snapshot("02-Dog")
     }
 
 }
