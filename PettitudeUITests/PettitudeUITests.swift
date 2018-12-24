@@ -16,7 +16,7 @@ class PettitudeUITests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        continueAfterFailure = true
 
         app = XCUIApplication()
         setupSnapshot(app)
@@ -46,7 +46,9 @@ class PettitudeUITests: XCTestCase {
     private func acceptCameraAccess() {
         let springboardApp = XCUIApplication(bundleIdentifier: "com.apple.springboard")
         let alert = springboardApp.alerts.element
-        alert.buttons["OK"].tap()
+        if alert.buttons["OK"].exists {
+            alert.buttons["OK"].tap()
+        }
     }
 
 }
