@@ -42,10 +42,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         sceneView.session.run(configuration)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
     // MARK: - Protocol ARSessionDelegate
 
     // The pixel buffer being held for analysis; used to serialize Vision requests.
