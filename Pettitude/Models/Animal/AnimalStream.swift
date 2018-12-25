@@ -10,6 +10,9 @@ import RxSwift
 
 public struct Animal {
     let type: AnimalType
+    static func == (lhs: Animal, rhs: Animal) -> Bool {
+        return lhs.type == rhs.type
+    }
 }
 
 typealias Emoji = String
@@ -26,7 +29,7 @@ protocol AnimalStream: class {
 }
 
 protocol MutableAnimalStream: AnimalStream {
-    func updateAnimal(with animal: Animal, feeling: Feeling)
+    func updateAnimal(with animal: Animal, feeling: Feeling?)
 }
 
 protocol AnimalDisplayable {
@@ -75,14 +78,25 @@ class AnimalDisplayableImpl: AnimalDisplayable {
 
 class AnimalStreamImpl: MutableAnimalStream {
 
+    init() {
+        feelingsGenerator = FeelingsGenerator()
+    }
+
     var animalDisplayable: Observable<AnimalDisplayable> {
         return subject
             .asObservable()
     }
 
-    func updateAnimal(with animal: Animal, feeling: Feeling) {
-        let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feeling)
+    /// The second parameter (feeling) is simply used for ui tests
+    func updateAnimal(with animal: Animal, feeling: Feeling? = nil) {
         if animal.type != .unknown {
+            let feelingGenerated: Feeling
+            if let feeling = feeling {
+                feelingGenerated = feeling
+            } else {
+                feelingGenerated = feelingsGenerator.getFeeling(for: animal)
+            }
+            let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feelingGenerated)
             subject.onNext(animalDisplayable)
         }
     }
@@ -90,4 +104,5 @@ class AnimalStreamImpl: MutableAnimalStream {
     // MARK: - Private
 
     private let subject = PublishSubject<AnimalDisplayable>()
+    private let feelingsGenerator: FeelingsGenerator
 }

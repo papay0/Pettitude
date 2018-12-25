@@ -29,9 +29,20 @@ struct Feeling {
 
 class FeelingsGenerator: FeelingsGeneratable {
 
+    init() {
+        defaultFeelingDescription = LS("Happy")
+        defaultFeeling = Feeling(description: defaultFeelingDescription, sentimentType: .positive)
+        previousFeeling = defaultFeeling
+        minimumTimeForSameFeeling = 10
+    }
+
     func getFeeling(for animal: Animal) -> Feeling {
+        if canGetPreviousFeeling(previousFeeling: previousFeeling, animal: animal) {
+            previousDate = Date.timeIntervalSinceReferenceDate
+            return previousFeeling
+        }
         let sentimentType: SentimentType = generateSentimentType()
-        let feelingDescription = feelings[sentimentType]?.randomElement() ?? defaultFeeling
+        let feelingDescription = feelings[sentimentType]?.randomElement() ?? defaultFeelingDescription
         var feeling: Feeling
         switch animal.type {
         case .cat:
@@ -43,6 +54,9 @@ class FeelingsGenerator: FeelingsGeneratable {
         case .unknown:
             feeling = Feeling(description: "unknown", sentimentType: .neutral)
         }
+        previousFeeling = feeling
+        previousDate = Date.timeIntervalSinceReferenceDate
+        previousAnimal = animal
         return feeling
     }
 
@@ -107,5 +121,20 @@ class FeelingsGenerator: FeelingsGeneratable {
         }
     }
 
-    private let defaultFeeling: FeelingDescription = LS("Happy")
+    private func canGetPreviousFeeling(previousFeeling: Feeling, animal: Animal) -> Bool {
+        guard let previousAnimal = previousAnimal, previousAnimal == animal else { return false }
+        guard let previousDate = previousDate else { return false }
+        let currentDate = Date.timeIntervalSinceReferenceDate
+        if Int(currentDate - previousDate) >= minimumTimeForSameFeeling {
+            return false
+        }
+        return true
+    }
+
+    private var previousFeeling: Feeling
+    private var previousAnimal: Animal?
+    private let defaultFeelingDescription: FeelingDescription
+    private let defaultFeeling: Feeling
+    private var previousDate: TimeInterval?
+    private let minimumTimeForSameFeeling: Int
 }
