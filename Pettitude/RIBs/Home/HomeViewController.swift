@@ -9,6 +9,7 @@
 import ARKit
 import Firebase
 import Photos
+import RevealingSplashView
 import RIBs
 import RxSwift
 import UIKit
@@ -31,6 +32,7 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHome()
+        launchSplashScreen()
         setupUitests()
     }
 
@@ -102,6 +104,20 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     private func setupHome() {
         setupVision()
         checkCameraAccess()
+    }
+
+    private func launchSplashScreen() {
+        if let splashImage = UIImage(named: "Glyph") {
+            let revealingSplashView = RevealingSplashView(iconImage: splashImage,
+                                                          iconInitialSize: CGSize(width: 80, height: 88),
+                                                          backgroundColor: UIColor(red: 0.0/255.0,
+                                                                                   green: 99.0/255.0,
+                                                                                   blue: 219.0/255.0,
+                                                                                   alpha: 1.0)
+            )
+            self.view.addSubview(revealingSplashView)
+            revealingSplashView.startAnimation()
+        }
     }
 
     private func setupVision() {

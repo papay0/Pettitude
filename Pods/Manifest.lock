@@ -127,6 +127,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - RevealingSplashView (0.6.0)
   - RIBs (0.9.1):
     - RxSwift (~> 4.0)
   - RxAtomic (4.4.0)
@@ -147,6 +148,7 @@ DEPENDENCIES:
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
   - Firebase/Performance
+  - RevealingSplashView
   - RIBs (~> 0.9.0)
   - RxCocoa (~> 4.0)
   - SnapKit (~> 4.0)
@@ -177,6 +179,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - Protobuf
+    - RevealingSplashView
     - RIBs
     - RxAtomic
     - RxCocoa
@@ -208,6 +211,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   RIBs: 879184fbca567425c488d6b3d14a9c5abfbf9d47
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
@@ -215,6 +219,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: bfde310c2ac6ca52ca30b4655934671c2745c947
+PODFILE CHECKSUM: c0f2de96ee795502bac2e6b7b0d037135dd54602
 
 COCOAPODS: 1.5.3
