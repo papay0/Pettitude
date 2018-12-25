@@ -58,10 +58,8 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             return
         }
         self.currentBuffer = frame.capturedImage
-        let trace = Performance.startTrace(name: "classify image")
         listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: {
             self.currentBuffer = nil
-            trace?.stop()
         })
     }
 
