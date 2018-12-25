@@ -29,7 +29,8 @@ protocol AnimalStream: class {
 }
 
 protocol MutableAnimalStream: AnimalStream {
-    func updateAnimal(with animal: Animal, feeling: Feeling?)
+    func updateAnimal(with animal: Animal)
+    func UITests_updateAnimal(with animal: Animal, feeling: Feeling)
 }
 
 protocol AnimalDisplayable {
@@ -87,16 +88,17 @@ class AnimalStreamImpl: MutableAnimalStream {
             .asObservable()
     }
 
-    /// The second parameter (feeling) is simply used for ui tests
-    func updateAnimal(with animal: Animal, feeling: Feeling? = nil) {
+    func updateAnimal(with animal: Animal) {
         if animal.type != .unknown {
-            let feelingGenerated: Feeling
-            if let feeling = feeling {
-                feelingGenerated = feeling
-            } else {
-                feelingGenerated = feelingsGenerator.getFeeling(for: animal)
-            }
-            let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feelingGenerated)
+            let feeling = feelingsGenerator.getFeeling(for: animal)
+            let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feeling)
+            subject.onNext(animalDisplayable)
+        }
+    }
+
+    func UITests_updateAnimal(with animal: Animal, feeling: Feeling) {
+        if animal.type != .unknown {
+            let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feeling)
             subject.onNext(animalDisplayable)
         }
     }

@@ -77,7 +77,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             }
             completionHandler()
             let animal = mlProcessorResponse.animal
-            self.mutableAnimalStream.updateAnimal(with: animal, feeling: nil)
+            self.mutableAnimalStream.updateAnimal(with: animal)
         }
     }
 
@@ -92,7 +92,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     func UITests_only_showCardFor(animal: Animal, feeling: Feeling) {
-        self.mutableAnimalStream.updateAnimal(with: animal, feeling: feeling)
+        self.mutableAnimalStream.UITests_updateAnimal(with: animal, feeling: feeling)
     }
 
     // MARK: - Private
