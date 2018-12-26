@@ -2,6 +2,7 @@ language: swift
 osx_image: xcode10.1
 
 before_install:
+  - cp Pettitude/Resources/mock-GoogleService-Info.plist Pettitude/Resources/GoogleService-Info.plist
   - rvm install ruby-2.2.2
   - gem install cocoapods
   - gem install xcpretty -N
