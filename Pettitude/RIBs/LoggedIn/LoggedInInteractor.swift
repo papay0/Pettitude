@@ -6,7 +6,6 @@
 //  Copyright © 2018 Arthur Papailhau. All rights reserved.
 //
 
-import Firebase
 import RIBs
 import RxSwift
 
@@ -26,7 +25,6 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        Auth.auth().signInAnonymously(completion: nil)
     }
 
     override func willResignActive() {

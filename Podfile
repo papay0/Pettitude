@@ -7,6 +7,7 @@ def common_pods
   pod 'SnapKit', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
   pod 'Firebase/Core'
+  pod 'Firebase/Functions'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionLabelModel'
   pod 'SwiftLint'

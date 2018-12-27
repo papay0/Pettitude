@@ -14,6 +14,7 @@
 //  limitations under the License.
 //
 
+import Firebase
 import RIBs
 import RxSwift
 
@@ -41,6 +42,7 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        FirestoreManager.shared.login()
     }
 
     override func willResignActive() {

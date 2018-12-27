@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
 		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
+		700DFCEE21D547A3009AF03F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DFCED21D547A3009AF03F /* FirestoreManager.swift */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
 		701A408A21D02E2A006724F4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A408921D02E2A006724F4 /* SnapshotHelper.swift */; };
 		70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70787ECD21CFC1CD00AA3F55 /* Mocks.swift */; };
@@ -78,6 +79,7 @@
 		58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7003DFB321CF027700343022 /* Pettitude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pettitude.entitlements; sourceTree = "<group>"; };
 		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		700DFCED21D547A3009AF03F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
 		701A408921D02E2A006724F4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		70787ECD21CFC1CD00AA3F55 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		700DFCEC21D54791009AF03F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				700DFCED21D547A3009AF03F /* FirestoreManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		7016A3DB21CC219D0054E19F /* Feelings */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		708F8CC221CFAF9D00CAE79A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				700DFCEC21D54791009AF03F /* Firebase */,
 				708F8CC321CFAFC000CAE79A /* UserDefault */,
 				92A2554B21BD85510098333A /* ML */,
 				92A2554621BD69EC0098333A /* SharedUI */,
@@ -802,6 +813,7 @@
 				92A2555021BDA5AA0098333A /* MLProcessorResponse.swift in Sources */,
 				70BBD20B21CFAB5D007F74BE /* OnboardingInteractor.swift in Sources */,
 				92000C8021C0780A00EB800B /* HomeComponent+Status.swift in Sources */,
+				700DFCEE21D547A3009AF03F /* FirestoreManager.swift in Sources */,
 				92A2555C21BDB57C0098333A /* StatusInteractor.swift in Sources */,
 				92A2554821BD69F90098333A /* View.swift in Sources */,
 				92A2552B21BD5C010098333A /* LoggedInInteractor.swift in Sources */,
