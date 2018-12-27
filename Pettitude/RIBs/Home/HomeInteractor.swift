@@ -92,6 +92,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     func UITests_only_showCardFor(animal: Animal, feeling: Feeling) {
+        guard CommandLine.arguments.contains("uitests") else { return }
         self.mutableAnimalStream.UITests_updateAnimal(with: animal, feeling: feeling)
     }
 

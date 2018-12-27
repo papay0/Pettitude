@@ -97,6 +97,7 @@ class AnimalStreamImpl: MutableAnimalStream {
     }
 
     func UITests_updateAnimal(with animal: Animal, feeling: Feeling) {
+        guard CommandLine.arguments.contains("uitests") else { return }
         if animal.type != .unknown {
             let animalDisplayable = AnimalDisplayableImpl(animal: animal, feeling: feeling)
             subject.onNext(animalDisplayable)
