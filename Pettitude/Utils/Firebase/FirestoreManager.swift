@@ -20,6 +20,7 @@ class FirestoreManager {
     init() {}
 
     func login() {
+        guard !isUITests() else { return }
         Auth.auth().signInAnonymously { (authResult, error) in
             if let error = error as NSError? {
                 Crashlytics.sharedInstance().recordError(error)
@@ -46,6 +47,7 @@ class FirestoreManager {
     }
 
     func animalClassified(animalType: String, feelingDescription: String) {
+        guard !isUITests() else { return }
         guard let userId = UserDefaultsManager.userId else {
             Analytics.logEvent("error_userId_null", parameters: nil)
             return
@@ -70,5 +72,11 @@ class FirestoreManager {
                 Analytics.logEvent("error_animalClassified", parameters: nil)
             }
         })
+    }
+
+    // MARK: Private
+
+    private func isUITests() -> Bool {
+        return CommandLine.arguments.contains("uitests")
     }
 }
