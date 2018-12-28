@@ -45,13 +45,18 @@ class FirestoreManager {
         }
     }
 
-    func animalClassified() {
+    func animalClassified(animalType: String, feelingDescription: String) {
         guard let userId = UserDefaultsManager.userId else {
             Analytics.logEvent("error_userId_null", parameters: nil)
             return
         }
         self.functions.httpsCallable(Fcts.animalClassified.rawValue)
-            .call(["userId": userId], completion: { (result, error) in
+            .call(
+                [
+                    "userId": userId,
+                    "animalType": animalType,
+                    "feelingDescription": feelingDescription
+                ], completion: { (result, error) in
             if let error = error as NSError? {
                 Crashlytics.sharedInstance().recordError(error)
                 Analytics.logEvent(

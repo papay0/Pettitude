@@ -11,7 +11,14 @@ const createUser = async (userId: String) => {
             userId: userId,
             createdAt: admin.firestore.FieldValue.serverTimestamp(),
             updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-            animalClassifiedNumber: 0
+            animalClassifiedNumber: 0,
+            animal: {
+                animalType: {
+                    "cat": 0,
+                    "dog": 0,
+                    "bird": 0
+                }
+            }
         });
 };
 
@@ -25,7 +32,14 @@ const createStats = async () => {
             .set({
                 animalClassifiedNumber: 0,
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),
-                updatedAt: admin.firestore.FieldValue.serverTimestamp()
+                updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+                animal: {
+                    animalType: {
+                        "cat": 0,
+                        "dog": 0,
+                        "bird": 0
+                    }
+                }
             });
     }
 };
@@ -35,7 +49,32 @@ const initData = async (userId: String) => {
     await createStats();
 };
 
-const increaseAnimalClassifiedNumberForUser = async (users) => {
+const updateAnimalCountForUser = async (user, animalType) => {
+    const animalTypeKey = "animal.animalType." + animalType;
+    await db.runTransaction(async t => {
+        const animalTypeCount = user.data().animal.animalType[animalType];
+        await t.update(user.ref, {
+            [animalTypeKey]: animalTypeCount + 1,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+    });
+};
+
+const updateAnimalCountStats = async (animalType) => {
+    const animalTypeKey = "animal.animalType." + animalType;
+    const stat = await db.collection("Stats").doc("global_stats").get();
+    if (stat.exists) {
+        await db.runTransaction(async t => {
+            const animalTypeCount = stat.data().animal.animalType[animalType];
+            await t.update(stat.ref, {
+                [animalTypeKey]: animalTypeCount + 1,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp()
+            });
+        });
+    }
+};
+
+const updateAnimalClassifiedNumberForUser = async (users) => {
     await db.runTransaction(async t => {
         const user = users.docs[0];
         const animalClassifiedNumber = user.data().animalClassifiedNumber;
@@ -43,10 +82,10 @@ const increaseAnimalClassifiedNumberForUser = async (users) => {
             animalClassifiedNumber: animalClassifiedNumber + 1,
             updatedAt: admin.firestore.FieldValue.serverTimestamp()
         });
-    })
+    });
 };
 
-const increaseAnimalClassifiedNumberStats = async () => {
+const updateAnimalClassifiedNumberStats = async () => {
     const stat = await db.collection("Stats").doc("global_stats").get();
     if (stat.exists) {
         await db.runTransaction(async t => {
@@ -78,14 +117,18 @@ exports.login = functions.https.onCall(async (data, context) => {
 
 exports.animalClassified = functions.https.onCall(async (data, context) => {
     const userId = data.userId;
+    const animalType = data.animalType
+    // const feelingDescription = data.feelingDescription
     const userRef = db.collection("Users").where("userId", "==", userId);
     const users = await userRef.get();
     let updated = false;
     if (!users.empty) {
-        await increaseAnimalClassifiedNumberForUser(users);
-        if (await increaseAnimalClassifiedNumberStats()) {
+        await updateAnimalClassifiedNumberForUser(users);
+        if (await updateAnimalClassifiedNumberStats()) {
             updated = true;
         }
+        await updateAnimalCountForUser(users.docs[0], animalType);
+        await updateAnimalCountStats(animalType);
     }
     return { updated: updated };
 })

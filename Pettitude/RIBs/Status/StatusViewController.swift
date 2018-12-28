@@ -84,7 +84,10 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
             Analytics.setUserProperty(feeling.description, forName: "animal_feeling")
             self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: {
-                FirestoreManager.shared.animalClassified()
+                FirestoreManager.shared.animalClassified(
+                    animalType: animal.type.rawValue,
+                    feelingDescription: feeling.description
+                )
             })
         }
     }
