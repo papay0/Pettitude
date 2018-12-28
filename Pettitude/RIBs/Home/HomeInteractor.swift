@@ -59,9 +59,24 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
                 case .cannotSampleBuffer:
                     self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
                     Analytics.logEvent("error_cannotSampleBuffer", parameters: nil)
+                    let cannotSampleBufferError = NSError(domain: "",
+                                                          code: 401,
+                                                          userInfo: [
+                                                            NSLocalizedDescriptionKey: "Cannot sample buffer"
+                                                        ]
+                    )
+                    Crashlytics.sharedInstance().recordError(cannotSampleBufferError)
                 case .error(let errorDescription):
                     self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                    Analytics.logEvent("error_cannotSampleBuffer", parameters: ["description": errorDescription])
+                    Analytics.logEvent("error_classify", parameters: ["description": errorDescription])
+                    let cannotClassifyError = NSError(domain: "",
+                                                          code: 401,
+                                                          userInfo: [
+                                                            NSLocalizedDescriptionKey:
+                                                                "Error classify - " + errorDescription
+                        ]
+                    )
+                    Crashlytics.sharedInstance().recordError(cannotClassifyError)
                 case .animalNotRecognized:
                     Analytics.logEvent("warning_animalNotRecognized", parameters: nil)
                 case .emptyFeatures:
@@ -73,6 +88,13 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             guard let mlProcessorResponse = mlProcessorResponse else {
                 self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
                 completionHandler()
+                let mlProcessorResponseError = NSError(domain: "",
+                                                  code: 401,
+                                                  userInfo: [
+                                                    NSLocalizedDescriptionKey: "Cannot get mlProcessorResponse"
+                    ]
+                )
+                Crashlytics.sharedInstance().recordError(mlProcessorResponseError)
                 return
             }
             completionHandler()
