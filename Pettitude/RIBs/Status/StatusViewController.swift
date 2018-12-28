@@ -21,18 +21,18 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     weak var listener: StatusPresentableListener?
 
     lazy var animalBulletinManager: BLTNItemManager = {
-        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: "")
+        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: FeelingDescription(feelingKey: ""))
         return BLTNItemManager(rootItem: rootItem)
     }()
 
     lazy var errorBulletinManager: BLTNItemManager = {
-        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: "")
+        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: FeelingDescription(feelingKey: ""))
         return BLTNItemManager(rootItem: rootItem)
     }()
 
     private func createBulletinStatusAnimal(feeling: FeelingDescription) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
-        page.descriptionText = feeling
+        page.descriptionText = feeling.localizedDescription
         page.actionButtonTitle = LS("screenshot")
 
         page.actionHandler = { item in
@@ -82,11 +82,11 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
             Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description])
             Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
-            Analytics.setUserProperty(feeling.description, forName: "animal_feeling")
+            Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
             self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: {
                 FirestoreManager.shared.animalClassified(
                     animalType: animal.type.rawValue,
-                    feelingDescription: feeling.description
+                    feelingDescription: feeling.description.englishDescription
                 )
             })
         }

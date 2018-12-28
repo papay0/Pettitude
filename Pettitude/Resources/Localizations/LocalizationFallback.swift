@@ -8,9 +8,9 @@
 
 import Foundation
 
-public func LS(_ key: String) -> String {
+public func LS(_ key: String, useEnglish: Bool = false) -> String {
     let value = NSLocalizedString(key, comment: "")
-    if value != key || NSLocale.preferredLanguages.first == "en" {
+    if value != key || NSLocale.preferredLanguages.first == "en" || useEnglish {
         return value
     }
 

@@ -20,7 +20,17 @@ enum SentimentType {
     case extraNegative
 }
 
-typealias FeelingDescription = String
+typealias FeelingDescriptionType = String
+
+class FeelingDescription {
+    let localizedDescription: FeelingDescriptionType
+    let englishDescription: FeelingDescriptionType
+    
+    init(feelingKey: String) {
+        self.localizedDescription = LS(feelingKey)
+        self.englishDescription = LS(feelingKey, useEnglish: true)
+    }
+}
 
 struct Feeling {
     let description: FeelingDescription
@@ -30,8 +40,9 @@ struct Feeling {
 class FeelingsGenerator: FeelingsGeneratable {
 
     init() {
-        defaultFeelingDescription = LS("Happy")
-        defaultFeeling = Feeling(description: defaultFeelingDescription, sentimentType: .positive)
+        defaultFeelingDescription = FeelingDescription(feelingKey: "Happy")
+        defaultFeeling = Feeling(description: defaultFeelingDescription,
+                                 sentimentType: .positive)
         previousFeeling = defaultFeeling
         minimumTimeForSameFeeling = 10
     }
@@ -52,7 +63,7 @@ class FeelingsGenerator: FeelingsGeneratable {
         case .bird:
             feeling = Feeling(description: feelingDescription, sentimentType: sentimentType)
         case .unknown:
-            feeling = Feeling(description: "unknown", sentimentType: .neutral)
+            feeling = Feeling(description: FeelingDescription(feelingKey: "unknown"), sentimentType: .neutral)
         }
         previousFeeling = feeling
         previousDate = Date.timeIntervalSinceReferenceDate
@@ -64,37 +75,37 @@ class FeelingsGenerator: FeelingsGeneratable {
             SentimentType: [FeelingDescription]
         ] = [
             .extraPositive: [
-                LS("in_love")
+                FeelingDescription(feelingKey: "in_love")
             ],
             .positive: [
-                LS("Happy"),
-                LS("Surprised"),
-                LS("Playful"),
-                LS("Curious"),
-                LS("Satisfied"),
-                LS("Meditative"),
-                LS("Relaxed")
+                FeelingDescription(feelingKey: "Happy"),
+                FeelingDescription(feelingKey: "Surprised"),
+                FeelingDescription(feelingKey: "Playful"),
+                FeelingDescription(feelingKey: "Curious"),
+                FeelingDescription(feelingKey: "Satisfied"),
+                FeelingDescription(feelingKey: "Meditative"),
+                FeelingDescription(feelingKey: "Relaxed")
             ],
             .neutral: [
-                LS("Nostalgic"),
-                LS("Calm"),
-                LS("Innocent"),
-                LS("Indifferent"),
-                LS("Undecided"),
-                LS("Suspicious"),
-                LS("Perplexed"),
-                LS("Shocked")
+                FeelingDescription(feelingKey: "Nostalgic"),
+                FeelingDescription(feelingKey: "Calm"),
+                FeelingDescription(feelingKey: "Innocent"),
+                FeelingDescription(feelingKey: "Indifferent"),
+                FeelingDescription(feelingKey: "Undecided"),
+                FeelingDescription(feelingKey: "Suspicious"),
+                FeelingDescription(feelingKey: "Perplexed"),
+                FeelingDescription(feelingKey: "Shocked")
             ],
             .negative: [
-                LS("Bored"),
-                LS("Arrogant"),
-                LS("Regretful")
+                FeelingDescription(feelingKey: "Bored"),
+                FeelingDescription(feelingKey: "Arrogant"),
+                FeelingDescription(feelingKey: "Regretful")
             ],
             .extraNegative: [
-                LS("Sad"),
-                LS("Horrified"),
-                LS("Guilty"),
-                LS("Disgusted")
+                FeelingDescription(feelingKey: "Sad"),
+                FeelingDescription(feelingKey: "Horrified"),
+                FeelingDescription(feelingKey: "Guilty"),
+                FeelingDescription(feelingKey: "Disgusted")
             ]
         ]
 

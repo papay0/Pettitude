@@ -18,7 +18,8 @@ const createUser = async (userId: String) => {
                     "dog": 0,
                     "bird": 0
                 }
-            }
+            },
+            feelings: {}
         });
 };
 
@@ -39,7 +40,8 @@ const createStats = async () => {
                         "dog": 0,
                         "bird": 0
                     }
-                }
+                },
+                feelings: {}
             });
     }
 };
@@ -48,6 +50,18 @@ const initData = async (userId: String) => {
     await createUser(userId);
     await createStats();
 };
+
+const updateAnimalFeelingsForUser = async (user, feeling) => {
+    const feelingKey = "feelings." + feeling;
+    await db.runTransaction(async t => {
+        const feelingCount = user.data().feelings[feeling] || 0;
+        await t.update(user.ref, {
+            [feelingKey]: feelingCount + 1,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+    });
+};
+
 
 const updateAnimalCountForUser = async (user, animalType) => {
     const animalTypeKey = "animal.animalType." + animalType;
@@ -74,9 +88,8 @@ const updateAnimalCountStats = async (animalType) => {
     }
 };
 
-const updateAnimalClassifiedNumberForUser = async (users) => {
+const updateAnimalClassifiedNumberForUser = async (user) => {
     await db.runTransaction(async t => {
-        const user = users.docs[0];
         const animalClassifiedNumber = user.data().animalClassifiedNumber;
         await t.update(user.ref, {
             animalClassifiedNumber: animalClassifiedNumber + 1,
@@ -118,17 +131,19 @@ exports.login = functions.https.onCall(async (data, context) => {
 exports.animalClassified = functions.https.onCall(async (data, context) => {
     const userId = data.userId;
     const animalType = data.animalType
-    // const feelingDescription = data.feelingDescription
+    const feelingDescription = data.feelingDescription
     const userRef = db.collection("Users").where("userId", "==", userId);
     const users = await userRef.get();
     let updated = false;
     if (!users.empty) {
-        await updateAnimalClassifiedNumberForUser(users);
+        const user = users.docs[0];
+        await updateAnimalClassifiedNumberForUser(user);
         if (await updateAnimalClassifiedNumberStats()) {
             updated = true;
         }
-        await updateAnimalCountForUser(users.docs[0], animalType);
+        await updateAnimalCountForUser(user, animalType);
         await updateAnimalCountStats(animalType);
+        await updateAnimalFeelingsForUser(user, feelingDescription);
     }
     return { updated: updated };
 })
