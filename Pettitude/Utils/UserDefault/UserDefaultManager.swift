@@ -11,6 +11,7 @@ import Foundation
 class UserDefaultsManager {
 
     private static let onboardingDoneKey = "onboardingDone"
+    private static let userIdKey = "userId"
 
     static var onboardingDone: Bool {
         get {
@@ -18,6 +19,15 @@ class UserDefaultsManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: onboardingDoneKey)
+        }
+    }
+
+    static var userId: String? {
+        get {
+            return UserDefaults.standard.string(forKey: userIdKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: userIdKey)
         }
     }
 }
