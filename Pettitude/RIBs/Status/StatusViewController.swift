@@ -80,7 +80,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         DispatchQueue.main.async {
             Analytics.logEvent("present_animal", parameters: nil)
             Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
-            Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description])
+            Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description.englishDescription])
             Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
             Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
             self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: {

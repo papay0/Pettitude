@@ -62,6 +62,19 @@ const updateAnimalFeelingsForUser = async (user, feeling) => {
     });
 };
 
+const updateAnimalFeelingsStats = async (feeling) => {
+    const feelingKey = "feelings." + feeling;
+    const stat = await db.collection("Stats").doc("global_stats").get();
+    if (stat.exists) {
+        await db.runTransaction(async t => {
+            const feelingCount = stat.data().feelings[feeling] || 0;
+            await t.update(stat.ref, {
+                [feelingKey]: feelingCount + 1,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp()
+            });
+        });
+    }
+};
 
 const updateAnimalCountForUser = async (user, animalType) => {
     const animalTypeKey = "animal.animalType." + animalType;
@@ -144,6 +157,7 @@ exports.animalClassified = functions.https.onCall(async (data, context) => {
         await updateAnimalCountForUser(user, animalType);
         await updateAnimalCountStats(animalType);
         await updateAnimalFeelingsForUser(user, feelingDescription);
+        await updateAnimalFeelingsStats(feelingDescription);
     }
     return { updated: updated };
 })
