@@ -16,8 +16,6 @@
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
 		70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */; };
-		70B44B6221D7BB52003B5D62 /* Release in Resources */ = {isa = PBXBuildFile; fileRef = 70B44B6121D7BB52003B5D62 /* Release */; };
-		70B44B6421D7BB5B003B5D62 /* Debug in Resources */ = {isa = PBXBuildFile; fileRef = 70B44B6321D7BB5B003B5D62 /* Debug */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -90,8 +88,6 @@
 		70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
 		70916FC321D02AD1006FF4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70B44B6121D7BB52003B5D62 /* Release */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Release; sourceTree = "<group>"; };
-		70B44B6321D7BB5B003B5D62 /* Debug */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Debug; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -235,8 +231,6 @@
 		70716F7B21D7AF5A0044F5EF /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				70B44B6321D7BB5B003B5D62 /* Debug */,
-				70B44B6121D7BB52003B5D62 /* Release */,
 				706ED99721D7B64900BA1F18 /* Mock */,
 			);
 			path = Config;
@@ -586,8 +580,6 @@
 			files = (
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
 				70F7648221CFEE410047537C /* Localizable.strings in Resources */,
-				70B44B6221D7BB52003B5D62 /* Release in Resources */,
-				70B44B6421D7BB5B003B5D62 /* Debug in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
 				702FE32721D7B7B0001C4DCD /* mock-GoogleService-Info.plist in Resources */,
 			);
