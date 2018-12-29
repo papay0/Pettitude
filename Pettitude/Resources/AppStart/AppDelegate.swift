@@ -36,28 +36,27 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
                             didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
         -> Bool {
 
-        FirebaseApp.configure()
-
+        let filePath: String!
+        #if DEBUG
+        print("[FIREBASE] Development mode.")
+        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Debug")
+        #else
+        print("[FIREBASE] Production mode.")
+        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Release")
+        #endif
+        
+        // TODO: Check if that's false, which one it takes?
+        if let options = FirebaseOptions.init(contentsOfFile: filePath) {
+            FirebaseApp.configure(options: options)
+            FirebaseConfiguration.shared.setLoggerLevel(.min)
+        }
+            
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
         let launchRouter = RootBuilder(dependency: AppComponent()).build()
         self.launchRouter = launchRouter
         launchRouter.launchFromWindow(window)
-
-        let filePath: String!
-        #if DEBUG
-        print("[FIREBASE] Development mode.")
-        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Config/Debug")
-        #else
-        print("[FIREBASE] Production mode.")
-        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "../Config/Release")
-        #endif
-
-        // TODO: Check if that's false, which one it takes?
-        if let options = FirebaseOptions.init(contentsOfFile: filePath) {
-            FirebaseApp.configure(options: options)
-        }
 
         return true
     }

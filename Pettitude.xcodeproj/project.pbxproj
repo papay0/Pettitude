@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0EDABB07CE8DBCA429150FB4 /* Pods_Pettitude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA654D8C51F4F1AF1DF27AD0 /* Pods_Pettitude.framework */; };
-		7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7003DFB621CF05F400343022 /* GoogleService-Info.plist */; };
 		700DFCEE21D547A3009AF03F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700DFCED21D547A3009AF03F /* FirestoreManager.swift */; };
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
 		701A408A21D02E2A006724F4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A408921D02E2A006724F4 /* SnapshotHelper.swift */; };
@@ -17,6 +16,8 @@
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
 		70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */; };
+		70B44B6221D7BB52003B5D62 /* Release in Resources */ = {isa = PBXBuildFile; fileRef = 70B44B6121D7BB52003B5D62 /* Release */; };
+		70B44B6421D7BB5B003B5D62 /* Debug in Resources */ = {isa = PBXBuildFile; fileRef = 70B44B6321D7BB5B003B5D62 /* Debug */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -79,7 +80,6 @@
 		39961957A0268D5A26E5CD2A /* Pods_PettitudeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FF100AC146A1FFA98BFD37 /* Pods_PettitudeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PettitudeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7003DFB321CF027700343022 /* Pettitude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pettitude.entitlements; sourceTree = "<group>"; };
-		7003DFB621CF05F400343022 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		700DFCED21D547A3009AF03F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
 		701A408921D02E2A006724F4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
 		70916FC321D02AD1006FF4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B44B6121D7BB52003B5D62 /* Release */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Release; sourceTree = "<group>"; };
+		70B44B6321D7BB5B003B5D62 /* Debug */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Debug; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -233,26 +235,11 @@
 		70716F7B21D7AF5A0044F5EF /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				70B44B6321D7BB5B003B5D62 /* Debug */,
+				70B44B6121D7BB52003B5D62 /* Release */,
 				706ED99721D7B64900BA1F18 /* Mock */,
-				70716F7D21D7AF700044F5EF /* Release */,
-				70716F7C21D7AF6C0044F5EF /* Debug */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		70716F7C21D7AF6C0044F5EF /* Debug */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Debug;
-			sourceTree = "<group>";
-		};
-		70716F7D21D7AF700044F5EF /* Release */ = {
-			isa = PBXGroup;
-			children = (
-				7003DFB621CF05F400343022 /* GoogleService-Info.plist */,
-			);
-			path = Release;
 			sourceTree = "<group>";
 		};
 		70787ECC21CFC1BF00AA3F55 /* Mocks */ = {
@@ -599,7 +586,8 @@
 			files = (
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
 				70F7648221CFEE410047537C /* Localizable.strings in Resources */,
-				7003DFB721CF05F400343022 /* GoogleService-Info.plist in Resources */,
+				70B44B6221D7BB52003B5D62 /* Release in Resources */,
+				70B44B6421D7BB5B003B5D62 /* Debug in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
 				702FE32721D7B7B0001C4DCD /* mock-GoogleService-Info.plist in Resources */,
 			);
