@@ -12,13 +12,14 @@ before_install:
   - gem install xcpretty -N
   - brew update
   - pod repo update
-  - brew install swiftlint || true
+    # - brew install swiftlint || true
   - bundle install
 # - bundle exec pod install --repo-update
     
 script:
   - set -o pipefail
   - xcodebuild -workspace Pettitude.xcworkspace -scheme Pettitude -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-  - swiftlint
+  - ./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
+    # - swiftlint
 
 
