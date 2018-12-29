@@ -12,7 +12,9 @@ before_install:
   - gem install xcpretty -N
   - brew update
   - brew install swiftlint || true
+  - bundle install
   - bundle exec pod install --repo-update
+    
 script:
   - set -o pipefail
   - xcodebuild -workspace Pettitude.xcworkspace -scheme Pettitude -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
