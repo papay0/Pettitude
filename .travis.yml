@@ -1,6 +1,10 @@
 language: swift
 osx_image: xcode10.1
 
+notifications:
+  email:
+    - pettitude.app@gmail.com
+
 before_install:
   - cp Pettitude/Resources/Config/Mock/mock-GoogleService-Info.plist Pettitude/Resources/Config/Release/GoogleService-Info.plist
   - rvm install ruby-2.2.2
