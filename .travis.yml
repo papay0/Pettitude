@@ -11,6 +11,7 @@ before_install:
   - gem install cocoapods
   - gem install xcpretty -N
   - brew update
+  - pod repo update
   - brew install swiftlint || true
   - bundle install
 # - bundle exec pod install --repo-update
