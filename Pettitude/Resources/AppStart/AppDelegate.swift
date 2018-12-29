@@ -44,13 +44,12 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         print("[FIREBASE] Production mode.")
         filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Release")
         #endif
-        
-        // TODO: Check if that's false, which one it takes?
+
         if let options = FirebaseOptions.init(contentsOfFile: filePath) {
             FirebaseApp.configure(options: options)
             FirebaseConfiguration.shared.setLoggerLevel(.min)
         }
-            
+
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
