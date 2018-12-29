@@ -17,5 +17,5 @@ before_install:
 script:
   - set -o pipefail
   - xcodebuild -workspace Pettitude.xcworkspace -scheme Pettitude -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-  - xctool run-tests -workspace Pettitude.xcworkspace -scheme Pettitude -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - fastlane tests
   - ./Pods/SwiftLint/swiftlint lint --config .swiftlint.yml
