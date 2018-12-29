@@ -45,6 +45,20 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.launchRouter = launchRouter
         launchRouter.launchFromWindow(window)
 
+        let filePath: String!
+        #if DEBUG
+        print("[FIREBASE] Development mode.")
+        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Config/Debug")
+        #else
+        print("[FIREBASE] Production mode.")
+        filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "../Config/Release")
+        #endif
+
+        // TODO: Check if that's false, which one it takes?
+        if let options = FirebaseOptions.init(contentsOfFile: filePath) {
+            FirebaseApp.configure(options: options)
+        }
+
         return true
     }
 

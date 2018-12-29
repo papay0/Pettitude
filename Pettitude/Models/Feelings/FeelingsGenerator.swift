@@ -25,7 +25,7 @@ typealias FeelingDescriptionType = String
 class FeelingDescription {
     let localizedDescription: FeelingDescriptionType
     let englishDescription: FeelingDescriptionType
-    
+
     init(feelingKey: String) {
         self.localizedDescription = LS(feelingKey)
         self.englishDescription = LS(feelingKey, useEnglish: true)
