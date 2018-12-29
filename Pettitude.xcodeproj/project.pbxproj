@@ -12,6 +12,8 @@
 		7016A3DD21CC22300054E19F /* FeelingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */; };
 		701A408A21D02E2A006724F4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A408921D02E2A006724F4 /* SnapshotHelper.swift */; };
 		702FE32721D7B7B0001C4DCD /* mock-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 702FE32621D7B7B0001C4DCD /* mock-GoogleService-Info.plist */; };
+		70339D7121D7C42F0054F4D2 /* Release in Resources */ = {isa = PBXBuildFile; fileRef = 70339D7021D7C42F0054F4D2 /* Release */; };
+		70339D7321D7C43A0054F4D2 /* Debug in Resources */ = {isa = PBXBuildFile; fileRef = 70339D7221D7C43A0054F4D2 /* Debug */; };
 		70787ECE21CFC1CD00AA3F55 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70787ECD21CFC1CD00AA3F55 /* Mocks.swift */; };
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
@@ -82,6 +84,8 @@
 		7016A3DC21CC22300054E19F /* FeelingsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsGenerator.swift; sourceTree = "<group>"; };
 		701A408921D02E2A006724F4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		702FE32621D7B7B0001C4DCD /* mock-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mock-GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70339D7021D7C42F0054F4D2 /* Release */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Release; sourceTree = "<group>"; };
+		70339D7221D7C43A0054F4D2 /* Debug */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Debug; sourceTree = "<group>"; };
 		70787ECD21CFC1CD00AA3F55 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeComponent+Onboarding.swift"; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 		70716F7B21D7AF5A0044F5EF /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				70339D7221D7C43A0054F4D2 /* Debug */,
+				70339D7021D7C42F0054F4D2 /* Release */,
 				706ED99721D7B64900BA1F18 /* Mock */,
 			);
 			path = Config;
@@ -578,6 +584,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70339D7321D7C43A0054F4D2 /* Debug in Resources */,
+				70339D7121D7C42F0054F4D2 /* Release in Resources */,
 				92E14D6221BD542C00FF622B /* LaunchScreen.storyboard in Resources */,
 				70F7648221CFEE410047537C /* Localizable.strings in Resources */,
 				92E14D5F21BD542C00FF622B /* Assets.xcassets in Resources */,
