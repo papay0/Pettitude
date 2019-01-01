@@ -4,6 +4,16 @@ admin.initializeApp();
 const db = admin.firestore();
 db.settings({ timestampsInSnapshots: true });
 
+// Utils
+
+const compareUserData = (a, b) => {
+    if (a.animalClassifiedNumber < b.animalClassifiedNumber)
+      return 1;
+    if (a.animalClassifiedNumber > b.animalClassifiedNumber)
+      return -1;
+    return 0;
+  }
+
 const createUser = async (userId: String) => {
     await db
         .collection("Users")
@@ -166,6 +176,16 @@ exports.animalClassified = functions.https.onCall(async (data, context) => {
 
 exports.stats = functions.https.onRequest(async (req, res) => {
     const stats = await db.collection("Stats").doc("global_stats").get();
-    const data = stats.data();
+    const users = await db.collection("Users").get();
+    const userData = [];
+    users.forEach(user => {
+        userData.push(user.data());
+    });
+    const sortedUserData = userData.sort(compareUserData);
+    const data = {
+        'User Numbers': sortedUserData.length,
+        'Stats': stats.data(),
+        'Users': sortedUserData
+    };
     res.send(JSON.stringify(data));
 });
