@@ -161,3 +161,11 @@ exports.animalClassified = functions.https.onCall(async (data, context) => {
     }
     return { updated: updated };
 })
+
+// HTTPS
+
+exports.stats = functions.https.onRequest(async (req, res) => {
+    const stats = await db.collection("Stats").doc("global_stats").get();
+    const data = stats.data();
+    res.send(JSON.stringify(data));
+});
