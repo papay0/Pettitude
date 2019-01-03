@@ -18,11 +18,11 @@ private enum AnimalLabel: String {
     var animal: Animal {
         switch self {
         case .Cat:
-            return Animal(type: .cat)
+            return Animal(type: .cat, isKnown: true)
         case .Dog:
-            return Animal(type: .dog)
+            return Animal(type: .dog, isKnown: true)
         case .Bird:
-            return Animal(type: .bird)
+            return Animal(type: .bird, isKnown: true)
         }
     }
 }
@@ -32,6 +32,6 @@ public final class MLProcessorResponse {
     public let animal: Animal
 
     public init(label: String) {
-        animal = AnimalLabel(rawValue: label)?.animal ?? Animal(type: .unknown)
+        animal = AnimalLabel(rawValue: label)?.animal ?? Animal(type: .unknown, isKnown: false)
     }
 }

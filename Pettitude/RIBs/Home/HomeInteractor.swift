@@ -99,7 +99,10 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             }
             completionHandler()
             let animal = mlProcessorResponse.animal
-            self.mutableAnimalStream.updateAnimal(with: animal)
+            print("animal: \(animal)")
+            if animal.isKnown {
+                self.mutableAnimalStream.updateAnimal(with: animal)
+            }
         }
     }
 

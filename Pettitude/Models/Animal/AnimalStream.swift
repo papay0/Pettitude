@@ -10,6 +10,7 @@ import RxSwift
 
 public struct Animal {
     let type: AnimalType
+    let isKnown: Bool
     static func == (lhs: Animal, rhs: Animal) -> Bool {
         return lhs.type == rhs.type
     }

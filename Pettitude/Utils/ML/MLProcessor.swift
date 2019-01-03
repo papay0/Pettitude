@@ -18,7 +18,7 @@ public enum MLProcessorError {
 class MLProcessor {
 
     init() {
-        let options = VisionLabelDetectorOptions(confidenceThreshold: 0.5)
+        let options = VisionLabelDetectorOptions(confidenceThreshold: 0.80)
         let vision = Vision.vision()
         labelDetector = vision.labelDetector(options: options)
     }
@@ -52,6 +52,8 @@ class MLProcessor {
                 completionHandler(nil, .emptyFeatures)
                 return
             }
+            print("label: \(sortedFeatures.first?.label)")
+            print("confidence: \(sortedFeatures.first?.confidence)")
             let response = MLProcessorResponse(label: label)
             completionHandler(response, nil)
         }
