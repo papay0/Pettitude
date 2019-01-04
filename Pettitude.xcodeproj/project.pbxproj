@@ -18,6 +18,8 @@
 		708F8CC521CFAFD900CAE79A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC421CFAFD900CAE79A /* UserDefaultManager.swift */; };
 		708F8CC721CFB0F200CAE79A /* HomeComponent+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */; };
 		70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */; };
+		70A9A10921DEC4E1003F39AB /* FirebaseRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9A10821DEC4E1003F39AB /* FirebaseRemoteConfig.swift */; };
+		70A9A10C21DEC8DF003F39AB /* PettitudeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -92,6 +94,8 @@
 		70916FBF21D02AD1006FF4C8 /* PettitudeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PettitudeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeUITests.swift; sourceTree = "<group>"; };
 		70916FC321D02AD1006FF4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70A9A10821DEC4E1003F39AB /* FirebaseRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfig.swift; sourceTree = "<group>"; };
+		70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeConstants.swift; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				700DFCED21D547A3009AF03F /* FirestoreManager.swift */,
+				70A9A10821DEC4E1003F39AB /* FirebaseRemoteConfig.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 		708F8CC221CFAF9D00CAE79A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				70A9A10A21DEC8D3003F39AB /* Constants */,
 				700DFCEC21D54791009AF03F /* Firebase */,
 				708F8CC321CFAFC000CAE79A /* UserDefault */,
 				92A2554B21BD85510098333A /* ML */,
@@ -278,6 +284,14 @@
 				70916FC321D02AD1006FF4C8 /* Info.plist */,
 			);
 			path = PettitudeUITests;
+			sourceTree = "<group>";
+		};
+		70A9A10A21DEC8D3003F39AB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		70BBD20C21CFAE65007F74BE /* Resources */ = {
@@ -858,7 +872,9 @@
 				70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */,
 				92A2551B21BD58BD0098333A /* AppComponent.swift in Sources */,
 				92A2554121BD607F0098333A /* HomeViewController.swift in Sources */,
+				70A9A10C21DEC8DF003F39AB /* PettitudeConstants.swift in Sources */,
 				92A2553A21BD5DE60098333A /* RootBuilder.swift in Sources */,
+				70A9A10921DEC4E1003F39AB /* FirebaseRemoteConfig.swift in Sources */,
 				92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

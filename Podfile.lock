@@ -25,6 +25,9 @@ PODS:
   - Firebase/Performance (5.15.0):
     - Firebase/Core
     - FirebasePerformance (= 2.2.2)
+  - Firebase/RemoteConfig (5.15.0):
+    - Firebase/Core
+    - FirebaseRemoteConfig (= 3.1.0)
   - FirebaseABTesting (2.0.0):
     - FirebaseCore (~> 5.0)
     - Protobuf (~> 3.5)
@@ -156,6 +159,7 @@ DEPENDENCIES:
   - Firebase/MLVision
   - Firebase/MLVisionLabelModel
   - Firebase/Performance
+  - Firebase/RemoteConfig
   - RevealingSplashView
   - RIBs (~> 0.9.0)
   - RxCocoa (~> 4.0)
@@ -229,6 +233,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 025171ae154b9a31da9c04acac4f082c26b895aa
+PODFILE CHECKSUM: d9a8099fbed5ed5f68cb6093796f2e9e22334d68
 
 COCOAPODS: 1.5.3

@@ -33,9 +33,9 @@ class FirestoreManager {
                     Crashlytics.sharedInstance().recordError(error)
                     Analytics.logEvent("error_httpsCallable_login", parameters: ["description": error.description])
                 }
+                UserDefaultsManager.userId = userId
                 if let userCreated = (result?.data as? [String: Any])?["userCreated"] as? Bool, userCreated {
                     Analytics.logEvent("user_created", parameters: nil)
-                    UserDefaultsManager.userId = userId
                 }
                 if let userLoggedIn = (result?.data as? [String: Any])?["userLoggedIn"] as? Bool, userLoggedIn {
                     Analytics.logEvent("user_logged_in", parameters: nil)

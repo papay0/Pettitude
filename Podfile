@@ -17,6 +17,7 @@ def common_pods
   pod 'Firebase/Performance'
   pod 'Firebase/Auth'
   pod 'RevealingSplashView'
+  pod 'Firebase/RemoteConfig'
 end
 
 target 'Pettitude' do

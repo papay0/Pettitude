@@ -95,7 +95,6 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     // MARK: - StatusPresentable
 
     func set(animalDisplayable: AnimalDisplayable) {
-        print("animal: \(animalDisplayable.animal.type)")
         titleBulletin = animalDisplayable.animalRepresentation
         presentAnimalCard(animal: animalDisplayable.animal, feeling: animalDisplayable.feeling)
     }

@@ -49,6 +49,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
             FirebaseApp.configure(options: options)
             FirebaseConfiguration.shared.setLoggerLevel(.min)
         }
+        FirebaseRemoteConfig.shared.fetch()
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
