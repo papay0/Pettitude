@@ -1088,6 +1088,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA9343CD93FEB53B8EB94D99 /* Pods-Pettitude.debug.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "Pettitude 🛠";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pettitude/Resources/Pettitude.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1100,7 +1101,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.arthur.pettitude;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthur.pettitude.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -1112,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF8557CCBCC716404FEE407A /* Pods-Pettitude.release.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = Pettitude;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pettitude/Resources/Pettitude.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
