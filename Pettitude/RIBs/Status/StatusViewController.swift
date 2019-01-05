@@ -61,19 +61,13 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             EntryManager.showPopupMessage(
                   title: titleBulletin,
                   description: feeling.description.localizedDescription,
-                  buttonAction: listener?.screenshot
-            ) {
-                self.listener?.dismissStatus()
-            }
-        Analytics.logEvent("present_animal", parameters: nil)
-        Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
-        Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description.englishDescription])
-        Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
-        Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
-        FirestoreManager.shared.animalClassified(
-            animalType: animal.type.rawValue,
-            feelingDescription: feeling.description.englishDescription
-        )
+                  buttonAction: listener?.screenshot,
+                  didDisappearCompletionHandler: {
+                    self.listener?.dismissStatus()
+                },
+                  didAppearCompletionHandler: {
+                    self.logEvents(animal: animal, feeling: feeling)
+            })
     }
 
     // MARK: - StatusPresentable
@@ -100,5 +94,19 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     func setParentViewController(parentVC: ViewControllable) {
         self.parentVC = parentVC.uiviewController
+    }
+
+    // MARK: - Private
+
+    private func logEvents(animal: Animal, feeling: Feeling) {
+        Analytics.logEvent("present_animal", parameters: nil)
+        Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
+        Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description.englishDescription])
+        Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
+        Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
+        FirestoreManager.shared.animalClassified(
+            animalType: animal.type.rawValue,
+            feelingDescription: feeling.description.englishDescription
+        )
     }
 }

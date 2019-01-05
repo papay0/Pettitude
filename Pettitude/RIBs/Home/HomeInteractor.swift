@@ -62,33 +62,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse, error) in
             if let error = error {
-                switch error {
-                case .cannotSampleBuffer:
-                    self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                    Analytics.logEvent("error_cannotSampleBuffer", parameters: nil)
-                    let cannotSampleBufferError = NSError(domain: "",
-                                                          code: 401,
-                                                          userInfo: [
-                                                            NSLocalizedDescriptionKey: "Cannot sample buffer"
-                                                        ]
-                    )
-                    Crashlytics.sharedInstance().recordError(cannotSampleBufferError)
-                case .error(let errorDescription):
-                    self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                    Analytics.logEvent("error_classify", parameters: ["description": errorDescription])
-                    let cannotClassifyError = NSError(domain: "",
-                                                          code: 401,
-                                                          userInfo: [
-                                                            NSLocalizedDescriptionKey:
-                                                                "Error classify - " + errorDescription
-                        ]
-                    )
-                    Crashlytics.sharedInstance().recordError(cannotClassifyError)
-                case .animalNotRecognized:
-                    Analytics.logEvent("warning_animalNotRecognized", parameters: nil)
-                case .emptyFeatures:
-                    Analytics.logEvent("warning_emptyFeatures", parameters: nil)
-                }
+                self.handleError(error: error)
                 completionHandler()
                 self.canClassify = true
                 return
@@ -133,6 +107,36 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     // MARK: - Private
+
+    private func handleError(error: MLProcessorError) {
+        switch error {
+        case .cannotSampleBuffer:
+            self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
+            Analytics.logEvent("error_cannotSampleBuffer", parameters: nil)
+            let cannotSampleBufferError = NSError(domain: "",
+                                                  code: 401,
+                                                  userInfo: [
+                                                    NSLocalizedDescriptionKey: "Cannot sample buffer"
+                ]
+            )
+            Crashlytics.sharedInstance().recordError(cannotSampleBufferError)
+        case .error(let errorDescription):
+            self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
+            Analytics.logEvent("error_classify", parameters: ["description": errorDescription])
+            let cannotClassifyError = NSError(domain: "",
+                                              code: 401,
+                                              userInfo: [
+                                                NSLocalizedDescriptionKey:
+                                                    "Error classify - " + errorDescription
+                ]
+            )
+            Crashlytics.sharedInstance().recordError(cannotClassifyError)
+        case .animalNotRecognized:
+            Analytics.logEvent("warning_animalNotRecognized", parameters: nil)
+        case .emptyFeatures:
+            Analytics.logEvent("warning_emptyFeatures", parameters: nil)
+        }
+    }
 
     private let mlProcessor: MLProcessor
     private let mutableAnimalStream: MutableAnimalStream

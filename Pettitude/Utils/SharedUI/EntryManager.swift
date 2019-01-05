@@ -35,7 +35,8 @@ struct EntryManager {
     static func showPopupMessage( title: String,
                                   description: String,
                                   buttonAction: (() -> Void)?,
-                                  completionHandler:  @escaping () -> Void) {
+                                  didDisappearCompletionHandler:  @escaping () -> Void,
+                                  didAppearCompletionHandler:  @escaping () -> Void) {
         
         let buttonTitleColor = EKColor.Gray.mid
         var attributes: EKAttributes
@@ -50,7 +51,11 @@ struct EntryManager {
         attributes.screenInteraction = .dismiss
         
         attributes.lifecycleEvents.didDisappear = {
-            completionHandler()
+            didDisappearCompletionHandler()
+        }
+        
+        attributes.lifecycleEvents.didAppear = {
+            didAppearCompletionHandler()
         }
         
         let title = EKProperty.LabelContent(text: title, style: .init(font: MainFont.medium.with(size: 24), color: .white, alignment: .center))
