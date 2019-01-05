@@ -45,11 +45,17 @@ class MLProcessor {
             let sortedFeatures = features.sorted(by: { (image1, image2) -> Bool in
                 return image1.confidence > image2.confidence
             })
-            guard let label = sortedFeatures.first?.label else {
+            guard let feature = sortedFeatures.first else {
                 completionHandler(nil, .emptyFeatures)
                 return
             }
+            let label = feature.label
             let response = MLProcessorResponse(label: label)
+            if response.animal.isKnown {
+                let confidence = Int(feature.confidence * 100)
+                print("confidence = \(confidence)")
+                Analytics.logEvent("animal_confidence", parameters: ["description": confidence])
+            }
             completionHandler(response, nil)
         }
     }

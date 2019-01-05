@@ -56,8 +56,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     private func presentAnimalCard(animal: Animal, feeling: Feeling) {
         guard !SwiftEntryKit.isCurrentlyDisplaying,
-            !errorBulletinManager.isShowingBulletin,
-            UserDefaultsManager.onboardingDone else { return }
+            !errorBulletinManager.isShowingBulletin else { return }
             EntryManager.showPopupMessage(
                   title: titleBulletin,
                   description: feeling.description.localizedDescription,

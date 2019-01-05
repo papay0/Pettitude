@@ -96,7 +96,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     func startOnboarding() {
-        if !UserDefaultsManager.onboardingDone {
+        if !UserDefaultsManager.onboardingDone && !CommandLine.arguments.contains("uitests") {
             router?.startOnboarding()
         }
     }
