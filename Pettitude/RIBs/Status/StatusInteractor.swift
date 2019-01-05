@@ -22,6 +22,7 @@ protocol StatusPresentable: Presentable {
 
 protocol StatusListener: class {
     func screenshot()
+    func dismissStatus()
 }
 
 final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusInteractable, StatusPresentableListener {
@@ -48,6 +49,10 @@ final class StatusInteractor: PresentableInteractor<StatusPresentable>, StatusIn
 
     func screenshot() {
         listener?.screenshot()
+    }
+
+    func dismissStatus() {
+        listener?.dismissStatus()
     }
 
     // MARK: - Private

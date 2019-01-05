@@ -2,6 +2,7 @@ excluded:
   - Pods
   - tooling
   - PettitudeUITests/SnapshotHelper.swift
+  - Pettitude/Utils/SharedUI
   - vendor
 opt_in_rules:
   - force_unwrapping

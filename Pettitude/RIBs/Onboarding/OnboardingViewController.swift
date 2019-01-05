@@ -29,9 +29,12 @@ final class OnboardingViewController: UIViewController, OnboardingPresentable, O
         page.descriptionText = LS("onboarding_description")
         page.actionButtonTitle = LS("onboarding_acknowledgement")
 
+        page.dismissalHandler = { item in
+            UserDefaultsManager.onboardingDone = true
+        }
+
         page.actionHandler = { item in
             self.onboardingBulletinManager.dismissBulletin()
-            UserDefaultsManager.onboardingDone = true
             Analytics.logEvent("onboarding_done", parameters: nil)
             Analytics.setUserProperty("true", forName: "onboarding_done")
         }

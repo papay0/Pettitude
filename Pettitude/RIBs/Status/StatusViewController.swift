@@ -11,36 +11,21 @@ import Firebase
 import RIBs
 import RxSwift
 import UIKit
+import SwiftEntryKit
 
 protocol StatusPresentableListener: class {
     func screenshot()
+    func dismissStatus()
 }
 
 final class StatusViewController: UIViewController, StatusPresentable, StatusViewControllable {
 
     weak var listener: StatusPresentableListener?
 
-    lazy var animalBulletinManager: BLTNItemManager = {
-        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: FeelingDescription(feelingKey: ""))
-        return BLTNItemManager(rootItem: rootItem)
-    }()
-
     lazy var errorBulletinManager: BLTNItemManager = {
-        let rootItem: BLTNItem = createBulletinStatusAnimal(feeling: FeelingDescription(feelingKey: ""))
+        let rootItem: BLTNItem = createBulletinErrorMessage(message: "", error: .mLProcessorError)
         return BLTNItemManager(rootItem: rootItem)
     }()
-
-    private func createBulletinStatusAnimal(feeling: FeelingDescription) -> BLTNItem {
-        let page = BLTNPageItem(title: titleBulletin)
-        page.descriptionText = feeling.localizedDescription
-        page.actionButtonTitle = LS("screenshot")
-
-        page.actionHandler = { item in
-            self.listener?.screenshot()
-        }
-
-        return page
-    }
 
     private func createBulletinErrorMessage(message: String, error: PettitudeErrorType) -> BLTNItem {
         let page = BLTNPageItem(title: titleBulletin)
@@ -50,7 +35,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
         if error == .mLProcessorError {
             page.actionButtonTitle = LS("Ok")
             page.actionHandler = { item in
-                self.animalBulletinManager.dismissBulletin()
+                self.errorBulletinManager.dismissBulletin()
             }
             // TODO: Improve the actioning system
         } else if error == .savingPhotoNotAuthorized || error == .cameraAccessDenied {
@@ -70,26 +55,29 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
     var parentVC: UIViewController?
 
     private func presentAnimalCard(animal: Animal, feeling: Feeling) {
-        guard let parentVC = parentVC,
-            !animalBulletinManager.isShowingBulletin,
-            !errorBulletinManager.isShowingBulletin else { return }
-        animalBulletinManager = BLTNItemManager(rootItem:
-            createBulletinStatusAnimal(feeling: feeling.description)
+        guard !SwiftEntryKit.isCurrentlyDisplaying,
+            !errorBulletinManager.isShowingBulletin,
+            UserDefaultsManager.onboardingDone else { return }
+            EntryManager.showPopupMessage(
+                  title: titleBulletin,
+                  titleColor: .white,
+                  description: feeling.description.localizedDescription,
+                  descriptionColor: .white,
+                  buttonTitleColor: EKColor.Gray.mid,
+                  buttonBackgroundColor: .white,
+                  buttonAction: listener?.screenshot
+            ) {
+                self.listener?.dismissStatus()
+            }
+        Analytics.logEvent("present_animal", parameters: nil)
+        Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
+        Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description.englishDescription])
+        Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
+        Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
+        FirestoreManager.shared.animalClassified(
+            animalType: animal.type.rawValue,
+            feelingDescription: feeling.description.englishDescription
         )
-        animalBulletinManager.backgroundViewStyle = .dimmed
-        DispatchQueue.main.async {
-            Analytics.logEvent("present_animal", parameters: nil)
-            Analytics.logEvent("animal_type", parameters: ["description": animal.type.rawValue])
-            Analytics.logEvent("animal_feeling", parameters: ["description": feeling.description.englishDescription])
-            Analytics.setUserProperty(animal.type.rawValue, forName: "animal_type")
-            Analytics.setUserProperty(feeling.description.englishDescription, forName: "animal_feeling")
-            self.animalBulletinManager.showBulletin(above: parentVC, animated: true, completion: {
-                FirestoreManager.shared.animalClassified(
-                    animalType: animal.type.rawValue,
-                    feelingDescription: feeling.description.englishDescription
-                )
-            })
-        }
     }
 
     // MARK: - StatusPresentable
@@ -101,8 +89,8 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     func showError(message: String, error: PettitudeErrorType) {
         guard let parentVC = parentVC, !errorBulletinManager.isShowingBulletin else { return }
-        if animalBulletinManager.isShowingBulletin {
-            animalBulletinManager.dismissBulletin()
+        if SwiftEntryKit.isCurrentlyDisplaying {
+            SwiftEntryKit.dismiss()
         }
         titleBulletin = "🤷‍♂️"
         errorBulletinManager = BLTNItemManager(rootItem: createBulletinErrorMessage(message: message, error: error))

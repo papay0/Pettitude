@@ -15,7 +15,7 @@ import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void)
     func showError(message: String, error: PettitudeErrorType)
     func startOnboarding()
 
@@ -50,11 +50,15 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
+        guard currentBuffer == nil, case .normal = frame.camera.trackingState, statusDismissed else {
             return
         }
+        statusDismissed = false
         self.currentBuffer = frame.capturedImage
-        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: {
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { isKnown in
+            if !isKnown {
+                self.statusDismissed = true
+            }
             self.currentBuffer = nil
         })
     }
@@ -82,15 +86,21 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
             takeScreenshotBlock()
         case .restricted, .denied:
             let message = LS("access_photo_denied")
-            print(message)
-        listener?.showError(message: message, error: .savingPhotoNotAuthorized)
+            listener?.showError(message: message, error: .savingPhotoNotAuthorized)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ (authorizationStatus) in
                 if authorizationStatus == .authorized {
                     takeScreenshotBlock()
+                } else if authorizationStatus == .denied {
+                    let message = LS("access_photo_denied")
+                    self.listener?.showError(message: message, error: .savingPhotoNotAuthorized)
                 }
             })
         }
+    }
+
+    func dismissStatus() {
+        statusDismissed = true
     }
 
     // MARK: - Private
@@ -179,5 +189,6 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         }
     }
 
+    private var statusDismissed: Bool = true
     private var sceneView: ARSKView!
 }

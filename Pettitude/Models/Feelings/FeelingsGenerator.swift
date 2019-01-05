@@ -48,7 +48,9 @@ class FeelingsGenerator: FeelingsGeneratable {
     }
 
     func getFeeling(for animal: Animal) -> Feeling {
+        print("Animal: \(animal.type.rawValue)")
         if canGetPreviousFeeling(previousFeeling: previousFeeling, animal: animal) {
+            print("canGetPreviousFeeling YES")
             previousDate = Date.timeIntervalSinceReferenceDate
             return previousFeeling
         }
@@ -136,6 +138,7 @@ class FeelingsGenerator: FeelingsGeneratable {
         guard let previousAnimal = previousAnimal, previousAnimal == animal else { return false }
         guard let previousDate = previousDate else { return false }
         let currentDate = Date.timeIntervalSinceReferenceDate
+        print("currentDate - previousDate = \(Int(currentDate - previousDate))")
         if Int(currentDate - previousDate) >= minimumTimeForSameFeeling {
             return false
         }

@@ -18,6 +18,7 @@ protocol HomeRouting: ViewableRouting {
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
     func screenshot()
+    func dismissStatus()
 }
 
 protocol HomeListener: class {}
@@ -50,9 +51,13 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
         presenter.screenshot()
     }
 
+    func dismissStatus() {
+        presenter.dismissStatus()
+    }
+
     // MARK: - HomePresentableListener
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void) {
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse, error) in
             if let error = error {
                 switch error {
@@ -82,12 +87,12 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
                 case .emptyFeatures:
                     Analytics.logEvent("warning_emptyFeatures", parameters: nil)
                 }
-                completionHandler()
+                completionHandler(false)
                 return
             }
             guard let mlProcessorResponse = mlProcessorResponse else {
                 self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                completionHandler()
+                completionHandler(false)
                 let mlProcessorResponseError = NSError(domain: "",
                                                   code: 401,
                                                   userInfo: [
@@ -97,11 +102,11 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
                 Crashlytics.sharedInstance().recordError(mlProcessorResponseError)
                 return
             }
-            completionHandler()
             let animal = mlProcessorResponse.animal
             if animal.isKnown {
                 self.mutableAnimalStream.updateAnimal(with: animal)
             }
+            completionHandler(animal.isKnown)
         }
     }
 

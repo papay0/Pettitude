@@ -18,6 +18,7 @@ def common_pods
   pod 'Firebase/Auth'
   pod 'RevealingSplashView'
   pod 'Firebase/RemoteConfig'
+  pod 'SwiftEntryKit', '0.8.6'
 end
 
 target 'Pettitude' do
