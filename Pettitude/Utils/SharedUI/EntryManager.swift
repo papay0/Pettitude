@@ -33,14 +33,11 @@ struct EntryManager {
     }
     
     static func showPopupMessage( title: String,
-                                  titleColor: UIColor,
                                   description: String,
-                                  descriptionColor: UIColor,
-                                  buttonTitleColor: UIColor,
-                                  buttonBackgroundColor: UIColor,
                                   buttonAction: (() -> Void)?,
                                   completionHandler:  @escaping () -> Void) {
         
+        let buttonTitleColor = EKColor.Gray.mid
         var attributes: EKAttributes
         attributes = bottomAlertAttributes
         attributes.scroll = .edgeCrossingDisabled(swipeable: true)
@@ -56,12 +53,12 @@ struct EntryManager {
             completionHandler()
         }
         
-        let title = EKProperty.LabelContent(text: title, style: .init(font: MainFont.medium.with(size: 24), color: titleColor, alignment: .center))
-        let description = EKProperty.LabelContent(text: description, style: .init(font: MainFont.light.with(size: 34), color: descriptionColor, alignment: .center))
+        let title = EKProperty.LabelContent(text: title, style: .init(font: MainFont.medium.with(size: 24), color: .white, alignment: .center))
+        let description = EKProperty.LabelContent(text: description, style: .init(font: MainFont.light.with(size: 34), color: .white, alignment: .center))
         let button = EKProperty.ButtonContent(label: .init(text: LS("screenshot"),
                                                            style: .init(font: MainFont.bold.with(size: 16),
                                                                         color: buttonTitleColor)),
-                                              backgroundColor: buttonBackgroundColor,
+                                              backgroundColor: .white,
                                               highlightedBackgroundColor: buttonTitleColor.withAlphaComponent(0.05))
         
         if let window = UIApplication.shared.windows.first {

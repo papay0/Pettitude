@@ -60,11 +60,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             UserDefaultsManager.onboardingDone else { return }
             EntryManager.showPopupMessage(
                   title: titleBulletin,
-                  titleColor: .white,
                   description: feeling.description.localizedDescription,
-                  descriptionColor: .white,
-                  buttonTitleColor: EKColor.Gray.mid,
-                  buttonBackgroundColor: .white,
                   buttonAction: listener?.screenshot
             ) {
                 self.listener?.dismissStatus()
