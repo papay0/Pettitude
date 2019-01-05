@@ -18,7 +18,6 @@ protocol HomeRouting: ViewableRouting {
 protocol HomePresentable: Presentable {
     var listener: HomePresentableListener? { get set }
     func screenshot()
-    func dismissStatus()
 }
 
 protocol HomeListener: class {}
@@ -52,12 +51,15 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
     }
 
     func dismissStatus() {
-        presenter.dismissStatus()
+        canClassify = true
     }
 
     // MARK: - HomePresentableListener
 
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void) {
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void) {
+        guard canClassify else { completionHandler(); return }
+        canClassify = false
+
         mlProcessor.classify(pixelBuffer: pixelBuffer) { (mlProcessorResponse, error) in
             if let error = error {
                 switch error {
@@ -87,12 +89,14 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
                 case .emptyFeatures:
                     Analytics.logEvent("warning_emptyFeatures", parameters: nil)
                 }
-                completionHandler(false)
+                completionHandler()
+                self.canClassify = true
                 return
             }
             guard let mlProcessorResponse = mlProcessorResponse else {
                 self.showError(message: self.genericErrorMessage, error: .mLProcessorError)
-                completionHandler(false)
+                completionHandler()
+                self.canClassify = true
                 let mlProcessorResponseError = NSError(domain: "",
                                                   code: 401,
                                                   userInfo: [
@@ -105,8 +109,11 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
             let animal = mlProcessorResponse.animal
             if animal.isKnown {
                 self.mutableAnimalStream.updateAnimal(with: animal)
+                self.canClassify = false
+            } else {
+                self.canClassify = true
             }
-            completionHandler(animal.isKnown)
+            completionHandler()
         }
     }
 
@@ -129,6 +136,7 @@ final class HomeInteractor: PresentableInteractor<HomePresentable>, HomeInteract
 
     private let mlProcessor: MLProcessor
     private let mutableAnimalStream: MutableAnimalStream
+    private var canClassify: Bool = true
 
     private let genericErrorMessage = LS("generic_error_message")
 }

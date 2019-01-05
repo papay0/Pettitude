@@ -18,7 +18,7 @@ struct EntryManager {
         attributes.screenBackground = .color(color: UIColor(white: 100.0/255.0, alpha: 0.3))
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.3, radius: 8))
         attributes.entryInteraction = .absorbTouches
-        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .easeOut)
         attributes.roundCorners = .all(radius: 25)
         attributes.entranceAnimation = .init(translate: .init(duration: 0.7,
                                                               spring: .init(damping: 1, initialVelocity: 0)),
@@ -58,7 +58,7 @@ struct EntryManager {
         
         let title = EKProperty.LabelContent(text: title, style: .init(font: MainFont.medium.with(size: 24), color: titleColor, alignment: .center))
         let description = EKProperty.LabelContent(text: description, style: .init(font: MainFont.light.with(size: 34), color: descriptionColor, alignment: .center))
-        let button = EKProperty.ButtonContent(label: .init(text: "Screenshot 📸",
+        let button = EKProperty.ButtonContent(label: .init(text: LS("screenshot"),
                                                            style: .init(font: MainFont.bold.with(size: 16),
                                                                         color: buttonTitleColor)),
                                               backgroundColor: buttonBackgroundColor,

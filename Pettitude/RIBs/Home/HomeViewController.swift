@@ -15,7 +15,7 @@ import RxSwift
 import UIKit
 
 protocol HomePresentableListener: class {
-    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping (Bool) -> Void)
+    func classify(pixelBuffer: CVPixelBuffer, completionHandler: @escaping () -> Void)
     func showError(message: String, error: PettitudeErrorType)
     func startOnboarding()
 
@@ -50,15 +50,11 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     private let visionQueue = DispatchQueue(label: "com.example.apple-samplecode.ARKitVision.serialVisionQueue")
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        guard currentBuffer == nil, case .normal = frame.camera.trackingState, statusDismissed else {
+        guard currentBuffer == nil, case .normal = frame.camera.trackingState else {
             return
         }
-        statusDismissed = false
         self.currentBuffer = frame.capturedImage
-        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: { isKnown in
-            if !isKnown {
-                self.statusDismissed = true
-            }
+        listener?.classify(pixelBuffer: frame.capturedImage, completionHandler: {
             self.currentBuffer = nil
         })
     }
@@ -99,8 +95,8 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         }
     }
 
-    func dismissStatus() {
-        statusDismissed = true
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
     }
 
     // MARK: - Private
@@ -189,6 +185,5 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
         }
     }
 
-    private var statusDismissed: Bool = true
     private var sceneView: ARSKView!
 }
