@@ -35,6 +35,7 @@ struct EntryManager {
     static func showPopupMessage( title: String,
                                   description: String,
                                   buttonAction: (() -> Void)?,
+                                  showButton: Bool,
                                   didDisappearCompletionHandler:  @escaping () -> Void,
                                   didAppearCompletionHandler:  @escaping () -> Void) {
         
@@ -66,7 +67,7 @@ struct EntryManager {
                                               backgroundColor: .white,
                                               highlightedBackgroundColor: buttonTitleColor.withAlphaComponent(0.05))
         
-        if let window = UIApplication.shared.windows.first {
+        if let window = UIApplication.shared.windows.first, showButton {
             let message = EKPopUpMessage(title: title, description: description, button: button) {
                 buttonAction?()
             }

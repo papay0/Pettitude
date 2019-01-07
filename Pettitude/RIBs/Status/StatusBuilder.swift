@@ -10,11 +10,16 @@ import RIBs
 
 protocol StatusDependency: Dependency {
     var animalStream: AnimalStream { get }
+    var isARKitCapable: Bool { get }
 }
 
 final class StatusComponent: Component<StatusDependency> {
     fileprivate var animalStream: AnimalStream {
         return dependency.animalStream
+    }
+
+    fileprivate var isARKitCapable: Bool {
+        return dependency.isARKitCapable
     }
 }
 
@@ -32,7 +37,7 @@ final class StatusBuilder: Builder<StatusDependency>, StatusBuildable {
 
     func build(with listener: StatusListener) -> StatusRouting {
         let component = StatusComponent(dependency: dependency)
-        let viewController = StatusViewController()
+        let viewController = StatusViewController(showScreenshotButton: component.isARKitCapable)
         let interactor = StatusInteractor(presenter: viewController,
                                           animalStream: component.animalStream)
         interactor.listener = listener

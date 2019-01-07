@@ -37,7 +37,12 @@ final class HomeBuilder: Builder<HomeDependency>, HomeBuildable {
 
     func build(with listener: HomeListener) -> HomeRouting {
         let component = HomeComponent(dependency: dependency)
-        let viewController = HomeViewController()
+        let viewController: HomeViewControllable & HomePresentable
+        if component.isARKitCapable {
+            viewController = HomeViewController()
+        } else {
+            viewController = NotARHomeViewController()
+        }
 
         let interactor = HomeInteractor(presenter: viewController,
                                         mlProcessor: component.mlProcessor,

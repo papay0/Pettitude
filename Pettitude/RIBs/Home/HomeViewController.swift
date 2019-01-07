@@ -62,6 +62,12 @@ final class HomeViewController: UIViewController, HomePresentable, HomeViewContr
     // MARK: - HomePresentable
 
     func screenshot() {
+        Screenshot.screenshot(view: sceneView) { (message, errorType) in
+            self.listener?.showError(message: message, error: errorType)
+        }
+    }
+
+    func screenshotBackUp() {
         Analytics.logEvent("screenshot", parameters: nil)
         let takeScreenshotBlock = {
             DispatchQueue.main.async {

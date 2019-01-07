@@ -2,6 +2,7 @@ PODS:
   - BulletinBoard (3.0.0)
   - Crashlytics (3.12.0):
     - Fabric (~> 1.9.0)
+  - Device.swift (1.1.2)
   - Fabric (1.9.0)
   - Firebase (5.15.0):
     - Firebase/Core (= 5.15.0)
@@ -154,6 +155,7 @@ PODS:
 DEPENDENCIES:
   - BulletinBoard
   - Crashlytics (~> 3.12.0)
+  - Device.swift
   - Fabric (~> 1.9.0)
   - Firebase
   - Firebase/Auth
@@ -174,6 +176,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BulletinBoard
     - Crashlytics
+    - Device.swift
     - Fabric
     - Firebase
     - FirebaseABTesting
@@ -209,6 +212,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Device.swift: f5ff884087c13999505b3a6b2ff1104fb6923f93
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
@@ -241,6 +245,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: cb0e8d6b61552e374813a304a29b7ba51ea53128
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 07367c440f323f909d050e6a9910f80ce90c160b
+PODFILE CHECKSUM: 3b7f2666ed0fb37283defe70e9935ec494b73148
 
 COCOAPODS: 1.5.3

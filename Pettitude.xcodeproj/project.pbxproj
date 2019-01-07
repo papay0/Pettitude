@@ -20,6 +20,8 @@
 		70916FC221D02AD1006FF4C8 /* PettitudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70916FC121D02AD1006FF4C8 /* PettitudeUITests.swift */; };
 		70A9A10921DEC4E1003F39AB /* FirebaseRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9A10821DEC4E1003F39AB /* FirebaseRemoteConfig.swift */; };
 		70A9A10C21DEC8DF003F39AB /* PettitudeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */; };
+		70B81E8C21E3BC7A004048B9 /* NotARHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B81E8B21E3BC7A004048B9 /* NotARHomeViewController.swift */; };
+		70B81E8F21E3C701004048B9 /* Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B81E8E21E3C701004048B9 /* Screenshot.swift */; };
 		70BBD20821CFAB5D007F74BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */; };
 		70BBD20921CFAB5D007F74BE /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */; };
 		70BBD20A21CFAB5D007F74BE /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */; };
@@ -103,6 +105,8 @@
 		70916FC321D02AD1006FF4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70A9A10821DEC4E1003F39AB /* FirebaseRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfig.swift; sourceTree = "<group>"; };
 		70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettitudeConstants.swift; sourceTree = "<group>"; };
+		70B81E8B21E3BC7A004048B9 /* NotARHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotARHomeViewController.swift; sourceTree = "<group>"; };
+		70B81E8E21E3C701004048B9 /* Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshot.swift; sourceTree = "<group>"; };
 		70BBD20421CFAB5D007F74BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		70BBD20521CFAB5D007F74BE /* OnboardingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		70BBD20621CFAB5D007F74BE /* OnboardingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 		708F8CC221CFAF9D00CAE79A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				70B81E8D21E3C6EF004048B9 /* Screenshot */,
 				70A9A10A21DEC8D3003F39AB /* Constants */,
 				700DFCEC21D54791009AF03F /* Firebase */,
 				708F8CC321CFAFC000CAE79A /* UserDefault */,
@@ -306,6 +311,14 @@
 				70A9A10B21DEC8DF003F39AB /* PettitudeConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		70B81E8D21E3C6EF004048B9 /* Screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				70B81E8E21E3C701004048B9 /* Screenshot.swift */,
+			);
+			path = Screenshot;
 			sourceTree = "<group>";
 		};
 		70BBD20C21CFAE65007F74BE /* Resources */ = {
@@ -384,6 +397,7 @@
 			children = (
 				92A2553C21BD607F0098333A /* HomeRouter.swift */,
 				92A2553D21BD607F0098333A /* HomeViewController.swift */,
+				70B81E8B21E3BC7A004048B9 /* NotARHomeViewController.swift */,
 				92000C7F21C0780A00EB800B /* HomeComponent+Status.swift */,
 				708F8CC621CFB0F200CAE79A /* HomeComponent+Onboarding.swift */,
 				92A2553E21BD607F0098333A /* HomeBuilder.swift */,
@@ -648,6 +662,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pettitude/Pods-Pettitude-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
+				"${BUILT_PRODUCTS_DIR}/Device.swift/Device_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -668,6 +683,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -774,6 +790,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PettitudeUITests/Pods-PettitudeUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
+				"${BUILT_PRODUCTS_DIR}/Device.swift/Device_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -794,6 +811,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -901,6 +919,7 @@
 				92A2553921BD5DE60098333A /* RootRouter.swift in Sources */,
 				92A2553621BD5DE60098333A /* RootInteractor.swift in Sources */,
 				70D8FAAC21DFFEFF00D59628 /* EntryManager.swift in Sources */,
+				70B81E8C21E3BC7A004048B9 /* NotARHomeViewController.swift in Sources */,
 				70D8FAA521DFF6A600D59628 /* UIColor+Utils.swift in Sources */,
 				70D8FAA821DFF6A600D59628 /* Object+ClassName.swift in Sources */,
 				92A2554221BD607F0098333A /* HomeBuilder.swift in Sources */,
@@ -910,6 +929,7 @@
 				92A2554121BD607F0098333A /* HomeViewController.swift in Sources */,
 				70A9A10C21DEC8DF003F39AB /* PettitudeConstants.swift in Sources */,
 				92A2553A21BD5DE60098333A /* RootBuilder.swift in Sources */,
+				70B81E8F21E3C701004048B9 /* Screenshot.swift in Sources */,
 				70A9A10921DEC4E1003F39AB /* FirebaseRemoteConfig.swift in Sources */,
 				92000C7E21C071B700EB800B /* AnimalStream.swift in Sources */,
 			);

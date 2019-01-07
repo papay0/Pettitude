@@ -21,14 +21,15 @@ class MLProcessor {
 
     func classify(pixelBuffer: CVPixelBuffer,
                   completionHandler: @escaping (MLProcessorResponse?, MLProcessorError?) -> Void) {
+
         guard let sampleBuffer = getCMSampleBuffer(pixelBuffer: pixelBuffer) else {
             completionHandler(nil, .cannotSampleBuffer)
             return
         }
-
+        let image = VisionImage(buffer: sampleBuffer)
         let metadata = VisionImageMetadata()
         metadata.orientation = .bottomLeft
-        let image = VisionImage(buffer: sampleBuffer)
+
         image.metadata = metadata
 
         let labelDetector = getLabelDetector()

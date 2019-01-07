@@ -22,6 +22,15 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
 
     weak var listener: StatusPresentableListener?
 
+    init(showScreenshotButton: Bool) {
+        self.showScreenshotButton = showScreenshotButton
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     lazy var errorBulletinManager: BLTNItemManager = {
         let rootItem: BLTNItem = createBulletinErrorMessage(message: "", error: .mLProcessorError)
         return BLTNItemManager(rootItem: rootItem)
@@ -61,6 +70,7 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
                   title: titleBulletin,
                   description: feeling.description.localizedDescription,
                   buttonAction: listener?.screenshot,
+                  showButton: showScreenshotButton,
                   didDisappearCompletionHandler: {
                     self.listener?.dismissStatus()
                 },
@@ -108,4 +118,6 @@ final class StatusViewController: UIViewController, StatusPresentable, StatusVie
             feelingDescription: feeling.description.englishDescription
         )
     }
+
+    private let showScreenshotButton: Bool
 }
