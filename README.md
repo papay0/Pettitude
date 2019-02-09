@@ -1,8 +1,5 @@
 # Pettitude
 
-[![Build Status](https://travis-ci.com/papay0/Pettitude.svg?token=3arWsr3xydR2Acvx4dZe&branch=master)](https://travis-ci.com/papay0/Pettitude)
-The build is failing because of a dependency issue with Fastlane. Not sure I'll fix it TBH because I made this app to practice my mobile architcture skills, and as of now I already started a new app.
-
 ## App Store
 Pettitude is on the [App Store](https://itunes.apple.com/nl/app/pettitude/id1447747060)!
 
@@ -59,3 +56,10 @@ I also made a public API to quickly visualize [important stats](https://us-centr
 ### Debug
 
 I have two schemes, one for release and one for debug. Debug is not linked to the same Firebase instance so that I do not update the production database.
+
+### CI
+
+I use [Travis CI](https://travis-ci.org/).
+
+[![Build Status](https://travis-ci.com/papay0/Pettitude.svg?token=3arWsr3xydR2Acvx4dZe&branch=master)](https://travis-ci.com/papay0/Pettitude)
+The build is failing because of a dependency issue with Fastlane. Not sure I'll fix it TBH because I made this app to practice my mobile architcture skills, and as of now I already started a new app.
