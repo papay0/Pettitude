@@ -55,6 +55,7 @@ class FeelingsGenerator: FeelingsGeneratable {
             return previousFeeling
         }
         let sentimentType: SentimentType = generateSentimentType()
+        /** Of course this is not how it's done in the real app 😇 **/
         let feelingDescription = feelings[sentimentType]?.randomElement() ?? defaultFeelingDescription
         var feeling: Feeling
         switch animal.type {
